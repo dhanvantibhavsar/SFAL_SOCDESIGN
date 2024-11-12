@@ -7,13 +7,17 @@ The **Caravel RISC-V Core** is an open-source SoC platform developed by Efabless
 ## Repository structure
 The directory structure is organized as follows:
 
-```plaintext
+
+```
 vsdscl180/
-├── caravel_scl180/          # Caravel project specifically adapted for the SCL180 process node
-    
-├── designs/                 # Contains various standalone designs and IP blocks
-├── scripts/                 # Useful scripts for setting up, simulating, and synthesizing designs
-├── testbenches/             # Contains testbenches for functional and verification purposes
-├── docs/                    # Documentation for each project and general guidelines
-└── README.md                # Repository overview and setup instructions
- 
+├── caravel_scl180/          # Caravel project adapted for the SCL180 process node
+    ├── hkspi/                # Contains various testbench files for the project
+    ├── rtl/                  # Verilog files for the project's RTL design
+    ├── scl180/               # Wrapper files for integrating the SCL180 node
+├── caravel_130/             # Caravel project adapted for the SCL130 process node
+├── synthesis/               # Scripts for setup, simulation, and synthesis
+```
+
+### Testbench 
+Make sure you have installed the riscv gcc toolchain\
+To install the toolchain refer this repo [link](https://github.com/riscv-collab/riscv-gnu-toolchain)

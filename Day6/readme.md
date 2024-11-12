@@ -67,3 +67,35 @@ Get the cells containing 'or'
 get_lib_cells */*or*
 ```
 ![image](../images/Day6_labs/get_lib_cells_or.png)
+
+We can use loop for the each cell
+
+```
+foreach in collection my lib cell [get lib cells */*or*] {
+  set my_lib_cell_name [get_object_name $my_lib_cell];
+  echo $my_lib_cell;
+}
+```
+![image](../images/Day6_labs/loop.png)
+
+```
+get_lib_pins tsl18fs120_scl_ff/or03do/*
+get_lib_attribute <cellname>/* <attribute>
+```
+![image](../images/Day6_labs/get_lib_pins.png)
+![image](../images/Day6_labs/Get_lib_attribute.png)
+![image](../images/Day6_labs/cellfunction.png)
+
+Edit tcl file and source it and check all the attributes
+
+![image](../images/Day6_labs/source_tclfile.png)
+![image](../images/Day6_labs/check_A_C_C.png)
+![image](../images/Day6_labs/check_ACC.png)
+
+We can list all the attributes using 
+
+```
+list_attribute -app
+```
+![image](../images/Day6_labs/listallattrubutes.png)
+
