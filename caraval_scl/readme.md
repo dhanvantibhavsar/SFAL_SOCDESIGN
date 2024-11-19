@@ -20,7 +20,22 @@ vsdscl180/
 
 ### Testbench 
 Make sure you have installed the riscv gcc toolchain\
-To install the toolchain refer this repo [link](https://github.com/riscv-collab/riscv-gnu-toolchain)
+To install the toolchain refer this repo [link](https://github.com/stnolting/riscv-gcc-prebuilt/releases/tag/rv32e-231223)
 
-#### Result
+### Run the testbench 
+
+1. Export the variables
+```
+export GCC_PATH=<path_to_riscv_gcc>   # /home/dhanvanti/Downloads/riscv32/bin
+export GCC_PREFIX=<gcc_prefix>        # riscv32-unknown-elf
+export SCL_PDK_PATH=<path_to_scl_pdk> # /home/dhanvanti/scl_pdk_v2
+```
+2. Run the testbench
+```
+cd hkspi
+make
+```
+
+### Result
+
 ![images](../images/caraval/make.png)
