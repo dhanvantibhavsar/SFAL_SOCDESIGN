@@ -1,0 +1,85 @@
+[SCL] 11/26/2024 18:08:18 PID:3709 Client:sfalvsd Authorization failed Synopsys-Release 2022.03
+[SCL] 11/26/2024 18:08:19 PID:3709 Client:sfalvsd Server:2021@3.7.156.91 Authorization succeeded Design-Compiler 2022.03
+[SCL] 11/26/2024 18:08:20 Checking status for feature Design-Compiler
+[SCL] 11/26/2024 18:08:20 PID:3709 Client:sfalvsd Server:2021@3.7.156.91 Checkout succeeded Design-Compiler 2022.03
+[SCL] 11/26/2024 18:08:20 PID:3709 Client:sfalvsd Authorization failed Synopsys 2022.03
+[SCL] 11/26/2024 18:08:20 PID:3709 Client:sfalvsd Authorization failed DC-Debug 2022.03
+[SCL] 11/26/2024 18:08:20 PID:3709 Client:sfalvsd Authorization failed DC-NXT-DPX-Beta 2022.03
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+              Version T-2022.03-SP5-6 for linux64 - Sep 20, 2023 
+
+                    Copyright (c) 1988 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+[SCL] 11/26/2024 18:08:21 PID:3709 Client:sfalvsd Server:2021@3.7.156.91 Authorization succeeded DC-Expert 2022.03
+set target_library /home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db
+/home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db
+set link_library {* $target_library}
+* $target_library
+set verilog_files  "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl"
+/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl
+set top_module "caravel" ;
+caravel
+read_file $verilog_files -autoread -format verilog -top $top_module
+== READ_FILE autoread for top design 'caravel' ==
+
+Starting READ_FILE autoread mode...
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl'.  (AUTOREAD-100)
+Warning: Adding missing directory to search_path - '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl'. (AUTOREAD-105)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/caravel.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/caravel_logo.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/caravel_core.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/caravel_motto.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/copyright_block.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/open_source.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/user_id_textblock.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/mprj_io_buffer.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/manual_power_connections.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/empty_macro.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/caravel_netlists.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/defines.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/pads.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/user_defines.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/chip_io.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/pc3d01_wrapper.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/pt3b02_wrapper.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/pc3b03ed_wrapper.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/digital_pll.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/digital_pll_controller.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/ring_osc2x13.v'.  (AUTOREAD-100)
+Information: Adding '/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/dummy_scl180_conb_1.v'.  (AUTOREAD-100)
+Error: Source pc3d01.v not found.  (AUTOREAD-200)
+Error: Source pc3b03ed.v not found.  (AUTOREAD-200)
+Error: Source pc3d01.v not found.  (AUTOREAD-200)
+Error: Source pt3b02.v not found.  (AUTOREAD-200)
+Error: No design found for 'caravel'.  (AUTOREAD-331)
+Cannot determine file dependencies properly
+*** Autoread command terminated with errors. ***
+# eloborate $top_module
+# link
+dc_shell> 
