@@ -8,6 +8,9 @@ read_file $verilog_files -autoread -format verilog -top $top_module
 
 # eloborate $top_module
 # link
+# write_verilog ./output/synth.v
+# write_ddc ./output/synth_ddc.v
+
 
 
 

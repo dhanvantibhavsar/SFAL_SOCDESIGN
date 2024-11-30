@@ -13,32 +13,21 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`include "defines.v"
-
-
-module mprj_io_buffer (
+module mprj2_logic_high (
 /*`ifdef USE_POWER_PINS
-      input VPWR,
-      input VGND,
-`endif*/
-     input [(`MPRJ_IO_PADS_1-1):0]  mgmt_gpio_in,
-     output [(`MPRJ_IO_PADS_1-1):0] mgmt_gpio_in_buf,
-     input [2:0]   mgmt_gpio_oeb,
-     output [2:0]  mgmt_gpio_oeb_buf,
-     input [(`MPRJ_IO_PADS_1-1):0]  mgmt_gpio_out,
-     output [(`MPRJ_IO_PADS_1-1):0] mgmt_gpio_out_buf
+    inout	   vccd2,
+    inout	   vssd2,
+`endif */
+    output         HI
 );
-
-
-buffd7 BUF[(`MPRJ_IO_PADS_2*2+3)-1:0] (
-    `ifndef USE_POWER_PINS
-            .VPWR(VPWR),
-            .VGND(VGND),
-            .VPB(VPWR),
-            .VNB(VGND),
-    `endif
-		.I({mgmt_gpio_in, mgmt_gpio_oeb, mgmt_gpio_out}), 
-		.Z({mgmt_gpio_in_buf, mgmt_gpio_oeb_buf, mgmt_gpio_out_buf})
-); 
-
+dummy_scl180_conb_1 inst (
+`ifndef USE_POWER_PINS
+                .VPWR(vccd2),
+                .VGND(vssd2),
+                .VPB(vccd2),
+                .VNB(vssd2),
+`endif
+                .HI(HI),
+                .LO()
+        );
 endmodule

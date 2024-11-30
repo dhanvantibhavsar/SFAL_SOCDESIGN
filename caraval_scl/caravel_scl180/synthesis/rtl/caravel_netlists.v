@@ -32,8 +32,8 @@
 	`include "sky130/sky130_fd_sc_hd/primitives.v"
 	`include "sky130/sky130_fd_sc_hd/sky130_fd_sc_hd.v"
 	*/
-	`include "sky130/sky130_fd_sc_hvl/primitives.v"
-	`include "sky130/sky130_fd_sc_hvl/sky130_fd_sc_hvl.v"
+	`include "primitives.v"
+	`include "sky130_fd_sc_hvl.v"
 	
 	//`include "sky130/sky130_sram_2kbyte_1rw1r_32x512_8.v"
 

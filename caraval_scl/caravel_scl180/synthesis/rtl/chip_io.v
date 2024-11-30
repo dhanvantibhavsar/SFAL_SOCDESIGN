@@ -1,5 +1,5 @@
 `include "pc3d01_wrapper.v"
-// `include "pc3d21.v"
+`include "pc3d21.v"
 `include "pt3b02_wrapper.v"
 `include "pc3b03ed_wrapper.v"
 // SPDX-FileCopyrightText: 2020 Efabless Corporation

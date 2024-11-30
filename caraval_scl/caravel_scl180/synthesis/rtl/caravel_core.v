@@ -31,10 +31,14 @@
 /* the management SoC).						*/
 /*                                                          	*/
 /*--------------------------------------------------------------*/
+`default_nettype wire
 
 `include "mprj_io_buffer.v"
 `include "manual_power_connections.v"
 `include "empty_macro.v"
+`include "user_defines.v"
+`include "mgmt_core.v"
+`include "defines.v"
 
 module caravel_core (
     // All top-level I/O are package-facing pins
