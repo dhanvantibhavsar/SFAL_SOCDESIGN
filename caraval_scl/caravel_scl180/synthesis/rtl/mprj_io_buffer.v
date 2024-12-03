@@ -15,6 +15,7 @@
 
 `include "defines.v"
 
+`default_nettype wire
 
 module mprj_io_buffer (
 /*`ifdef USE_POWER_PINS

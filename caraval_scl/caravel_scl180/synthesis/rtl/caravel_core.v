@@ -31,7 +31,7 @@
 /* the management SoC).						*/
 /*                                                          	*/
 /*--------------------------------------------------------------*/
-`default_nettype wire
+
 
 `include "mprj_io_buffer.v"
 `include "manual_power_connections.v"
@@ -39,7 +39,7 @@
 `include "user_defines.v"
 `include "mgmt_core.v"
 `include "defines.v"
-
+`default_nettype wire
 module caravel_core (
     // All top-level I/O are package-facing pins
 `ifdef USE_POWER_PINS

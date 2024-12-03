@@ -1,0 +1,90 @@
+Warning: Can't read link_library file '$target_library'. (UID-3)
+Information: Building the design 'chip_io'. (HDL-193)
+Warning: Cannot find the design 'chip_io' in the library 'WORK'. (LBR-1)
+Error: Can't find inout port 'vddio' on reference to 'caravel_core' in 'caravel'. (LINK-1)
+Warning: Unable to resolve reference 'caravel_core' in 'caravel'. (LINK-5)
+Warning: Unable to resolve reference 'chip_io' in 'caravel'. (LINK-5)
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : qor
+Design : caravel
+Version: T-2022.03-SP5-6
+Date   : Tue Dec  3 18:14:37 2024
+****************************************
+
+
+  Timing Path Group (none)
+  -----------------------------------
+  Levels of Logic:               1.00
+  Critical Path Length:          0.00
+  Critical Path Slack:         uninit
+  Critical Path Clk Period:       n/a
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          0
+  Hierarchical Port Count:          0
+  Leaf Cell Count:                  2
+  Buf/Inv Cell Count:               0
+  Buf Cell Count:                   0
+  Inv Cell Count:                   0
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:         2
+  Sequential Cell Count:            0
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:        0.000000
+  Noncombinational Area:     0.000000
+  Buf/Inv Area:              0.000000
+  Total Buffer Area:             0.00
+  Total Inverter Area:           0.00
+  Macro/Black Box Area:      0.000000
+  Net Area:                143.376000
+  -----------------------------------
+  Cell Area:                 0.000000
+  Design Area:             143.376000
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:           696
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: sfalvsd
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.00
+  Logic Optimization:                  0.16
+  Mapping Optimization:                0.88
+  -----------------------------------------
+  Overall Compile Time:                7.10
+  Overall Compile Wall Clock Time:     7.49
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

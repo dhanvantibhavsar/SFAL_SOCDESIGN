@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
-
+`default_nettype none
 
 `ifndef __GLOBAL_DEFINE_H
 // Global parameters
@@ -33,6 +33,9 @@
 `define ANALOG_PADS_2 6
 
 `define ANALOG_PADS (`ANALOG_PADS_1 + `ANALOG_PADS_2)
+
+// Adding  GPIO pads for caravel
+`define OPENFRAME_IO_PADS 44
 
 // Size of soc_mem_synth
 
