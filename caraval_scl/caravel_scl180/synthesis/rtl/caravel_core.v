@@ -39,6 +39,7 @@
 `include "user_defines.v"
 `include "mgmt_core.v"
 `include "defines.v"
+
 `default_nettype wire
 module caravel_core (
     // All top-level I/O are package-facing pins
@@ -545,10 +546,10 @@ module caravel_core (
     // DCO/Digital Locked Loop
 
     digital_pll pll (
-    /*`ifdef USE_POWER_PINS
+    `ifdef USE_POWER_PINS
 		.VPWR(vccd),
 		.VGND(vssd),
-    `endif*/
+    `endif
         .resetb(rstb_l),
         .enable(spi_pll_ena),
         .osc(clock_core),

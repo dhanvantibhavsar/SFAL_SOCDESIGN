@@ -1,0 +1,210 @@
+CRTE_SNAPSHOT_START
+
+SECTION_CRTE_VERSION
+3.0
+
+SECTION_PID
+28140
+
+SECTION_POLLING_INTERVAL
+5
+
+SECTION_DATE_TIME
+Tue Dec 10 12:08:12 UTC 2024 (1733832492)
+
+SECTION_OS_VERSION
+osname: Linux
+hostname: sfalvsd
+arch: x86_64
+release_version: 3.10.0-1160.114.2.el7.x86_64
+
+SECTION_IPC_INFO
+Error: command <ipcs -msq 2>/dev/null> can not be executed.
+SECTION_ULIMIT
+Error: command <sh -c "ulimit -a"> can not be executed.
+SECTION_SYSCONF
+_SC_THREAD_SAFE_FUNCTIONS= 200809
+_SC_CLK_TCK= 100
+_SC_OPEN_MAX= 4096
+_SC_PAGE_SIZE= 4096
+_SC_ARG_MAX= 4611686018427387903
+_SC_CHILD_MAX= 4096
+_SC_LINE_MAX= 2048
+
+SECTION_FULL_COMMAND
+/usr/synopsys/syn/T-2022.03-SP5-6/linux64/syn/bin/common_shell_exec -shell dc_shell -r /usr/synopsys/syn/T-2022.03-SP5-6 -f synth.tcl
+
+SECTION_CPUINFO
+total_core: 8
+
+model_name:  DO-Regular
+flags:  fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology eagerfpu pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd rsb_ctxsw ibrs ibpb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap xsaveopt arat md_clear spec_ctrl
+cpu_family: 6
+core_frequency_mhz: 2494
+core_per_socket: 0
+stepping: 1
+cache_size_kb: 4096
+ht: 0
+
+model_name:  DO-Regular
+flags:  fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology eagerfpu pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd rsb_ctxsw ibrs ibpb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap xsaveopt arat md_clear spec_ctrl
+cpu_family: 6
+core_frequency_mhz: 2494
+core_per_socket: 0
+stepping: 1
+cache_size_kb: 4096
+ht: 0
+
+model_name:  DO-Regular
+flags:  fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology eagerfpu pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd rsb_ctxsw ibrs ibpb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap xsaveopt arat md_clear spec_ctrl
+cpu_family: 6
+core_frequency_mhz: 2494
+core_per_socket: 0
+stepping: 1
+cache_size_kb: 4096
+ht: 0
+
+model_name:  DO-Regular
+flags:  fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology eagerfpu pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd rsb_ctxsw ibrs ibpb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap xsaveopt arat md_clear spec_ctrl
+cpu_family: 6
+core_frequency_mhz: 2494
+core_per_socket: 0
+stepping: 1
+cache_size_kb: 4096
+ht: 0
+
+model_name:  DO-Regular
+flags:  fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology eagerfpu pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd rsb_ctxsw ibrs ibpb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap xsaveopt arat md_clear spec_ctrl
+cpu_family: 6
+core_frequency_mhz: 2494
+core_per_socket: 0
+stepping: 1
+cache_size_kb: 4096
+ht: 0
+
+model_name:  DO-Regular
+flags:  fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology eagerfpu pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd rsb_ctxsw ibrs ibpb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap xsaveopt arat md_clear spec_ctrl
+cpu_family: 6
+core_frequency_mhz: 2494
+core_per_socket: 0
+stepping: 1
+cache_size_kb: 4096
+ht: 0
+
+model_name:  DO-Regular
+flags:  fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology eagerfpu pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd rsb_ctxsw ibrs ibpb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap xsaveopt arat md_clear spec_ctrl
+cpu_family: 6
+core_frequency_mhz: 2494
+core_per_socket: 0
+stepping: 1
+cache_size_kb: 4096
+ht: 0
+
+model_name:  DO-Regular
+flags:  fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology eagerfpu pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd rsb_ctxsw ibrs ibpb tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap xsaveopt arat md_clear spec_ctrl
+cpu_family: 6
+core_frequency_mhz: 2494
+core_per_socket: 0
+stepping: 1
+cache_size_kb: 4096
+ht: 0
+
+SECTION_OS_RELEASE_VERSION
+Error: command <cat /etc/redhat-release> can not be executed.
+
+SECTION_SYS/VM
+Error: command <grep '' /proc/sys/vm/* 2> /dev/null> can not be executed.
+
+SECTION_SWAP
+Error: Could not collect the data.
+
+CRTE_SNAPSHOT_END
+
+CRTE_PERIODIC_START 1 1733832492754
+
+SECTION_MPSTAT
+total_core: 8
+
+CPU     %user   %kernel %wait   %idle   
+all   2.253496 1.846868 0.005708 95.893921
+0     1.659440 1.369442 0.004801 96.966309
+1     3.109749 2.592366 0.005696 94.292191
+2     2.897852 2.423074 0.005593 94.673477
+3     1.907978 1.544167 0.005236 96.542618
+4     2.434441 1.971362 0.005984 95.588219
+5     2.097037 1.721531 0.006551 96.174881
+6     2.041907 1.669093 0.006345 96.282654
+7     1.904453 1.505639 0.005454 96.584450
+SECTION_LOADAVG
+1.17 1.01 0.97 19/3476 24995
+
+SECTION_PID_STATUS
+name: common_shell_ex
+state: 1
+vmsize: 2367368
+vmrss: 396500
+vmdata: 1523824
+vmstk: 224
+vmexe: 316388
+vmlib: 318548
+threads: 1
+
+SECTION_PROCESS_CPU_UTIL
+pid: 28140
+cpu_total_time: 637514191
+cpu_used_time: 6752
+cpu_p: 
+
+SECTION_SYSTEM_CPU_UTIL
+sys_cpu_p: 
+
+SECTION_MEMINFO
+memtotal: 16265296
+memfree: 165188
+cached: 1625544
+swapcached: 0
+active: 14398708
+swaptotal: 0
+swapfree: 0
+
+SECTION_SMAPS
+shared_kb: 1028
+private_kb: 395704
+
+SECTION_DF
+Filesystem  Size  Used Avail Use%
+filesystem        319G  125G  194G    39
+
+Filesystem    Inodes   IUsed   IFree   IUse%
+filesystem          167770560  1539708 166230852   4294964969
+
+SECTION_CWD
+Filesystem  Size  Used Avail Use%
+filesystem        319G  125G  194G    39
+
+Filesystem    Inodes   IUsed   IFree   IUse%
+filesystem          167770560  1539708 166230852   4294964969
+
+SECTION_SWAP_RATE
+Error: Could not collect the data.
+
+SECTION_FD_SIZE
+files: 15
+total_size: 379854
+
+SECTION_NET_INTERFACE
+total_eth_avbl: 4
+
+name net_rx_err net_rx_drp net_tx_err net_tx_drp 
+  eth0:         0        0        0        0
+  eth1:           0        0        0        0
+    lo:         0        0        0        0
+virbr0-nic:               0        0        0        0
+
+SECTION_NFSSTAT
+Error: Could not collect the data.
+
+SECTION_THREAD_CPU_UTIL
+28140 : 28140 (common_shell_ex) R 19345 28140 8455 34819 28140 8192 509075 93689 374 6 6040 195 485 34 20 0 1 0 30147904 2424184832 99181 18446744073709551615 4194304 328171869 140737488345296 140737488331896 46912557922112 0 0 67112960 1132490495 0 0 0 17 5 0 0 96 0 0 418442576 450116527 1674113024 140737488346239 140737488346373 140737488346373 140737488351156 0
+
+CRTE_PERIODIC_END 1 1733832492754
