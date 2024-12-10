@@ -64,12 +64,12 @@ module mgmt_protect_hv (
     );
 
     dummy_scl180_conb_1 mprj2_logic_high_hvl (
-`ifndef USE_POWER_PINS
+/*`ifndef USE_POWER_PINS
         .VPWR(vdda2),
         .VGND(vssa2),
         .VPB(vdda2),
         .VNB(vssa2),
-`endif
+`endif*/
         .HI(mprj2_vdd_logic1_h),
         .LO()
     );

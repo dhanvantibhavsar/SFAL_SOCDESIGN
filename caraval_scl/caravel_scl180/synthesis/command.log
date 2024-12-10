@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version T-2022.03-SP5-6 for linux64 -- Sep 20, 2023
-#@ # Date:   Tue Dec 10 12:56:29 2024
+#@ # Date:   Tue Dec 10 22:40:58 2024
 #@ # Run by: dhanvanti@sfalvsd
 #@ 
 
@@ -8628,8 +8628,8 @@ source /usr/synopsys/syn/T-2022.03-SP5-6/admin/setup/.synopsys_dc.setup
 
 #@ # -- End source /usr/synopsys/syn/T-2022.03-SP5-6/admin/setup/.synopsys_dc.setup
 
-source synth.tcl
-#@ # -- Starting source synth.tcl
+source -echo -verbose /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/synth.tcl
+#@ # -- Starting source /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/synth.tcl
 
 #@ read_db /home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db
 #@ set target_library /home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db
@@ -8646,3 +8646,23 @@ source synth.tcl
 #@ link
 #@ 
 #@ compile_ultra
+#@ 
+#@ report_qor > "$report_dir/qor_post_synth.rpt"
+#@ report_area > "$report_dir/area_post_synth.rpt"
+#@ report_power > "$report_dir/power_post_synth.rpt"
+#@ 
+#@ write -format verilog -hierarchy -output $output_file
+#@ 
+#@ # write_verilog ./output/synth.v
+#@ # write_ddc ./output/synth_ddc.v
+#@ 
+#@ 
+#@ 
+#@ 
+#@ 
+#@ 
+#@ 
+#@ 
+#@ 
+#@ # -- End source /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/synth.tcl
+

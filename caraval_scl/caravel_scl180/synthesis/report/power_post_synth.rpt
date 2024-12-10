@@ -4,13 +4,13 @@ Report : power
         -analysis_effort low
 Design : caravel
 Version: T-2022.03-SP5-6
-Date   : Sat Dec  7 04:01:56 2024
+Date   : Tue Dec 10 22:50:06 2024
 ****************************************
 
 
 Library(s) Used:
 
-    No libraries used.
+    tsl18fs120_scl_ff (File: /home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db)
 
 
 Operating Conditions: tsl18fs120_scl_ff   Library: tsl18fs120_scl_ff
@@ -18,7 +18,7 @@ Wire Load Model Mode: top
 
 Design        Wire Load Model            Library
 ------------------------------------------------
-caravel                ForQA             tsl18fs120_scl_ff
+caravel                2000000           tsl18fs120_scl_ff
 
 
 Global Operating Voltage = 1.98 
@@ -35,12 +35,12 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =   0.0000 mW    (0%)
-  Net Switching Power  = 562.8989 uW  (100%)
+  Cell Internal Power  = 119.2068 mW   (60%)
+  Net Switching Power  =  80.2153 mW   (40%)
                          ---------
-Total Dynamic Power    = 562.8989 uW  (100%)
+Total Dynamic Power    = 199.4221 mW  (100%)
 
-Cell Leakage Power     =   0.0000 pW
+Cell Leakage Power     =   2.7493 uW
 
 Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
 
@@ -49,11 +49,11 @@ Power Group      Power            Power               Power              Power  
 --------------------------------------------------------------------------------------------------
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
-black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000           62.7200            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)  i
 register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
-sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational      0.0000            0.5391            0.0000            0.5391  ( 100.00%)
+sequential       114.8624        9.8994e-02        1.7985e+06          114.9631  (  57.69%)
+combinational      4.3335           79.9673        9.5078e+05           84.3025  (  42.31%)
 --------------------------------------------------------------------------------------------------
-Total              0.0000 mW         0.5391 mW         0.0000 pW         0.5391 mW
+Total            119.1960 mW        80.0663 mW     2.7493e+06 pW       199.2655 mW
 1

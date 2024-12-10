@@ -21,12 +21,12 @@ module mprj2_logic_high (
     output         HI
 );
 dummy_scl180_conb_1 inst (
-`ifndef USE_POWER_PINS
+/*`ifndef USE_POWER_PINS
                 .VPWR(vccd2),
                 .VGND(vssd2),
                 .VPB(vccd2),
                 .VNB(vssd2),
-`endif
+`endif*/
                 .HI(HI),
                 .LO()
         );

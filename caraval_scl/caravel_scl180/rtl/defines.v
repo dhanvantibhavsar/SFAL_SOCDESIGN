@@ -12,11 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
-
+//`default_nettype none
 
 `ifndef __GLOBAL_DEFINE_H
 // Global parameters
 `define __GLOBAL_DEFINE_H
+`define tri0 wire
+`define USE_POWER_PIN
+
 
 `define MPRJ_IO_PADS_1 19	/* number of user GPIO pads on user1 side */
 `define MPRJ_IO_PADS_2 19	/* number of user GPIO pads on user2 side */
@@ -34,6 +37,9 @@
 
 `define ANALOG_PADS (`ANALOG_PADS_1 + `ANALOG_PADS_2)
 
+`define OPENFRAME_IO_PADS 44
+// define power pin
+ 
 // Size of soc_mem_synth
 
 // Type and size of soc_mem
@@ -66,5 +72,4 @@
 `define USER_SPACE_SIZE 'hFFFFC // sum with USER_SPACE_ADDR is the address of last address
 `define IO_CTRL_BITS 'd13 // size of gpio_control_reg
 `define POWER_DOMAINS 'd3 // size of gpio_control_reg
-
-`endif // __GLOBAL_DEFINE_H
+`endif //

@@ -1,22 +1,63 @@
-Information: Building the design 'chip_io'. (HDL-193)
-Warning: Cannot find the design 'chip_io' in the library 'WORK'. (LBR-1)
-Error: Can't find inout port 'vddio' on reference to 'caravel_core' in 'caravel'. (LINK-1)
-Warning: Unable to resolve reference 'caravel_core' in 'caravel'. (LINK-5)
-Warning: Unable to resolve reference 'chip_io' in 'caravel'. (LINK-5)
+Information: Building the design 'gpio_control_block'. (HDL-193)
+Warning: Cannot find the design 'gpio_control_block' in the library 'WORK'. (LBR-1)
+Information: Building the design 'sky130_fd_sc_hvl__schmittbuf_1'. (HDL-193)
+Warning: Cannot find the design 'sky130_fd_sc_hvl__schmittbuf_1' in the library 'WORK'. (LBR-1)
+Warning: Unable to resolve reference 'gpio_control_block' in 'caravel_core'. (LINK-5)
+Warning: Unable to resolve reference 'sky130_fd_sc_hvl__schmittbuf_1' in 'simple_por'. (LINK-5)
 Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	chip_core/housekeeping/U113/I chip_core/housekeeping/U113/Z chip_core/housekeeping/U21/I chip_core/housekeeping/U21/Z chip_core/housekeeping/wbbd_sck_reg/CP chip_core/housekeeping/wbbd_sck_reg/Q chip_core/housekeeping/U119/A1 chip_core/housekeeping/U119/ZN chip_core/housekeeping/U120/A chip_core/housekeeping/U120/ZN chip_core/housekeeping/U28/I chip_core/housekeeping/U28/Z chip_core/housekeeping/U127/I chip_core/housekeeping/U127/Z chip_core/housekeeping/U26/I chip_core/housekeeping/U26/Z chip_core/housekeeping/U128/I chip_core/housekeeping/U128/Z chip_core/housekeeping/pll_trim_reg[5]/CP chip_core/housekeeping/pll_trim_reg[5]/QN chip_core/U816/I0 chip_core/U816/Z chip_core/U753/I chip_core/U753/ZN chip_core/pll/ringosc/dstage[5].id/delayen0/EN chip_core/pll/ringosc/dstage[5].id/delayen0/ZN chip_core/clock_ctrl/ext_clk_syncd_reg/CP chip_core/clock_ctrl/ext_clk_syncd_reg/Q chip_core/U810/I1 chip_core/U810/Z chip_core/U809/I0 chip_core/U809/Z 
+Information: Timing loop detected. (OPT-150)
+	chip_core/housekeeping/U121/I chip_core/housekeeping/U121/Z chip_core/housekeeping/U27/I chip_core/housekeeping/U27/Z chip_core/housekeeping/U122/I chip_core/housekeeping/U122/Z chip_core/housekeeping/U123/I chip_core/housekeeping/U123/Z chip_core/housekeeping/U124/I chip_core/housekeeping/U124/Z chip_core/housekeeping/gpio_configure_reg[3][3]/CP chip_core/housekeeping/gpio_configure_reg[3][3]/Q chip_core/housekeeping/U114/A1 chip_core/housekeeping/U114/ZN chip_core/housekeeping/U117/A2 chip_core/housekeeping/U117/ZN chip_core/housekeeping/U120/C2 chip_core/housekeeping/U120/ZN chip_core/housekeeping/U28/I chip_core/housekeeping/U28/Z 
+Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/housekeeping/wbbd_sck_reg'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/housekeeping/gpio_configure_reg[3][3]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/housekeeping/hkspi_disable_reg'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/pll/pll_control/tval_reg[6]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/pll/pll_control/tval_reg[4]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/pll/pll_control/tval_reg[5]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/pll/pll_control/tval_reg[2]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/pll/pll_control/tval_reg[3]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'I' and 'ZN' on cell 'chip_core/pll/ringosc/dstage[0].id/delayenb1'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'I' and 'ZN' on cell 'chip_core/pll/ringosc/dstage[0].id/delayen1'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'I' and 'ZN' on cell 'chip_core/pll/ringosc/dstage[0].id/delayenb0'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/clock_ctrl/divider/syncN_reg[0]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/clock_ctrl/divider/syncN_reg[2]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'QN' on cell 'chip_core/clock_ctrl/divider/syncN_reg[1]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/housekeeping/wbbd_busy_reg'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/clock_ctrl/divider2/syncN_reg[0]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/clock_ctrl/divider2/syncN_reg[2]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'QN' on cell 'chip_core/clock_ctrl/divider2/syncN_reg[1]'
+         to break a timing loop. (OPT-314)
  
 ****************************************
 Report : qor
 Design : caravel
 Version: T-2022.03-SP5-6
-Date   : Sat Dec  7 04:01:56 2024
+Date   : Tue Dec 10 22:50:06 2024
 ****************************************
 
 
   Timing Path Group (none)
   -----------------------------------
-  Levels of Logic:               1.00
-  Critical Path Length:          0.00
+  Levels of Logic:               4.00
+  Critical Path Length:          0.74
   Critical Path Slack:         uninit
   Critical Path Clk Period:       n/a
   Total Negative Slack:          0.00
@@ -29,39 +70,40 @@ Date   : Sat Dec  7 04:01:56 2024
 
   Cell Count
   -----------------------------------
-  Hierarchical Cell Count:          0
-  Hierarchical Port Count:          0
-  Leaf Cell Count:                  2
-  Buf/Inv Cell Count:               0
-  Buf Cell Count:                   0
-  Inv Cell Count:                   0
+  Hierarchical Cell Count:         11
+  Hierarchical Port Count:       3707
+  Leaf Cell Count:              56150
+  Buf/Inv Cell Count:            5268
+  Buf Cell Count:                2323
+  Inv Cell Count:                2945
   CT Buf/Inv Cell Count:            0
-  Combinational Cell Count:         2
-  Sequential Cell Count:            0
+  Combinational Cell Count:     38922
+  Sequential Cell Count:        17228
   Macro Count:                      0
   -----------------------------------
 
 
   Area
   -----------------------------------
-  Combinational Area:        0.000000
-  Noncombinational Area:     0.000000
-  Buf/Inv Area:              0.000000
-  Total Buffer Area:             0.00
-  Total Inverter Area:           0.00
-  Macro/Black Box Area:      0.000000
-  Net Area:                143.788000
+  Combinational Area:   725094.115867
+  Noncombinational Area:
+                       1034554.800510
+  Buf/Inv Area:          55541.980257
+  Total Buffer Area:         33909.27
+  Total Inverter Area:       21632.71
+  Macro/Black Box Area:    100.320000
+  Net Area:             107078.463313
   -----------------------------------
-  Cell Area:                 0.000000
-  Design Area:             143.788000
+  Cell Area:           1759749.236377
+  Design Area:         1866827.699690
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:           698
-  Nets With Violations:             0
+  Total Number of Nets:         57170
+  Nets With Violations:           278
   Max Trans Violations:             0
-  Max Cap Violations:               0
+  Max Cap Violations:             278
   -----------------------------------
 
 
@@ -69,12 +111,12 @@ Date   : Sat Dec  7 04:01:56 2024
 
   Compile CPU Statistics
   -----------------------------------------
-  Resource Sharing:                    0.00
-  Logic Optimization:                  0.11
-  Mapping Optimization:                0.60
+  Resource Sharing:                   20.65
+  Logic Optimization:                 11.06
+  Mapping Optimization:              181.11
   -----------------------------------------
-  Overall Compile Time:                5.41
-  Overall Compile Wall Clock Time:     5.71
+  Overall Compile Time:              505.05
+  Overall Compile Wall Clock Time:   527.20
 
   --------------------------------------------------------------------
 

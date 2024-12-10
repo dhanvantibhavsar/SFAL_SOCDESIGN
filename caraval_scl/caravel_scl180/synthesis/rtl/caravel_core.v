@@ -575,7 +575,7 @@ module caravel_core (
     // Housekeeping interface
 
     housekeeping housekeeping (
-    `ifndef USE_POWER_PINS
+    `ifdef USE_POWER_PINS
 		.VPWR(vccd),
 		.VGND(vssd),
     `endif
@@ -1375,7 +1375,7 @@ module caravel_core (
     user_id_programming #(
 	.USER_PROJECT_ID(USER_PROJECT_ID)
     ) user_id_value (
-	`ifndef USE_POWER_PINS
+	`ifdef USE_POWER_PINS
 		.VPWR(vccd),
 		.VGND(vssd),
 	`endif
@@ -1397,7 +1397,7 @@ module caravel_core (
 
     // XRES (chip input pin reset) reset level converter
     xres_buf rstb_level (
-	`ifndef USE_POWER_PINS
+	`ifdef USE_POWER_PINS
 		.VPWR(vddio),
 		.LVPWR(vccd),
 		.LVGND(vssd),

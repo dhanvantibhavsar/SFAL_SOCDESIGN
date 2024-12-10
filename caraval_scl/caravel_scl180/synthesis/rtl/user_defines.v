@@ -18,7 +18,8 @@
 `ifndef __USER_DEFINES_H
 // User GPIO initial configuration parameters
 `define __USER_DEFINES_H
-
+`define tri0 wire
+//`define MPRJ_IO_PADS 44
 // Useful GPIO mode values.  These match the names used in defs.h.
 `define GPIO_MODE_MGMT_STD_INPUT_NOPULL    13'h0403
 `define GPIO_MODE_MGMT_STD_INPUT_PULLDOWN  13'h0c01

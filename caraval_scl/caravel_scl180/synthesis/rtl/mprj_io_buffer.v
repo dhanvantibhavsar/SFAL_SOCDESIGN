@@ -32,12 +32,12 @@ module mprj_io_buffer (
 
 
 buffd7 BUF[(`MPRJ_IO_PADS_2*2+3)-1:0] (
-    `ifndef USE_POWER_PINS
+   /* `ifndef USE_POWER_PINS
             .VPWR(VPWR),
             .VGND(VGND),
             .VPB(VPWR),
             .VNB(VGND),
-    `endif
+    `endif*/
 		.I({mgmt_gpio_in, mgmt_gpio_oeb, mgmt_gpio_out}), 
 		.Z({mgmt_gpio_in_buf, mgmt_gpio_oeb_buf, mgmt_gpio_out_buf})
 ); 

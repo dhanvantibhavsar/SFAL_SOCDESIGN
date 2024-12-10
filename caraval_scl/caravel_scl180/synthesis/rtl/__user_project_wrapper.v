@@ -13,7 +13,6 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype wire
 /*
  *-------------------------------------------------------------
  *
@@ -30,6 +29,9 @@
  */
 
 `include "debug_regs.v"
+`include "defines.v"
+`default_nettype wire
+
 module user_project_wrapper #(
     parameter BITS = 32
 )(

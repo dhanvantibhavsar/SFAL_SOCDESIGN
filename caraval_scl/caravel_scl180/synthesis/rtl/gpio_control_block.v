@@ -152,12 +152,12 @@ module gpio_control_block #(
     /* Propagate the clock and reset signals so that they aren't wired	*/
     /* all over the chip, but are just wired between the blocks.	*/
     (* keep *) bufbd7 BUF[2:0] (
-    `ifndef USE_POWER_PINS
+    /*`ifndef USE_POWER_PINS
             .VPWR(vccd),
             .VGND(vssd),
             .VPB(vccd),
             .VNB(vssd),
-    `endif
+    `endif*/
         .I({serial_clock, resetn, serial_load}),
         .Z({serial_clock_out, resetn_out, serial_load_out})
     );
@@ -253,19 +253,20 @@ module gpio_control_block #(
 
     (* keep *)
     scl180_marco_sparecell spare_cell (
-`ifndef USE_POWER_PINS
+	.LO(lo_signal),
+`ifdef USE_POWER_PINS
+	    .VGND(vssd),
             .VPWR(vccd),
-            .VGND(vssd),
 `endif
     );
 
     dummy_scl180_conb_1 const_source (
-`ifndef USE_POWER_PINS
+/*`ifndef USE_POWER_PINS
             .VPWR(vccd),
             .VGND(vssd),
             .VPB(vccd),
             .VNB(vssd),
-`endif
+`endif*/
             .HI(one_unbuf),
             .LO(zero_unbuf)
     );

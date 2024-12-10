@@ -33,7 +33,7 @@
  `delay_mode_path
 `endif 
 
-
+`default_nettype wire
 module pc3d01 (PAD,CIN);
 
 output  CIN;
