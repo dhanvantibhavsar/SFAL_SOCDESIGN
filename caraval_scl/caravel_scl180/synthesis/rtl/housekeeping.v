@@ -274,12 +274,12 @@ wire mgmt_gpio_out_9_prebuff, mgmt_gpio_out_14_prebuff, mgmt_gpio_out_15_prebuff
     assign spimemio_flash_io1_di = (pass_thru_mgmt) ? 1'b0 : pad_flash_io1_di;
 
 (* keep *) bufbd7 pad_flashh_clk_buff_inst (
-`ifndef USE_POWER_PINS
+/*`ifndef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
         .VNB(VGND),
-`endif
+`endif*/
 	.I(pad_flash_clk_prebuff),
     .Z(pad_flash_clk));
 
@@ -807,12 +807,12 @@ wire mgmt_gpio_out_9_prebuff, mgmt_gpio_out_14_prebuff, mgmt_gpio_out_15_prebuff
 			: mgmt_gpio_data[9];
 
 (* keep *) bufbd7 mgmt_gpio_9_buff_inst (
-`ifndef USE_POWER_PINS
+/*`ifndef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
         .VNB(VGND),
-`endif
+`endif*/
 	.I(mgmt_gpio_out_9_prebuff),
     .Z(mgmt_gpio_out[9]));
 
@@ -858,12 +858,12 @@ wire mgmt_gpio_out_9_prebuff, mgmt_gpio_out_14_prebuff, mgmt_gpio_out_15_prebuff
 		: mgmt_gpio_data[15];
 
 (* keep *) bufbd7 mgmt_gpio_15_buff_inst (
-`ifndef USE_POWER_PINS
+/*`ifndef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
         .VNB(VGND),
-`endif
+`endif*/
 	.I(mgmt_gpio_out_15_prebuff),
     .Z(mgmt_gpio_out[15]));
 
@@ -871,12 +871,12 @@ wire mgmt_gpio_out_9_prebuff, mgmt_gpio_out_14_prebuff, mgmt_gpio_out_15_prebuff
 		: mgmt_gpio_data[14];
 
 (* keep *) bufbd7 mgmt_gpio_14_buff_inst (
-`ifndef USE_POWER_PINS
+/*`ifndef USE_POWER_PINS
         .VPWR(VPWR),
         .VGND(VGND),
         .VPB(VPWR),
         .VNB(VGND),
-`endif
+`endif*/
 	.I(mgmt_gpio_out_14_prebuff),
     .Z(mgmt_gpio_out[14]));
 

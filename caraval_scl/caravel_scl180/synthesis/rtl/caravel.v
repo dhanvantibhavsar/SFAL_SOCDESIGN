@@ -32,13 +32,15 @@
 /*                                                          	*/
 /*--------------------------------------------------------------*/
 
-`include "copyright_block.v"
-`include "caravel_logo.v"
-`include "caravel_motto.v"
-`include "open_source.v"
-`include "user_id_textblock.v"
-`include "caravel_core.v"
-`include "caravel_netlists.v"
+// `include "copyright_block.v"
+// `include "caravel_logo.v"
+// `include "caravel_motto.v"
+// `include "open_source.v"
+// `include "user_id_textblock.v"
+// `include "caravel_core.v"
+// `include "caravel_netlists.v"
+
+`default_nettype wire
 
 module caravel (
     // All top-level I/O are package-facing pins
@@ -294,8 +296,8 @@ module caravel (
 `ifdef USE_POWER_PINS
       .vddio(vddio_core),  // Common 3.3V padframe/ESD power
       .vssio(vssio_core),  // Common padframe/ESD ground
-//    .vdda (vdda_core),   // Management 3.3V power
-//    .vssa (vssa_core),   // Common analog ground
+      // .vdda (vdda_core),   // Management 3.3V power
+      // .vssa (vssa_core),   // Common analog ground
       .vccd (vccd_core),   // Management/Common 1.8V power
       .vssd (vssd_core),   // Common digital ground
       .vdda1(vdda1_core),  // User area 1 3.3V power
@@ -357,10 +359,10 @@ module caravel (
   );
 
 copyright_block copyright_block();
-// caravel_logo caravel_logo();
-// caravel_motto caravel_motto();
+caravel_logo caravel_logo();
+caravel_motto caravel_motto();
 open_source open_source();
 user_id_textblock user_id_textblock();
 
 endmodule
-// `default_nettype wire
+ // `default_nettype wire

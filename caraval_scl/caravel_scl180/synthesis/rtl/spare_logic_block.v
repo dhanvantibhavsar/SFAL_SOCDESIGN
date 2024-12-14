@@ -46,69 +46,69 @@ module spare_logic_block (
     assign spare_xz = spare_logic0;
 
     dummy_scl180_conb_1 spare_logic_const [26:0] (
-	`ifndef USE_POWER_PINS
+	/*`ifndef USE_POWER_PINS
             .VPWR(vccd),
             .VGND(vssd),
             .VPB(vccd),
             .VNB(vssd),
-	`endif
+	`endif*/
             .HI(spare_logic1),
             .LO(spare_logic0)
     );
 
      inv0d2 spare_logic_inv [3:0] (
-	`ifndef USE_POWER_PINS
+	/*`ifndef USE_POWER_PINS
             .VPWR(vccd),
             .VGND(vssd),
             .VPB(vccd),
             .VNB(vssd),
-	`endif
+	`endif*/
             .ZN(spare_xi),
             .I(spare_logic0[3:0])
     );
 
      inv0d7 spare_logic_biginv (
-	`ifndef USE_POWER_PINS
+	/*`ifndef USE_POWER_PINS
             .VPWR(vccd),
             .VGND(vssd),
             .VPB(vccd),
             .VNB(vssd),
-	`endif
+	`endif*/
             .ZN(spare_xib),
             .I(spare_logic0[4])
     );
 
     nd02d2 spare_logic_nand [1:0] (
-	`ifndef USE_POWER_PINS
+	/*`ifndef USE_POWER_PINS
             .VPWR(vccd),
             .VGND(vssd),
             .VPB(vccd),
             .VNB(vssd),
-	`endif
+	`endif*/
             .ZN(spare_xna),
             .A1(spare_logic0[6:5]),
             .A2(spare_logic0[8:7])
     );
 
     nr02d2 spare_logic_nor [1:0] (
-	`ifndef USE_POWER_PINS
+	/*`ifndef USE_POWER_PINS
             .VPWR(vccd),
             .VGND(vssd),
             .VPB(vccd),
             .VNB(vssd),
-	`endif
+	`endif*/
             .ZN(spare_xno),
             .A1(spare_logic0[10:9]),
             .A2(spare_logic0[12:11])
     );
 
     mx02d2 spare_logic_mux [1:0] (
-	`ifndef USE_POWER_PINS
+	/*`ifndef USE_POWER_PINS
             .VPWR(vccd),
             .VGND(vssd),
             .VPB(vccd),
             .VNB(vssd),
-	`endif
+	`endif*/
             .Z(spare_xmx),
             .I0(spare_logic0[14:13]),
             .I1(spare_logic0[16:15]),
@@ -116,12 +116,12 @@ module spare_logic_block (
     );
 
     dfbrb1 spare_logic_flop [1:0] (
-	`ifndef USE_POWER_PINS
+	/*`ifndef USE_POWER_PINS
             .VPWR(vccd),
             .VGND(vssd),
             .VPB(vccd),
             .VNB(vssd),
-	`endif
+	`endif*/
             .Q(spare_xfq),
             .QN(spare_xfqn),
             .D(spare_logic0[20:19]),
@@ -142,12 +142,12 @@ module spare_logic_block (
 // don't find the need of this - CONFIRMATION TO NEEDED - TIM
 
     adiode spare_logic_diode [3:0] (
-	`ifndef USE_POWER_PINS
+	/*`ifndef USE_POWER_PINS
             .VPWR(vccd),
             .VGND(vssd),
             .VPB(vccd),
             .VNB(vssd),
-	`endif
+	`endif*/
 	    .I(spare_logic_nc)
     );
  

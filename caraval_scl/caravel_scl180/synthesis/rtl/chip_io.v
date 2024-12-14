@@ -1061,8 +1061,10 @@ wire \mprj_pads.analog_a ;
     wire [6:0] vssd_const_zero;	// Constant value for management pins
 
     constant_block constant_value_inst [6:0] (
-	.vccd(vccd),
-	.vssd(vssd),
+	`ifdef USE_POWER_PINS
+		.vccd(vccd),
+		.vssd(vssd),
+	`endif
 	.one(vccd_const_one),
 	.zero(vssd_const_zero)
     );

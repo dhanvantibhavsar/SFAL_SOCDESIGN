@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version T-2022.03-SP5-6 for linux64 -- Sep 20, 2023
-#@ # Date:   Tue Dec  3 18:21:24 2024
+#@ # Date:   Tue Dec 10 22:40:58 2024
 #@ # Run by: dhanvanti@sfalvsd
 #@ 
 
@@ -8628,227 +8628,41 @@ source /usr/synopsys/syn/T-2022.03-SP5-6/admin/setup/.synopsys_dc.setup
 
 #@ # -- End source /usr/synopsys/syn/T-2022.03-SP5-6/admin/setup/.synopsys_dc.setup
 
-gui_start
-#@ # -- Starting source /usr/synopsys/syn/T-2022.03-SP5-6/auxx/tcllib/lib/itk4.1.0/itk.tcl
+source -echo -verbose /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/synth.tcl
+#@ # -- Starting source /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/synth.tcl
 
-#@ #
-#@ # itk.tcl
-#@ # ----------------------------------------------------------------------
-#@ # Invoked automatically upon startup to customize the interpreter
-#@ # for [incr Tk].
-#@ # ----------------------------------------------------------------------
-#@ #   AUTHOR:  Michael J. McLennan
-#@ #            Bell Labs Innovations for Lucent Technologies
-#@ #            mmclennan@lucent.com
-#@ #            http://www.tcltk.com/itcl
-#@ # ----------------------------------------------------------------------
-#@ #            Copyright (c) 1993-1998  Lucent Technologies, Inc.
-#@ # ======================================================================
-#@ # See the file "license.terms" for information on usage and
-#@ # redistribution of this file, and for a DISCLAIMER OF ALL WARRANTIES.
+#@ read_db /home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db
+#@ set target_library /home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db
+#@ set link_library {* /home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db}
+#@ set root_dir "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180"
+#@ set verilog_files  "$root_dir/synthesis/rtl"
+#@ set top_module "caravel" ;
+#@ set output_file "$root_dir/synthesis/output/caravel_synthesis.v"
+#@ set report_dir "$root_dir/synthesis/report"
+#@ read_file $verilog_files -autoread -format verilog -top $top_module
 #@ 
-#@ package require -exact Itk 4.1.0
-#@ #
-#@ # Provide transparent access to all [incr Tk] commands
-#@ #
-#@ if {$tcl_platform(os) == "MacOS"} {
-#@     source -rsrc itk:tclIndex
-#@ } else {
-#@     lappend auto_path ${itk::library}
-#@ }
 #@ 
-#@ # ----------------------------------------------------------------------
-#@ #  USAGE:  itk::remove_destroy_hook <widget>
-#@ #
-#@ #  Used iquit
-ally via "itk_component delete" when disconnecting a
-#@ #  component <widget> from the mega-widget that contains it.
-#@ #  Each component has a special binding for the <Destroy> event
-#@ #  that causes it to disconnect itself from its parent when destroyed.
-#@ #  This procedure removes the binding from the binding tag list and
-#@ #  deletes the binding.  It is much easier to implement this in
-#@ #  Tcl than C.
-#@ # ----------------------------------------------------------------------
-#@ proc ::itk::remove_destroy_hook {widget} {
-#@     if {![winfo exists $widget]} {return}
-#@     set tags [bindtags $widget]
-#@     set i [lsearch $tags "itk-destroy-$widget"]
-#@     if {$i >= 0} {
-#@         bindtags $widget [lreplace $tags $i $i]
-#@     }
-#@     bind itk-destroy-$widget <Destroy> {}
-#@ }
+#@ elaborate $top_module
+#@ link
 #@ 
-#@ #
-#@ # Define "usual" option-handling code for the Tk widgets:
-#@ #
-#@ itk::usual Button {
-#@     keep -background -cursor -foreground -font
-#@     keep -activebackground -activeforeground -disabledforeground
-#@     keep -highlightcolor -highlightthickness
-#@     rename -highlightbackground -background background Background
-#@ }
+#@ compile_ultra
 #@ 
-#@ itk::usual Canvas {
-#@     keep -background -cursor
-#@     keep -insertbackground -insertborderwidth -insertwidth
-#@     keep -insertontime -insertofftime
-#@     keep -selectbackground -selectborderwidth -selectforeground
-#@     keep -highlightcolor -highlightthickness
-#@     rename -highlightbackground -background background Background
-#@ }
+#@ report_qor > "$report_dir/qor_post_synth.rpt"
+#@ report_area > "$report_dir/area_post_synth.rpt"
+#@ report_power > "$report_dir/power_post_synth.rpt"
 #@ 
-#@ itk::usual Checkbutton {
-#@     keep -background -cursor -foreground -font
-#@     keep -activebackground -activeforeground -disabledforeground
-#@     keep -selectcolor
-#@     keep -highlightcolor -highlightthickness
-#@     rename -highlightbackground -background background Background
-#@ }
+#@ write -format verilog -hierarchy -output $output_file
 #@ 
-#@ itk::usual Entry {
-#@     keep -background -cursor -foreground -font
-#@     keep -insertbackground -insertborderwidth -insertwidth
-#@     keep -insertontime -insertofftime
-#@     keep -selectbackground -selectborderwidth -selectforeground
-#@     keep -highlightcolor -highlightthickness
-#@     rename -highlightbackground -background background Background
-#@ }
+#@ # write_verilog ./output/synth.v
+#@ # write_ddc ./output/synth_ddc.v
 #@ 
-#@ itk::usual Frame {
-#@     keep -background -cursor
-#@ }
 #@ 
-#@ itk::usual Label {
-#@     keep -background -cursor -foreground -font
-#@     keep -highlightcolor -highlightthickness
-#@     rename -highlightbackground -background background Background
-#@ }
 #@ 
-#@ itk::usual Listbox {
-#@     keep -background -cursor -foreground -font
-#@     keep -selectbackground -selectborderwidth -selectforeground
-#@     keep -highlightcolor -highlightthickness
-#@     rename -highlightbackground -background background Background
-#@ }
 #@ 
-#@ itk::usual Menu {
-#@     keep -background -cursor -foreground -font
-#@     keep -activebackground -activeforeground -disabledforeground
-#@     keep -selectcolor -tearoff
-#@ }
 #@ 
-#@ itk::usual Menubutton {
-#@     keep -background -cursor -foreground -font
-#@     keep -activebackground -activeforeground -disabledforeground
-#@     keep -highlightcolor -highlightthickness
-#@     rename -highlightbackground -background background Background
-#@ }
 #@ 
-#@ itk::usual Message {
-#@     keep -background -cursor -foreground -font
-#@     keep -highlightcolor -highlightthickness
-#@     rename -highlightbackground -background background Background
-#@ }
 #@ 
-#@ itk::usual Radiobutton {
-#@     keep -background -cursor -foreground -font
-#@     keep -activebackground -activeforeground -disabledforeground
-#@     keep -selectcolor
-#@     keep -highlightcolor -highlightthickness
-#@     rename -highlightbackground -background background Background
-#@ }
 #@ 
-#@ itk::usual Scale {
-#@     keep -background -cursor -foreground -font -troughcolor
-#@     keep -activebackground
-#@     keep -highlightcolor -highlightthickness
-#@     rename -highlightbackground -background background Background
-#@ }
 #@ 
-#@ itk::usual Scrollbar {
-#@     keep -background -cursor -troughcolor
-#@     keep -activebackground -activerelief
-#@     keep -highlightcolor -highlightthickness
-#@     rename -highlightbackground -background background Background
-#@ }
-#@ 
-#@ itk::usual Text {
-#@     keep -background -cursor -foreground -font
-#@     keep -insertbackground -insertborderwidth -insertwidth
-#@     keep -insertontime -insertofftime
-#@     keep -selectbackground -selectborderwidth -selectforeground
-#@     keep -highlightcolor -highlightthickness
-#@     rename -highlightbackground -background background Background
-#@ }
-#@ 
-#@ itk::usual Toplevel {
-#@     keep -background -cursor
-#@ }
-#@ # -- End source /usr/synopsys/syn/T-2022.03-SP5-6/auxx/tcllib/lib/itk4.1.0/itk.tcl
+#@ # -- End source /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/synth.tcl
 
-#@ # -- Starting source /usr/synopsys/syn/T-2022.03-SP5-6/auxx/tcllib/lib/iwidgets4.1/iwidgets.tcl
-
-#@ #
-#@ # iwidgets.tcl
-#@ # ----------------------------------------------------------------------
-#@ # Invoked automatically by [incr Tk] upon startup to initialize
-#@ # the [incr Widgets] package.
-#@ # ----------------------------------------------------------------------
-#@ #  AUTHOR: Mark L. Ulferts               EMAIL: mulferts@spd.dsccc.com
-#@ #
-#@ #  @(#) $Id: iwidgets.tcl.in,v 1.8 2017/07/07 19:06:40 dgp Exp $
-#@ # ----------------------------------------------------------------------
-#@ #                Copyright (c) 1995  Mark L. Ulferts
-#@ # ======================================================================
-#@ # See the file "license.terms" for information on usage and
-#@ # redistribution of this file, and for a DISCLAIMER OF ALL WARRANTIES.
-#@ 
-#@ package require Tcl 8.0
-#@ package require Tk 8.0
-#@ package require Itcl 4.2.1
-#@ if {[string length [package provide Itk]] == 0} {
-#@     package forget Itk
-#@     package forget itk
-#@ }
-#@ package require Itk [string index 4.2.1 0]
-#@ 
-#@ namespace eval ::iwidgets {
-#@     namespace export *
-#@ 
-#@     variable library [file dirname [info script]]
-#@     variable version 4.1.1
-#@ 
-#@     lappend auto_path $iwidgets::library
-#@     variable subdir
-#@     foreach subdir {generic scripts} {
-#@ 	if {[file isdirectory [file join $iwidgets::library $subdir]]} {
-#@ 	    lappend auto_path [file join $iwidgets::library $subdir]
-#@ 	}
-#@     }
-#@     unset subdir
-#@ }
-#@ 
-#@ package provide Iwidgets $iwidgets::version
-#@ # -- End source /usr/synopsys/syn/T-2022.03-SP5-6/auxx/tcllib/lib/iwidgets4.1/iwidgets.tcl
-
-gui_set_pref_value -category {SelectByNamePalette} -key {ObjectType} -value {LeafCells}
-read_ddc output/out1.ddc
-change_selection [get_cells caravel]
-gui_set_setting -window [gui_get_current_window -types Schematic -mru] -setting schematic:background_color -value black
-gui_set_setting -window [gui_get_current_window -types Schematic -mru] -setting zoomFitFactor -value 0.0
-change_selection [get_cells caravel]
-change_selection [get_cells caravel]
-change_selection [get_cells caravel]
-change_selection 
-change_selection [get_cells caravel]
-change_selection [get_s {{mprj_io_one[]}}]
-change_selection -add [get_nets {{mprj_io_one[37]} {mprj_io_one[36]} {mprj_io_one[35]} {mprj_io_one[34]} {mprj_io_one[33]} {mprj_io_one[32]} {mprj_io_one[31]}}]
-change_selection -add [get_nets {{mprj_io_one[30]} {mprj_io_one[29]} {mprj_io_one[28]} {mprj_io_one[27]} {mprj_io_one[26]} {mprj_io_one[25]} {mprj_io_one[24]}}]
-change_selection -add [get_nets {{mprj_io_one[23]} {mprj_io_one[22]} {mprj_io_one[21]} {mprj_io_one[20]} {mprj_io_one[19]} {mprj_io_one[18]} {mprj_io_one[17]}}]
-change_selection -add [get_nets {{mprj_io_one[16]} {mprj_io_one[15]} {mprj_io_one[14]} {mprj_io_one[13]} {mprj_io_one[12]} {mprj_io_one[11]} {mprj_io_one[10]}}]
-change_selection -add [get_nets {{mprj_io_one[9]} {mprj_io_one[8]} {mprj_io_one[7]} {mprj_io_one[6]} {mprj_io_one[5]} {mprj_io_one[4]} {mprj_io_one[3]}}]
-change_selection -add [get_nets {{mprj_io_one[2]} {mprj_io_one[1]} {mprj_io_one[0]}}]
-change_selection [get_cells padframe]
-change_selection [get_cells padframe]
-quit

@@ -17,10 +17,10 @@
 // This routine synchronizes the 
 
 module caravel_clocking(
-/*`ifdef USE_POWER_PINS
+`ifdef USE_POWER_PINS
     input VPWR,
     input VGND,
-`endif */
+`endif 
     input porb,		// Master (negative sense) reset from power-on-reset
     input resetb, 	// Master (negative sense) reset
     input ext_clk_sel,	// 0=use PLL clock, 1=use external (pad) clock

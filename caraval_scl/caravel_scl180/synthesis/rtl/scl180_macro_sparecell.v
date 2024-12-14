@@ -20,7 +20,6 @@ module scl180_marco_sparecell (
     wire nd2right ;
     wire tielo    ;
     wire net7     ;
-
     //                       Name    Output         Other arguments
     inv0d2 inv0   (.I(nor2left) , .ZN(invleft));
     inv0d2 inv1   (.I(nor2right), .ZN(invright));
@@ -29,7 +28,7 @@ module scl180_marco_sparecell (
     nd02d2 nand20 (.A2(tielo)    , .A1(tielo), .ZN(nd2right));
     nd02d2 nand21 (.A2(tielo)    , .A1(tielo), .ZN(nd2left));
     dummy_scl180_conb_1  conb0  (.LO(tielo)   , .HI(net7)  );
-  //  buffd1 buf0   (.Z(LO) , .I(tielo) );                                                                );
+    buffd1 buf0   (.Z(LO) , .I(tielo) );
 
 endmodule
 

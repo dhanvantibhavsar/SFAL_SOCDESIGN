@@ -1,5 +1,6 @@
+read_db /home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db
 set target_library /home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db
-set link_library {* $target_library}
+set link_library {* /home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db}
 set root_dir "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180"
 set verilog_files  "$root_dir/synthesis/rtl"
 set top_module "caravel" ;

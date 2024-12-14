@@ -43,7 +43,7 @@ inout   PAD;
 `ifdef charge_decay_on_bidi
    trireg (small) down;
 `else
-   tri0 down;
+   wire down;
 `endif
 
 buf #0.01 (CIN,PAD);

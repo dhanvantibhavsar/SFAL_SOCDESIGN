@@ -35,6 +35,9 @@
 `include "mprj_io_buffer.v"
 `include "manual_power_connections.v"
 `include "empty_macro.v"
+`include "user_defines.v"
+`include "mgmt_core.v"
+`include "defines.v"
 
 module caravel_core (
     // All top-level I/O are package-facing pins
@@ -373,7 +376,7 @@ module caravel_core (
     /* the vccd1 domain.						*/
 
     mgmt_protect mgmt_buffers (
-/*	`ifdef USE_POWER_PINS
+	`ifdef USE_POWER_PINS
  	    .vccd(vccd),
 	    .vssd(vssd),
 	    .vccd1(vccd1),
@@ -384,7 +387,7 @@ module caravel_core (
 	    .vssa1(vssa1),
 	    .vdda2(vdda2),
 	    .vssa2(vssa2),
-	`endif */
+	`endif 
 	.caravel_clk(caravel_clk),
 	.caravel_clk2(caravel_clk2),
 	.caravel_rstn(caravel_rstn),
@@ -433,7 +436,7 @@ module caravel_core (
     /*--------------------------------------------------*/
 
     user_project_wrapper mprj ( 
-    /*    `ifdef USE_POWER_PINS
+        `ifdef USE_POWER_PINS
 	    .vdda1(vdda1),		// User area 1 3.3V power
 	    .vdda2(vdda2),		// User area 2 3.3V power
 	    .vssa1(vssa1),		// User area 1 analog ground
@@ -442,7 +445,7 @@ module caravel_core (
 	    .vccd2(vccd2),		// User area 2 1.8V power
 	    .vssd1(vssd1),		// User area 1 digital ground
 	    .vssd2(vssd2),		// User area 2 digital ground
-    	`endif*/
+    	`endif
 
     	.wb_clk_i(mprj_clock),
     	.wb_rst_i(mprj_reset),
@@ -520,10 +523,10 @@ module caravel_core (
     // Clocking control
 
     caravel_clocking clock_ctrl (
-    /*`ifdef USE_POWER_PINS
+    `ifdef USE_POWER_PINS
 		.VPWR(vccd),
 		.VGND(vssd),
-    `endif*/
+    `endif
         .porb(porb_l),
         .ext_clk_sel(ext_clk_sel),
         .ext_clk(clock_core),
@@ -541,10 +544,10 @@ module caravel_core (
     // DCO/Digital Locked Loop
 
     digital_pll pll (
-    /*`ifdef USE_POWER_PINS
+    `ifdef USE_POWER_PINS
 		.VPWR(vccd),
 		.VGND(vssd),
-    `endif*/
+    `endif
         .resetb(rstb_l),
         .enable(spi_pll_ena),
         .osc(clock_core),
@@ -678,10 +681,10 @@ module caravel_core (
     );
 
   mprj_io_buffer gpio_buf (
-/*`ifdef USE_POWER_PINS
+`ifdef USE_POWER_PINS
       .VPWR(vccd),
       .VGND(vssd),
-`endif */
+`endif 
 
       .mgmt_gpio_in(mgmt_gpio_in),
       .mgmt_gpio_in_buf(mgmt_gpio_in_buf),

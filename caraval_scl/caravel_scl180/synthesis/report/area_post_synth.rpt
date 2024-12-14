@@ -1,33 +1,33 @@
-Warning: Design 'caravel' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Design 'caravel' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : area
 Design : caravel
 Version: T-2022.03-SP5-6
-Date   : Tue Dec  3 18:14:37 2024
+Date   : Tue Dec 10 22:50:06 2024
 ****************************************
 
 Library(s) Used:
 
-    No libraries used.
+    tsl18fs120_scl_ff (File: /home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db)
 
-Number of ports:                           63
-Number of nets:                           696
-Number of cells:                            2
-Number of combinational cells:              0
-Number of sequential cells:                 2
-Number of macros/black boxes:               0
-Number of buf/inv:                          0
+Number of ports:                         3770
+Number of nets:                         58968
+Number of cells:                        56694
+Number of combinational cells:          38762
+Number of sequential cells:             17372
+Number of macros/black boxes:              16
+Number of buf/inv:                       5268
 Number of references:                       2
 
-Combinational area:                  0.000000
-Buf/Inv area:                        0.000000
-Noncombinational area:               0.000000
-Macro/Black Box area:                0.000000
-Net Interconnect area:             143.376000
+Combinational area:             725094.115867
+Buf/Inv area:                    55541.980257
+Noncombinational area:         1034554.800510
+Macro/Black Box area:              100.320000
+Net Interconnect area:          107078.463313
 
-Total cell area:                     0.000000
-Total area:                        143.376000
+Total cell area:               1759749.236377
+Total area:                    1866827.699690
 
 Information: This design contains black box (unknown) components. (RPT-8)
 1

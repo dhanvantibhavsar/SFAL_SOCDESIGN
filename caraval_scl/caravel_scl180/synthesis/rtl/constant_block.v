@@ -35,12 +35,12 @@ module constant_block (
     wire	zero_unbuf;
 
     dummy_scl180_conb_1 const_source (
-`ifndef USE_POWER_PINS
+/*`ifndef USE_POWER_PINS
             .VPWR(vccd),
             .VGND(vssd),
             .VPB(vccd),
             .VNB(vssd),
-`endif
+`endif*/
             .HI(one_unbuf),
             .LO(zero_unbuf)
     );
@@ -52,23 +52,23 @@ module constant_block (
     /* requirements, without buffering.					*/
 
     buffda const_one_buf (
-`ifndef USE_POWER_PINS
+/*`ifndef USE_POWER_PINS
             .VPWR(vccd),
             .VGND(vssd),
             .VPB(vccd),
             .VNB(vssd),
-`endif
+`endif*/
             .I(one_unbuf),
             .Z(one)
     );
 
     buffda const_zero_buf (
-`ifndef USE_POWER_PINS
+/*`ifndef USE_POWER_PINS
             .VPWR(vccd),
             .VGND(vssd),
             .VPB(vccd),
             .VNB(vssd),
-`endif
+`endif*/
             .I(zero_unbuf),
             .Z(zero)
     );

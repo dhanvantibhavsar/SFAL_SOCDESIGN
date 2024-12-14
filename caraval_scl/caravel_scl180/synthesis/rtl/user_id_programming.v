@@ -35,12 +35,12 @@ module user_id_programming #(
     // For the mask revision input, use an array of digital constant logic cells
 
     dummy_scl180_conb_1 mask_rev_value [31:0] (
-`ifndef USE_POWER_PINS
+/*`ifndef USE_POWER_PINS
             .VPWR(VPWR),
             .VPB(VPWR),
             .VNB(VGND),
             .VGND(VGND),
-`endif
+`endif*/
             .HI(user_proj_id_high),
             .LO(user_proj_id_low)
     );
