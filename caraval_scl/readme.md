@@ -39,3 +39,8 @@ make
 ### Result
 
 ![images](../images/caraval/make.png)
+
+### Task1
+#### Download and functionally verify caravel_scl
+
+![image](../images/caraval/clkerror.png)
