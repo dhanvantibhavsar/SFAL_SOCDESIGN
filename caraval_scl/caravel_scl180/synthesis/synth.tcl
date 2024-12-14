@@ -11,7 +11,7 @@ read_file $verilog_files -autoread -format verilog -top $top_module
 
 elaborate $top_module
 link
-
+read_sdc "$root_dir/synthesis/caravel.sdc"
 compile_ultra
 
 report_qor > "$report_dir/qor_post_synth.rpt"

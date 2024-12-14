@@ -4,7 +4,7 @@ Report : power
         -analysis_effort low
 Design : caravel
 Version: T-2022.03-SP5-6
-Date   : Sat Dec 14 17:21:44 2024
+Date   : Sat Dec 14 18:31:05 2024
 ****************************************
 
 
@@ -18,7 +18,7 @@ Wire Load Model Mode: top
 
 Design        Wire Load Model            Library
 ------------------------------------------------
-caravel                2000000           tsl18fs120_scl_ff
+caravel                8000              tsl18fs120_scl_ff
 
 
 Global Operating Voltage = 1.98 
@@ -35,25 +35,24 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  = 115.2469 mW   (60%)
-  Net Switching Power  =  77.6462 mW   (40%)
+  Cell Internal Power  =  10.6843 uW    (0%)
+  Net Switching Power  =   2.3364 mW  (100%)
                          ---------
-Total Dynamic Power    = 192.8931 mW  (100%)
+Total Dynamic Power    =   2.3471 mW  (100%)
 
-Cell Leakage Power     =   2.8304 uW
+Cell Leakage Power     =  11.8399 nW
 
-Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
 
                  Internal         Switching           Leakage            Total
 Power Group      Power            Power               Power              Power   (   %    )  Attrs
 --------------------------------------------------------------------------------------------------
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
-black_box          0.0000            0.0000           62.7200            0.0000  (   0.00%)
-clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)  i
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network  1.0684e-02            1.7593        1.1800e+04            1.7700  ( 100.00%)  i
 register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
-sequential       111.5122        6.5344e-02        1.8759e+06          111.5795  (  57.84%)
-combinational      3.7404           77.5798        9.5441e+05           81.3214  (  42.16%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational      0.0000            0.0000           40.2800            0.0000  (   0.00%)
 --------------------------------------------------------------------------------------------------
-Total            115.2526 mW        77.6452 mW     2.8304e+06 pW       192.9009 mW
+Total          1.0684e-02 mW         1.7593 mW     1.1840e+04 pW         1.7700 mW
 1

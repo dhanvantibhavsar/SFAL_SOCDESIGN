@@ -254,11 +254,11 @@ module gpio_control_block #(
     (* keep *)
     scl180_marco_sparecell spare_cell (
          
-`ifdef USE_POWER_PINS
+	`ifdef USE_POWER_PINS
             .VGND(vssd),
-            .VPWR (vccd),
- `endif
-        // .LO(lo_signal),  
+            .VPWR(vccd),
+	 `endif
+       .LO(lo_signal) 
     );
 
     dummy_scl180_conb_1 const_source (
