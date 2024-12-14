@@ -39,6 +39,7 @@
 `include "user_defines.v"
 `include "mgmt_core.v"
 `include "defines.v"
+`include "gpio_control_block.v"
 
 `default_nettype wire
 module caravel_core (
@@ -1109,7 +1110,7 @@ module caravel_core (
     /* First two GPIOs (JTAG and SDO) */
 
     gpio_control_block gpio_control_bidir_1 [1:0] (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .vccd(vccd),
 	    .vssd(vssd),
 	    .vccd1(vccd1),
@@ -1162,7 +1163,7 @@ module caravel_core (
     /* Section 1 GPIOs (GPIO 2 to 7) that start up under management control */
 
     gpio_control_block gpio_control_in_1a [5:0] (
-        `ifndef USE_POWER_PINS
+        `ifdef USE_POWER_PINS
             .vccd(vccd),
 	    .vssd(vssd),
 	    .vccd1(vccd1),
@@ -1215,7 +1216,7 @@ module caravel_core (
     /* Section 1 GPIOs (GPIO 8 to 18) */
 
     gpio_control_block gpio_control_in_1 [`MPRJ_IO_PADS_1-9:0] (
-        `ifndef USE_POWER_PINS
+        `ifdef USE_POWER_PINS
             .vccd(vccd),
 	    .vssd(vssd),
 	    .vccd1(vccd1),
@@ -1268,7 +1269,7 @@ module caravel_core (
     /* Last three GPIOs (spi_sdo, flash_io2, and flash_io3) */
 
     gpio_control_block gpio_control_bidir_2 [2:0] (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .vccd(vccd),
 	    .vssd(vssd),
 	    .vccd1(vccd1),
@@ -1321,7 +1322,7 @@ module caravel_core (
     /* Section 2 GPIOs (GPIO 19 to 34) */
 
     gpio_control_block gpio_control_in_2 [`MPRJ_IO_PADS_2-4:0] (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
             .vccd(vccd),
 	    .vssd(vssd),
 	    .vccd1(vccd1),

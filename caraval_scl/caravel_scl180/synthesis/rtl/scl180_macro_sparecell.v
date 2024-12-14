@@ -1,16 +1,14 @@
-module scl180_marco_sparecell (
-    LO  ,
-`ifndef USE_POWER_PINS
-    VGND,
-    VPWR
+`default_nettype wire
+
+module scl180_marco_sparecell(
+
+`ifdef USE_POWER_PIN
+    input  VGND,
+    input  VPWR,
 `endif
+ output LO
 );
-
-    // Module ports
-    output LO  ;
-    input  VGND;
-    input  VPWR;
-
+    
     // Local signals
     wire nor2left ;
     wire invleft  ;

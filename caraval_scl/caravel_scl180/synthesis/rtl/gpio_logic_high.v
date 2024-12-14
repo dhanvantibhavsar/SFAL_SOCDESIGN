@@ -8,12 +8,12 @@ module gpio_logic_high(
 );
 
  dummy_scl180_conb_1 gpio_logic_high (
-`ifndef USE_POWER_PINS
+/*`ifndef USE_POWER_PINS
             .VPWR(vccd1),
             .VGND(vssd1),
             .VPB(vccd1),
             .VNB(vssd1),
-`endif
+`endif */
             .HI(gpio_logic1),
             .LO()
     );
