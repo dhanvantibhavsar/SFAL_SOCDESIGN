@@ -276,11 +276,11 @@ module caravel_core (
     // implementation must match this pinout.
 
     mgmt_core_wrapper soc (
-/*	`ifdef USE_POWER_PINS
+	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
 	`endif
-*/
+
 	// Clock and reset
 	.core_clk(caravel_clk),
 	.core_rstn(caravel_rstn),
