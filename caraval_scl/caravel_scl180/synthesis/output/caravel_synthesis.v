@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////
 // Created by: Synopsys DC Ultra(TM) in wire load mode
 // Version   : T-2022.03-SP5-6
-// Date      : Sat Dec 14 18:31:05 2024
+// Date      : Tue Dec 17 19:28:47 2024
 /////////////////////////////////////////////////////////////
 
 
@@ -12,15 +12,15 @@ module chip_io ( vddio_pad, vddio_pad2, vssio_pad, vssio_pad2, vccd_pad,
         vssa2, vccd1, vccd2, vssd1, vssd2, gpio, clock, resetb, flash_csb, 
         flash_clk, flash_io0, flash_io1, porb_h, por, resetb_core_h, 
         clock_core, gpio_out_core, gpio_in_core, gpio_mode0_core, 
-        gpio_mode1_core, gpio_outenb_core, gpio_inenb_core, flash_csb_core, 
-        flash_clk_core, flash_csb_oeb_core, flash_clk_oeb_core, 
-        flash_io0_oeb_core, flash_io1_oeb_core, flash_io0_ieb_core, 
-        flash_io1_ieb_core, flash_io0_do_core, flash_io1_do_core, 
-        flash_io0_di_core, flash_io1_di_core, mprj_io, mprj_io_out, 
-        mprj_io_oeb, mprj_io_inp_dis, mprj_io_ib_mode_sel, mprj_io_vtrip_sel, 
-        mprj_io_slow_sel, mprj_io_holdover, mprj_io_analog_en, 
-        mprj_io_analog_sel, mprj_io_analog_pol, mprj_io_dm, mprj_io_in, 
-        mprj_io_one, mprj_analog_io );
+        gpio_mode1_core, gpio_inenb_core, flash_csb_core, flash_clk_core, 
+        flash_csb_oeb_core, flash_clk_oeb_core, flash_io0_oeb_core, 
+        flash_io1_oeb_core, flash_io0_ieb_core, flash_io1_ieb_core, 
+        flash_io0_do_core, flash_io1_do_core, flash_io0_di_core, 
+        flash_io1_di_core, mprj_io, mprj_io_out, mprj_io_oeb, mprj_io_inp_dis, 
+        mprj_io_ib_mode_sel, mprj_io_vtrip_sel, mprj_io_slow_sel, 
+        mprj_io_holdover, mprj_io_analog_en, mprj_io_analog_sel, 
+        mprj_io_analog_pol, mprj_io_dm, mprj_io_in, mprj_io_one, 
+        mprj_analog_io, gpio_outenb_core_BAR );
   inout [37:0] mprj_io;
   input [37:0] mprj_io_out;
   input [37:0] mprj_io_oeb;
@@ -37,10 +37,10 @@ module chip_io ( vddio_pad, vddio_pad2, vssio_pad, vssio_pad2, vccd_pad,
   input [37:0] mprj_io_one;
   inout [28:0] mprj_analog_io;
   input clock, resetb, porb_h, por, gpio_out_core, gpio_mode0_core,
-         gpio_mode1_core, gpio_outenb_core, gpio_inenb_core, flash_csb_core,
-         flash_clk_core, flash_csb_oeb_core, flash_clk_oeb_core,
-         flash_io0_oeb_core, flash_io1_oeb_core, flash_io0_ieb_core,
-         flash_io1_ieb_core, flash_io0_do_core, flash_io1_do_core;
+         gpio_mode1_core, gpio_inenb_core, flash_csb_core, flash_clk_core,
+         flash_csb_oeb_core, flash_clk_oeb_core, flash_io0_oeb_core,
+         flash_io1_oeb_core, flash_io0_ieb_core, flash_io1_ieb_core,
+         flash_io0_do_core, flash_io1_do_core, gpio_outenb_core_BAR;
   output vdda1_pad, flash_csb, flash_clk, resetb_core_h, clock_core,
          gpio_in_core, flash_io0_di_core, flash_io1_di_core;
   inout vddio_pad,  vddio_pad2,  vssio_pad,  vssio_pad2,  vccd_pad,  vssd_pad, 
@@ -48,56 +48,7 @@ module chip_io ( vddio_pad, vddio_pad2, vssio_pad, vssio_pad2, vccd_pad,
      vssa2_pad,  vccd1_pad,  vccd2_pad,  vssd1_pad,  vssd2_pad,  vddio,  vssio, 
      vccd,  vssd,  vdda,  vssa,  vdda1,  vdda2,  vssa1,  vssa2,  vccd1,  vccd2, 
      vssd1,  vssd2,  gpio,  flash_io0,  flash_io1;
-  wire   \mprj_pads/area2_io_pad[37]/output_EN_N ,
-         \mprj_pads/area2_io_pad[36]/output_EN_N ,
-         \mprj_pads/area2_io_pad[35]/output_EN_N ,
-         \mprj_pads/area2_io_pad[34]/output_EN_N ,
-         \mprj_pads/area2_io_pad[33]/output_EN_N ,
-         \mprj_pads/area2_io_pad[32]/output_EN_N ,
-         \mprj_pads/area2_io_pad[31]/output_EN_N ,
-         \mprj_pads/area2_io_pad[30]/output_EN_N ,
-         \mprj_pads/area2_io_pad[29]/output_EN_N ,
-         \mprj_pads/area2_io_pad[28]/output_EN_N ,
-         \mprj_pads/area2_io_pad[27]/output_EN_N ,
-         \mprj_pads/area2_io_pad[26]/output_EN_N ,
-         \mprj_pads/area2_io_pad[25]/output_EN_N ,
-         \mprj_pads/area2_io_pad[24]/output_EN_N ,
-         \mprj_pads/area2_io_pad[23]/output_EN_N ,
-         \mprj_pads/area2_io_pad[22]/output_EN_N ,
-         \mprj_pads/area2_io_pad[21]/output_EN_N ,
-         \mprj_pads/area2_io_pad[20]/output_EN_N ,
-         \mprj_pads/area2_io_pad[19]/output_EN_N ,
-         \mprj_pads/area1_io_pad[9]/output_EN_N ,
-         \mprj_pads/area1_io_pad[8]/output_EN_N ,
-         \mprj_pads/area1_io_pad[7]/output_EN_N ,
-         \mprj_pads/area1_io_pad[6]/output_EN_N ,
-         \mprj_pads/area1_io_pad[5]/output_EN_N ,
-         \mprj_pads/area1_io_pad[4]/output_EN_N ,
-         \mprj_pads/area1_io_pad[3]/output_EN_N ,
-         \mprj_pads/area1_io_pad[2]/output_EN_N ,
-         \mprj_pads/area1_io_pad[1]/output_EN_N ,
-         \mprj_pads/area1_io_pad[18]/output_EN_N ,
-         \mprj_pads/area1_io_pad[17]/output_EN_N ,
-         \mprj_pads/area1_io_pad[16]/output_EN_N ,
-         \mprj_pads/area1_io_pad[15]/output_EN_N ,
-         \mprj_pads/area1_io_pad[14]/output_EN_N ,
-         \mprj_pads/area1_io_pad[13]/output_EN_N ,
-         \mprj_pads/area1_io_pad[12]/output_EN_N ,
-         \mprj_pads/area1_io_pad[11]/output_EN_N ,
-         \mprj_pads/area1_io_pad[10]/output_EN_N ,
-         \mprj_pads/area1_io_pad[0]/output_EN_N , \gpio_pad/N17 ,
-         \flash_io1_pad/N17 , \flash_io0_pad/N17 , n2, n8, n12, n18, n22, n26,
-         n30, n34, n38, n42, n46, n50, n54, n58, n62, n66, n70, n74, n78, n82,
-         n86, n90, n94, n98, n102, n106, n110, n114, n118, n122, n126, n130,
-         n134, n138, n142, n146, n150, n154, n158, n162, n166, n171, n172,
-         n173, n174, n175, n176, n177, n178, n179, n180, n181, n182, n183,
-         n184, n185, n186, n187, n188, n189, n190, n191, n192, n193, n194,
-         n195, n196, n197, n198, n199, n200, n201, n202, n203, n204, n205,
-         n206, n207, n208, n209, n210, n211, n344, n345, n346, n347, n349,
-         n350, n351, n352, n353, n354, n355, n356, n357, n358, n359, n360,
-         n361, n362, n363, n364, n365, n366, n367, n368, n369, n370, n371,
-         n372, n373, n374, n375, n376, n377, n378, n379, n380, n381, n382,
-         n383, n384, n385, n386, n387;
+
   tri   vddio;
   tri   vssio;
   tri   vccd;
@@ -115,26 +66,7 @@ module chip_io ( vddio_pad, vddio_pad2, vssio_pad, vssio_pad2, vccd_pad,
   tri   flash_clk;
   tri   flash_io0;
   tri   flash_io1;
-  tri   resetb;
-  tri   clock;
-  tri   gpio_out_core;
-  tri   gpio_mode0_core;
-  tri   gpio_mode1_core;
-  tri   gpio_outenb_core;
-  tri   gpio_inenb_core;
-  tri   flash_csb_oeb_core;
-  tri   flash_clk_oeb_core;
-  tri   flash_io0_oeb_core;
-  tri   flash_io1_oeb_core;
-  tri   flash_io0_ieb_core;
-  tri   flash_io1_ieb_core;
-  tri   flash_io0_do_core;
-  tri   flash_io1_do_core;
   tri   [37:0] mprj_io;
-  tri   [37:0] mprj_io_out;
-  tri   [37:0] mprj_io_oeb;
-  tri   [37:0] mprj_io_inp_dis;
-  tri   [113:0] mprj_io_dm;
   tran( vddio, vddio_pad2);
   tran( vddio, vddio_pad);
   tran( vssio, vssio_pad);
@@ -149,10 +81,7 @@ module chip_io ( vddio_pad, vddio_pad2, vssio_pad, vssio_pad2, vccd_pad,
   tran( vccd2, vccd2_pad);
   tran( vssd2, vssd2_pad);
   assign gpio_in_core = gpio;
-  assign flash_io0_di_core = flash_io0;
   assign flash_io1_di_core = flash_io1;
-  assign resetb_core_h = resetb;
-  assign clock_core = clock;
   assign mprj_io_in[37] = mprj_io[37];
   assign mprj_io_in[36] = mprj_io[36];
   assign mprj_io_in[35] = mprj_io[35];
@@ -192,446 +121,221 @@ module chip_io ( vddio_pad, vddio_pad2, vssio_pad, vssio_pad2, vccd_pad,
   assign mprj_io_in[1] = mprj_io[1];
   assign mprj_io_in[0] = mprj_io[0];
 
-  invtd1 \gpio_pad/pad/__tmp152  ( .I(n2), .EN(\gpio_pad/N17 ), .ZN(gpio) );
-  invtd1 \gpio_pad/pad/__tmp151  ( .I(1'b1), .EN(n211), .ZN(gpio) );
-  invtd1 \flash_io1_pad/pad/__tmp152  ( .I(n8), .EN(\flash_io1_pad/N17 ), .ZN(
-        flash_io1) );
-  invtd1 \flash_io1_pad/pad/__tmp151  ( .I(1'b1), .EN(n209), .ZN(flash_io1) );
-  invtd7 \mprj_pads/area1_io_pad[3]/pad/__tmp151  ( .I(1'b1), .EN(n174), .ZN(
+  invtd1 \gpio_pad/pad/__tmp151  ( .I(1'b1), .EN(1'b1), .ZN(gpio) );
+  invtd1 \gpio_pad/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(gpio) );
+  invtd1 \flash_io1_pad/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(flash_io1) );
+  invtd1 \flash_io1_pad/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(flash_io1) );
+  invtd7 \mprj_pads/area1_io_pad[3]/pad/__tmp152  ( .I(1'b0), .EN(1'b1), .ZN(
         mprj_io[3]) );
-  invtd7 \mprj_pads/area1_io_pad[3]/pad/__tmp152  ( .I(n106), .EN(
-        \mprj_pads/area1_io_pad[3]/output_EN_N ), .ZN(mprj_io[3]) );
-  invtd7 \mprj_pads/area2_io_pad[19]/pad/__tmp151  ( .I(1'b1), .EN(n190), .ZN(
-        mprj_io[19]) );
-  invtd7 \mprj_pads/area2_io_pad[19]/pad/__tmp152  ( .I(n18), .EN(
-        \mprj_pads/area2_io_pad[19]/output_EN_N ), .ZN(mprj_io[19]) );
-  invtd7 \mprj_pads/area2_io_pad[20]/pad/__tmp151  ( .I(1'b1), .EN(n191), .ZN(
-        mprj_io[20]) );
-  invtd7 \mprj_pads/area2_io_pad[20]/pad/__tmp152  ( .I(n22), .EN(
-        \mprj_pads/area2_io_pad[20]/output_EN_N ), .ZN(mprj_io[20]) );
-  invtd7 \mprj_pads/area2_io_pad[21]/pad/__tmp151  ( .I(1'b1), .EN(n192), .ZN(
-        mprj_io[21]) );
-  invtd7 \mprj_pads/area2_io_pad[21]/pad/__tmp152  ( .I(n26), .EN(
-        \mprj_pads/area2_io_pad[21]/output_EN_N ), .ZN(mprj_io[21]) );
-  invtd7 \mprj_pads/area2_io_pad[22]/pad/__tmp151  ( .I(1'b1), .EN(n193), .ZN(
-        mprj_io[22]) );
-  invtd7 \mprj_pads/area2_io_pad[22]/pad/__tmp152  ( .I(n30), .EN(
-        \mprj_pads/area2_io_pad[22]/output_EN_N ), .ZN(mprj_io[22]) );
-  invtd7 \mprj_pads/area2_io_pad[23]/pad/__tmp151  ( .I(1'b1), .EN(n194), .ZN(
-        mprj_io[23]) );
-  invtd7 \mprj_pads/area2_io_pad[23]/pad/__tmp152  ( .I(n34), .EN(
-        \mprj_pads/area2_io_pad[23]/output_EN_N ), .ZN(mprj_io[23]) );
-  invtd7 \mprj_pads/area2_io_pad[24]/pad/__tmp151  ( .I(1'b1), .EN(n195), .ZN(
-        mprj_io[24]) );
-  invtd7 \mprj_pads/area2_io_pad[24]/pad/__tmp152  ( .I(n38), .EN(
-        \mprj_pads/area2_io_pad[24]/output_EN_N ), .ZN(mprj_io[24]) );
-  invtd7 \mprj_pads/area2_io_pad[25]/pad/__tmp151  ( .I(1'b1), .EN(n196), .ZN(
-        mprj_io[25]) );
-  invtd7 \mprj_pads/area2_io_pad[25]/pad/__tmp152  ( .I(n42), .EN(
-        \mprj_pads/area2_io_pad[25]/output_EN_N ), .ZN(mprj_io[25]) );
-  invtd7 \mprj_pads/area2_io_pad[26]/pad/__tmp151  ( .I(1'b1), .EN(n197), .ZN(
-        mprj_io[26]) );
-  invtd7 \mprj_pads/area2_io_pad[26]/pad/__tmp152  ( .I(n46), .EN(
-        \mprj_pads/area2_io_pad[26]/output_EN_N ), .ZN(mprj_io[26]) );
-  invtd7 \mprj_pads/area2_io_pad[27]/pad/__tmp151  ( .I(1'b1), .EN(n198), .ZN(
-        mprj_io[27]) );
-  invtd7 \mprj_pads/area2_io_pad[27]/pad/__tmp152  ( .I(n50), .EN(
-        \mprj_pads/area2_io_pad[27]/output_EN_N ), .ZN(mprj_io[27]) );
-  invtd7 \mprj_pads/area2_io_pad[28]/pad/__tmp151  ( .I(1'b1), .EN(n199), .ZN(
-        mprj_io[28]) );
-  invtd7 \mprj_pads/area2_io_pad[28]/pad/__tmp152  ( .I(n54), .EN(
-        \mprj_pads/area2_io_pad[28]/output_EN_N ), .ZN(mprj_io[28]) );
-  invtd7 \mprj_pads/area2_io_pad[29]/pad/__tmp151  ( .I(1'b1), .EN(n200), .ZN(
-        mprj_io[29]) );
-  invtd7 \mprj_pads/area2_io_pad[29]/pad/__tmp152  ( .I(n58), .EN(
-        \mprj_pads/area2_io_pad[29]/output_EN_N ), .ZN(mprj_io[29]) );
-  invtd7 \mprj_pads/area2_io_pad[30]/pad/__tmp151  ( .I(1'b1), .EN(n201), .ZN(
-        mprj_io[30]) );
-  invtd7 \mprj_pads/area2_io_pad[30]/pad/__tmp152  ( .I(n62), .EN(
-        \mprj_pads/area2_io_pad[30]/output_EN_N ), .ZN(mprj_io[30]) );
-  invtd7 \mprj_pads/area2_io_pad[31]/pad/__tmp151  ( .I(1'b1), .EN(n202), .ZN(
-        mprj_io[31]) );
-  invtd7 \mprj_pads/area2_io_pad[31]/pad/__tmp152  ( .I(n66), .EN(
-        \mprj_pads/area2_io_pad[31]/output_EN_N ), .ZN(mprj_io[31]) );
-  invtd7 \mprj_pads/area2_io_pad[32]/pad/__tmp151  ( .I(1'b1), .EN(n203), .ZN(
-        mprj_io[32]) );
-  invtd7 \mprj_pads/area2_io_pad[32]/pad/__tmp152  ( .I(n70), .EN(
-        \mprj_pads/area2_io_pad[32]/output_EN_N ), .ZN(mprj_io[32]) );
-  invtd7 \mprj_pads/area2_io_pad[33]/pad/__tmp151  ( .I(1'b1), .EN(n204), .ZN(
-        mprj_io[33]) );
-  invtd7 \mprj_pads/area2_io_pad[33]/pad/__tmp152  ( .I(n74), .EN(
-        \mprj_pads/area2_io_pad[33]/output_EN_N ), .ZN(mprj_io[33]) );
-  invtd7 \mprj_pads/area2_io_pad[34]/pad/__tmp151  ( .I(1'b1), .EN(n205), .ZN(
-        mprj_io[34]) );
-  invtd7 \mprj_pads/area2_io_pad[34]/pad/__tmp152  ( .I(n78), .EN(
-        \mprj_pads/area2_io_pad[34]/output_EN_N ), .ZN(mprj_io[34]) );
-  invtd7 \mprj_pads/area2_io_pad[35]/pad/__tmp151  ( .I(1'b1), .EN(n206), .ZN(
-        mprj_io[35]) );
-  invtd7 \mprj_pads/area2_io_pad[35]/pad/__tmp152  ( .I(n82), .EN(
-        \mprj_pads/area2_io_pad[35]/output_EN_N ), .ZN(mprj_io[35]) );
-  invtd7 \mprj_pads/area2_io_pad[36]/pad/__tmp151  ( .I(1'b1), .EN(n207), .ZN(
-        mprj_io[36]) );
-  invtd7 \mprj_pads/area2_io_pad[36]/pad/__tmp152  ( .I(n86), .EN(
-        \mprj_pads/area2_io_pad[36]/output_EN_N ), .ZN(mprj_io[36]) );
-  invtd7 \mprj_pads/area2_io_pad[37]/pad/__tmp151  ( .I(1'b1), .EN(n208), .ZN(
+  invtd7 \mprj_pads/area1_io_pad[3]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[3]) );
+  invtd7 \flash_io0_pad/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(flash_io0) );
+  invtd7 \flash_io0_pad/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(flash_io0) );
+  invtd7 \mprj_pads/area2_io_pad[37]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
         mprj_io[37]) );
-  invtd7 \mprj_pads/area2_io_pad[37]/pad/__tmp152  ( .I(n90), .EN(
-        \mprj_pads/area2_io_pad[37]/output_EN_N ), .ZN(mprj_io[37]) );
-  invtd7 \mprj_pads/area1_io_pad[0]/pad/__tmp151  ( .I(1'b1), .EN(n171), .ZN(
-        mprj_io[0]) );
-  invtd7 \mprj_pads/area1_io_pad[0]/pad/__tmp152  ( .I(n94), .EN(
-        \mprj_pads/area1_io_pad[0]/output_EN_N ), .ZN(mprj_io[0]) );
-  invtd7 \mprj_pads/area1_io_pad[1]/pad/__tmp151  ( .I(1'b1), .EN(n172), .ZN(
-        mprj_io[1]) );
-  invtd7 \mprj_pads/area1_io_pad[1]/pad/__tmp152  ( .I(n98), .EN(
-        \mprj_pads/area1_io_pad[1]/output_EN_N ), .ZN(mprj_io[1]) );
-  invtd7 \mprj_pads/area1_io_pad[2]/pad/__tmp151  ( .I(1'b1), .EN(n173), .ZN(
-        mprj_io[2]) );
-  invtd7 \mprj_pads/area1_io_pad[2]/pad/__tmp152  ( .I(n102), .EN(
-        \mprj_pads/area1_io_pad[2]/output_EN_N ), .ZN(mprj_io[2]) );
-  invtd7 \mprj_pads/area1_io_pad[4]/pad/__tmp151  ( .I(1'b1), .EN(n175), .ZN(
-        mprj_io[4]) );
-  invtd7 \mprj_pads/area1_io_pad[4]/pad/__tmp152  ( .I(n110), .EN(
-        \mprj_pads/area1_io_pad[4]/output_EN_N ), .ZN(mprj_io[4]) );
-  invtd7 \mprj_pads/area1_io_pad[5]/pad/__tmp151  ( .I(1'b1), .EN(n176), .ZN(
-        mprj_io[5]) );
-  invtd7 \mprj_pads/area1_io_pad[5]/pad/__tmp152  ( .I(n114), .EN(
-        \mprj_pads/area1_io_pad[5]/output_EN_N ), .ZN(mprj_io[5]) );
-  invtd7 \mprj_pads/area1_io_pad[6]/pad/__tmp151  ( .I(1'b1), .EN(n177), .ZN(
-        mprj_io[6]) );
-  invtd7 \mprj_pads/area1_io_pad[6]/pad/__tmp152  ( .I(n118), .EN(
-        \mprj_pads/area1_io_pad[6]/output_EN_N ), .ZN(mprj_io[6]) );
-  invtd7 \mprj_pads/area1_io_pad[7]/pad/__tmp151  ( .I(1'b1), .EN(n178), .ZN(
-        mprj_io[7]) );
-  invtd7 \mprj_pads/area1_io_pad[7]/pad/__tmp152  ( .I(n122), .EN(
-        \mprj_pads/area1_io_pad[7]/output_EN_N ), .ZN(mprj_io[7]) );
-  invtd7 \mprj_pads/area1_io_pad[8]/pad/__tmp151  ( .I(1'b1), .EN(n179), .ZN(
-        mprj_io[8]) );
-  invtd7 \mprj_pads/area1_io_pad[8]/pad/__tmp152  ( .I(n126), .EN(
-        \mprj_pads/area1_io_pad[8]/output_EN_N ), .ZN(mprj_io[8]) );
-  invtd7 \mprj_pads/area1_io_pad[9]/pad/__tmp151  ( .I(1'b1), .EN(n180), .ZN(
-        mprj_io[9]) );
-  invtd7 \mprj_pads/area1_io_pad[9]/pad/__tmp152  ( .I(n130), .EN(
-        \mprj_pads/area1_io_pad[9]/output_EN_N ), .ZN(mprj_io[9]) );
-  invtd7 \mprj_pads/area1_io_pad[10]/pad/__tmp151  ( .I(1'b1), .EN(n181), .ZN(
-        mprj_io[10]) );
-  invtd7 \mprj_pads/area1_io_pad[10]/pad/__tmp152  ( .I(n134), .EN(
-        \mprj_pads/area1_io_pad[10]/output_EN_N ), .ZN(mprj_io[10]) );
-  invtd7 \mprj_pads/area1_io_pad[11]/pad/__tmp151  ( .I(1'b1), .EN(n182), .ZN(
-        mprj_io[11]) );
-  invtd7 \mprj_pads/area1_io_pad[11]/pad/__tmp152  ( .I(n138), .EN(
-        \mprj_pads/area1_io_pad[11]/output_EN_N ), .ZN(mprj_io[11]) );
-  invtd7 \mprj_pads/area1_io_pad[12]/pad/__tmp151  ( .I(1'b1), .EN(n183), .ZN(
-        mprj_io[12]) );
-  invtd7 \mprj_pads/area1_io_pad[12]/pad/__tmp152  ( .I(n142), .EN(
-        \mprj_pads/area1_io_pad[12]/output_EN_N ), .ZN(mprj_io[12]) );
-  invtd7 \mprj_pads/area1_io_pad[13]/pad/__tmp151  ( .I(1'b1), .EN(n184), .ZN(
-        mprj_io[13]) );
-  invtd7 \mprj_pads/area1_io_pad[13]/pad/__tmp152  ( .I(n146), .EN(
-        \mprj_pads/area1_io_pad[13]/output_EN_N ), .ZN(mprj_io[13]) );
-  invtd7 \mprj_pads/area1_io_pad[14]/pad/__tmp151  ( .I(1'b1), .EN(n185), .ZN(
-        mprj_io[14]) );
-  invtd7 \mprj_pads/area1_io_pad[14]/pad/__tmp152  ( .I(n150), .EN(
-        \mprj_pads/area1_io_pad[14]/output_EN_N ), .ZN(mprj_io[14]) );
-  invtd7 \mprj_pads/area1_io_pad[15]/pad/__tmp151  ( .I(1'b1), .EN(n186), .ZN(
-        mprj_io[15]) );
-  invtd7 \mprj_pads/area1_io_pad[15]/pad/__tmp152  ( .I(n154), .EN(
-        \mprj_pads/area1_io_pad[15]/output_EN_N ), .ZN(mprj_io[15]) );
-  invtd7 \mprj_pads/area1_io_pad[16]/pad/__tmp151  ( .I(1'b1), .EN(n187), .ZN(
-        mprj_io[16]) );
-  invtd7 \mprj_pads/area1_io_pad[16]/pad/__tmp152  ( .I(n158), .EN(
-        \mprj_pads/area1_io_pad[16]/output_EN_N ), .ZN(mprj_io[16]) );
-  invtd7 \mprj_pads/area1_io_pad[17]/pad/__tmp151  ( .I(1'b1), .EN(n188), .ZN(
-        mprj_io[17]) );
-  invtd7 \mprj_pads/area1_io_pad[17]/pad/__tmp152  ( .I(n162), .EN(
-        \mprj_pads/area1_io_pad[17]/output_EN_N ), .ZN(mprj_io[17]) );
-  invtd7 \mprj_pads/area1_io_pad[18]/pad/__tmp151  ( .I(1'b1), .EN(n189), .ZN(
+  invtd7 \mprj_pads/area2_io_pad[37]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[37]) );
+  invtd7 \mprj_pads/area2_io_pad[36]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[36]) );
+  invtd7 \mprj_pads/area2_io_pad[36]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[36]) );
+  invtd7 \mprj_pads/area2_io_pad[35]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[35]) );
+  invtd7 \mprj_pads/area2_io_pad[35]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[35]) );
+  invtd7 \mprj_pads/area2_io_pad[34]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[34]) );
+  invtd7 \mprj_pads/area2_io_pad[34]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[34]) );
+  invtd7 \mprj_pads/area2_io_pad[33]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[33]) );
+  invtd7 \mprj_pads/area2_io_pad[33]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[33]) );
+  invtd7 \mprj_pads/area2_io_pad[32]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[32]) );
+  invtd7 \mprj_pads/area2_io_pad[32]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[32]) );
+  invtd7 \mprj_pads/area2_io_pad[31]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[31]) );
+  invtd7 \mprj_pads/area2_io_pad[31]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[31]) );
+  invtd7 \mprj_pads/area2_io_pad[30]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[30]) );
+  invtd7 \mprj_pads/area2_io_pad[30]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[30]) );
+  invtd7 \mprj_pads/area2_io_pad[29]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[29]) );
+  invtd7 \mprj_pads/area2_io_pad[29]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[29]) );
+  invtd7 \mprj_pads/area2_io_pad[28]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[28]) );
+  invtd7 \mprj_pads/area2_io_pad[28]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[28]) );
+  invtd7 \mprj_pads/area2_io_pad[27]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[27]) );
+  invtd7 \mprj_pads/area2_io_pad[27]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[27]) );
+  invtd7 \mprj_pads/area2_io_pad[26]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[26]) );
+  invtd7 \mprj_pads/area2_io_pad[26]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[26]) );
+  invtd7 \mprj_pads/area2_io_pad[25]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[25]) );
+  invtd7 \mprj_pads/area2_io_pad[25]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[25]) );
+  invtd7 \mprj_pads/area2_io_pad[24]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[24]) );
+  invtd7 \mprj_pads/area2_io_pad[24]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[24]) );
+  invtd7 \mprj_pads/area2_io_pad[23]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[23]) );
+  invtd7 \mprj_pads/area2_io_pad[23]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[23]) );
+  invtd7 \mprj_pads/area2_io_pad[22]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[22]) );
+  invtd7 \mprj_pads/area2_io_pad[22]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[22]) );
+  invtd7 \mprj_pads/area2_io_pad[21]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[21]) );
+  invtd7 \mprj_pads/area2_io_pad[21]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[21]) );
+  invtd7 \mprj_pads/area2_io_pad[20]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[20]) );
+  invtd7 \mprj_pads/area2_io_pad[20]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[20]) );
+  invtd7 \mprj_pads/area2_io_pad[19]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[19]) );
+  invtd7 \mprj_pads/area2_io_pad[19]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[19]) );
+  invtd7 \mprj_pads/area1_io_pad[18]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
         mprj_io[18]) );
-  invtd7 \mprj_pads/area1_io_pad[18]/pad/__tmp152  ( .I(n166), .EN(
-        \mprj_pads/area1_io_pad[18]/output_EN_N ), .ZN(mprj_io[18]) );
-  invtd7 \flash_io0_pad/pad/__tmp151  ( .I(1'b1), .EN(n210), .ZN(flash_io0) );
-  invtd7 \flash_io0_pad/pad/__tmp152  ( .I(n12), .EN(\flash_io0_pad/N17 ), 
-        .ZN(flash_io0) );
-  buftd7 U1 ( .I(n344), .EN(flash_clk_oeb_core), .Z(flash_clk) );
-  inv0d0 U2 ( .I(n346), .ZN(n344) );
-  buftd7 U3 ( .I(n345), .EN(flash_csb_oeb_core), .Z(flash_csb) );
-  inv0d0 U4 ( .I(n347), .ZN(n345) );
-  inv0d0 U5 ( .I(1'b0), .ZN(n346) );
-  inv0d0 U6 ( .I(1'b0), .ZN(n347) );
-  nd12d0 U8 ( .A1(flash_io1_oeb_core), .A2(flash_io1_ieb_core), .ZN(
-        \flash_io1_pad/N17 ) );
-  nr03d0 U9 ( .A1(mprj_io_dm[57]), .A2(mprj_io_dm[59]), .A3(mprj_io_dm[58]), 
-        .ZN(n190) );
-  aoi211d1 U10 ( .C1(mprj_io_dm[57]), .C2(mprj_io_dm[58]), .A(mprj_io_dm[59]), 
-        .B(mprj_io_inp_dis[19]), .ZN(n349) );
-  or03d0 U11 ( .A1(n190), .A2(mprj_io_oeb[19]), .A3(n349), .Z(
-        \mprj_pads/area2_io_pad[19]/output_EN_N ) );
-  nd12d0 U12 ( .A1(flash_io0_oeb_core), .A2(flash_io0_ieb_core), .ZN(
-        \flash_io0_pad/N17 ) );
-  nr03d0 U13 ( .A1(mprj_io_dm[60]), .A2(mprj_io_dm[62]), .A3(mprj_io_dm[61]), 
-        .ZN(n191) );
-  aoi211d1 U14 ( .C1(mprj_io_dm[60]), .C2(mprj_io_dm[61]), .A(mprj_io_dm[62]), 
-        .B(mprj_io_inp_dis[20]), .ZN(n350) );
-  or03d0 U15 ( .A1(n191), .A2(mprj_io_oeb[20]), .A3(n350), .Z(
-        \mprj_pads/area2_io_pad[20]/output_EN_N ) );
-  nr03d0 U16 ( .A1(mprj_io_dm[63]), .A2(mprj_io_dm[65]), .A3(mprj_io_dm[64]), 
-        .ZN(n192) );
-  aoi211d1 U17 ( .C1(mprj_io_dm[63]), .C2(mprj_io_dm[64]), .A(mprj_io_dm[65]), 
-        .B(mprj_io_inp_dis[21]), .ZN(n351) );
-  or03d0 U18 ( .A1(n192), .A2(mprj_io_oeb[21]), .A3(n351), .Z(
-        \mprj_pads/area2_io_pad[21]/output_EN_N ) );
-  nr03d0 U19 ( .A1(mprj_io_dm[66]), .A2(mprj_io_dm[68]), .A3(mprj_io_dm[67]), 
-        .ZN(n193) );
-  aoi211d1 U20 ( .C1(mprj_io_dm[66]), .C2(mprj_io_dm[67]), .A(mprj_io_dm[68]), 
-        .B(mprj_io_inp_dis[22]), .ZN(n352) );
-  or03d0 U21 ( .A1(n193), .A2(mprj_io_oeb[22]), .A3(n352), .Z(
-        \mprj_pads/area2_io_pad[22]/output_EN_N ) );
-  nr03d0 U22 ( .A1(mprj_io_dm[69]), .A2(mprj_io_dm[71]), .A3(mprj_io_dm[70]), 
-        .ZN(n194) );
-  aoi211d1 U23 ( .C1(mprj_io_dm[69]), .C2(mprj_io_dm[70]), .A(mprj_io_dm[71]), 
-        .B(mprj_io_inp_dis[23]), .ZN(n353) );
-  or03d0 U24 ( .A1(n194), .A2(mprj_io_oeb[23]), .A3(n353), .Z(
-        \mprj_pads/area2_io_pad[23]/output_EN_N ) );
-  nr03d0 U25 ( .A1(mprj_io_dm[72]), .A2(mprj_io_dm[74]), .A3(mprj_io_dm[73]), 
-        .ZN(n195) );
-  aoi211d1 U26 ( .C1(mprj_io_dm[72]), .C2(mprj_io_dm[73]), .A(mprj_io_dm[74]), 
-        .B(mprj_io_inp_dis[24]), .ZN(n354) );
-  or03d0 U27 ( .A1(n195), .A2(mprj_io_oeb[24]), .A3(n354), .Z(
-        \mprj_pads/area2_io_pad[24]/output_EN_N ) );
-  nr03d0 U28 ( .A1(mprj_io_dm[75]), .A2(mprj_io_dm[77]), .A3(mprj_io_dm[76]), 
-        .ZN(n196) );
-  aoi211d1 U29 ( .C1(mprj_io_dm[75]), .C2(mprj_io_dm[76]), .A(mprj_io_dm[77]), 
-        .B(mprj_io_inp_dis[25]), .ZN(n355) );
-  or03d0 U30 ( .A1(n196), .A2(mprj_io_oeb[25]), .A3(n355), .Z(
-        \mprj_pads/area2_io_pad[25]/output_EN_N ) );
-  nr03d0 U31 ( .A1(mprj_io_dm[78]), .A2(mprj_io_dm[80]), .A3(mprj_io_dm[79]), 
-        .ZN(n197) );
-  aoi211d1 U32 ( .C1(mprj_io_dm[78]), .C2(mprj_io_dm[79]), .A(mprj_io_dm[80]), 
-        .B(mprj_io_inp_dis[26]), .ZN(n356) );
-  or03d0 U33 ( .A1(n197), .A2(mprj_io_oeb[26]), .A3(n356), .Z(
-        \mprj_pads/area2_io_pad[26]/output_EN_N ) );
-  nr03d0 U34 ( .A1(mprj_io_dm[81]), .A2(mprj_io_dm[83]), .A3(mprj_io_dm[82]), 
-        .ZN(n198) );
-  aoi211d1 U35 ( .C1(mprj_io_dm[81]), .C2(mprj_io_dm[82]), .A(mprj_io_dm[83]), 
-        .B(mprj_io_inp_dis[27]), .ZN(n357) );
-  or03d0 U36 ( .A1(n198), .A2(mprj_io_oeb[27]), .A3(n357), .Z(
-        \mprj_pads/area2_io_pad[27]/output_EN_N ) );
-  nr03d0 U37 ( .A1(mprj_io_dm[84]), .A2(mprj_io_dm[86]), .A3(mprj_io_dm[85]), 
-        .ZN(n199) );
-  aoi211d1 U38 ( .C1(mprj_io_dm[84]), .C2(mprj_io_dm[85]), .A(mprj_io_dm[86]), 
-        .B(mprj_io_inp_dis[28]), .ZN(n358) );
-  or03d0 U39 ( .A1(n199), .A2(mprj_io_oeb[28]), .A3(n358), .Z(
-        \mprj_pads/area2_io_pad[28]/output_EN_N ) );
-  nr03d0 U40 ( .A1(mprj_io_dm[87]), .A2(mprj_io_dm[89]), .A3(mprj_io_dm[88]), 
-        .ZN(n200) );
-  aoi211d1 U41 ( .C1(mprj_io_dm[87]), .C2(mprj_io_dm[88]), .A(mprj_io_dm[89]), 
-        .B(mprj_io_inp_dis[29]), .ZN(n359) );
-  or03d0 U42 ( .A1(n200), .A2(mprj_io_oeb[29]), .A3(n359), .Z(
-        \mprj_pads/area2_io_pad[29]/output_EN_N ) );
-  nr03d0 U43 ( .A1(mprj_io_dm[90]), .A2(mprj_io_dm[92]), .A3(mprj_io_dm[91]), 
-        .ZN(n201) );
-  aoi211d1 U44 ( .C1(mprj_io_dm[90]), .C2(mprj_io_dm[91]), .A(mprj_io_dm[92]), 
-        .B(mprj_io_inp_dis[30]), .ZN(n360) );
-  or03d0 U45 ( .A1(n201), .A2(mprj_io_oeb[30]), .A3(n360), .Z(
-        \mprj_pads/area2_io_pad[30]/output_EN_N ) );
-  nr03d0 U46 ( .A1(mprj_io_dm[93]), .A2(mprj_io_dm[95]), .A3(mprj_io_dm[94]), 
-        .ZN(n202) );
-  aoi211d1 U47 ( .C1(mprj_io_dm[93]), .C2(mprj_io_dm[94]), .A(mprj_io_dm[95]), 
-        .B(mprj_io_inp_dis[31]), .ZN(n361) );
-  or03d0 U48 ( .A1(n202), .A2(mprj_io_oeb[31]), .A3(n361), .Z(
-        \mprj_pads/area2_io_pad[31]/output_EN_N ) );
-  nr03d0 U49 ( .A1(mprj_io_dm[96]), .A2(mprj_io_dm[98]), .A3(mprj_io_dm[97]), 
-        .ZN(n203) );
-  aoi211d1 U50 ( .C1(mprj_io_dm[96]), .C2(mprj_io_dm[97]), .A(mprj_io_dm[98]), 
-        .B(mprj_io_inp_dis[32]), .ZN(n362) );
-  or03d0 U51 ( .A1(n203), .A2(mprj_io_oeb[32]), .A3(n362), .Z(
-        \mprj_pads/area2_io_pad[32]/output_EN_N ) );
-  nr03d0 U52 ( .A1(mprj_io_dm[99]), .A2(mprj_io_dm[101]), .A3(mprj_io_dm[100]), 
-        .ZN(n204) );
-  aoi211d1 U53 ( .C1(mprj_io_dm[99]), .C2(mprj_io_dm[100]), .A(mprj_io_dm[101]), .B(mprj_io_inp_dis[33]), .ZN(n363) );
-  or03d0 U54 ( .A1(n204), .A2(mprj_io_oeb[33]), .A3(n363), .Z(
-        \mprj_pads/area2_io_pad[33]/output_EN_N ) );
-  nr03d0 U55 ( .A1(mprj_io_dm[102]), .A2(mprj_io_dm[104]), .A3(mprj_io_dm[103]), .ZN(n205) );
-  aoi211d1 U56 ( .C1(mprj_io_dm[102]), .C2(mprj_io_dm[103]), .A(
-        mprj_io_dm[104]), .B(mprj_io_inp_dis[34]), .ZN(n364) );
-  or03d0 U57 ( .A1(n205), .A2(mprj_io_oeb[34]), .A3(n364), .Z(
-        \mprj_pads/area2_io_pad[34]/output_EN_N ) );
-  nr03d0 U58 ( .A1(mprj_io_dm[105]), .A2(mprj_io_dm[107]), .A3(mprj_io_dm[106]), .ZN(n206) );
-  aoi211d1 U59 ( .C1(mprj_io_dm[105]), .C2(mprj_io_dm[106]), .A(
-        mprj_io_dm[107]), .B(mprj_io_inp_dis[35]), .ZN(n365) );
-  or03d0 U60 ( .A1(n206), .A2(mprj_io_oeb[35]), .A3(n365), .Z(
-        \mprj_pads/area2_io_pad[35]/output_EN_N ) );
-  nr03d0 U61 ( .A1(mprj_io_dm[108]), .A2(mprj_io_dm[110]), .A3(mprj_io_dm[109]), .ZN(n207) );
-  aoi211d1 U62 ( .C1(mprj_io_dm[108]), .C2(mprj_io_dm[109]), .A(
-        mprj_io_dm[110]), .B(mprj_io_inp_dis[36]), .ZN(n366) );
-  or03d0 U63 ( .A1(n207), .A2(mprj_io_oeb[36]), .A3(n366), .Z(
-        \mprj_pads/area2_io_pad[36]/output_EN_N ) );
-  nr03d0 U64 ( .A1(mprj_io_dm[111]), .A2(mprj_io_dm[113]), .A3(mprj_io_dm[112]), .ZN(n208) );
-  aoi211d1 U65 ( .C1(mprj_io_dm[111]), .C2(mprj_io_dm[112]), .A(
-        mprj_io_dm[113]), .B(mprj_io_inp_dis[37]), .ZN(n367) );
-  or03d0 U66 ( .A1(n208), .A2(mprj_io_oeb[37]), .A3(n367), .Z(
-        \mprj_pads/area2_io_pad[37]/output_EN_N ) );
-  nr03d0 U67 ( .A1(mprj_io_dm[0]), .A2(mprj_io_dm[2]), .A3(mprj_io_dm[1]), 
-        .ZN(n171) );
-  aoi211d1 U68 ( .C1(mprj_io_dm[0]), .C2(mprj_io_dm[1]), .A(mprj_io_dm[2]), 
-        .B(mprj_io_inp_dis[0]), .ZN(n368) );
-  or03d0 U69 ( .A1(n171), .A2(mprj_io_oeb[0]), .A3(n368), .Z(
-        \mprj_pads/area1_io_pad[0]/output_EN_N ) );
-  nr03d0 U70 ( .A1(mprj_io_dm[3]), .A2(mprj_io_dm[5]), .A3(mprj_io_dm[4]), 
-        .ZN(n172) );
-  aoi211d1 U71 ( .C1(mprj_io_dm[3]), .C2(mprj_io_dm[4]), .A(mprj_io_dm[5]), 
-        .B(mprj_io_inp_dis[1]), .ZN(n369) );
-  or03d0 U72 ( .A1(n172), .A2(mprj_io_oeb[1]), .A3(n369), .Z(
-        \mprj_pads/area1_io_pad[1]/output_EN_N ) );
-  nr03d0 U73 ( .A1(mprj_io_dm[6]), .A2(mprj_io_dm[8]), .A3(mprj_io_dm[7]), 
-        .ZN(n173) );
-  aoi211d1 U74 ( .C1(mprj_io_dm[6]), .C2(mprj_io_dm[7]), .A(mprj_io_dm[8]), 
-        .B(mprj_io_inp_dis[2]), .ZN(n370) );
-  or03d0 U75 ( .A1(n173), .A2(mprj_io_oeb[2]), .A3(n370), .Z(
-        \mprj_pads/area1_io_pad[2]/output_EN_N ) );
-  nr03d0 U76 ( .A1(mprj_io_dm[9]), .A2(mprj_io_dm[11]), .A3(mprj_io_dm[10]), 
-        .ZN(n174) );
-  aoi211d1 U77 ( .C1(mprj_io_dm[9]), .C2(mprj_io_dm[10]), .A(mprj_io_dm[11]), 
-        .B(mprj_io_inp_dis[3]), .ZN(n371) );
-  or03d0 U78 ( .A1(n174), .A2(mprj_io_oeb[3]), .A3(n371), .Z(
-        \mprj_pads/area1_io_pad[3]/output_EN_N ) );
-  nr03d0 U79 ( .A1(mprj_io_dm[12]), .A2(mprj_io_dm[14]), .A3(mprj_io_dm[13]), 
-        .ZN(n175) );
-  aoi211d1 U80 ( .C1(mprj_io_dm[12]), .C2(mprj_io_dm[13]), .A(mprj_io_dm[14]), 
-        .B(mprj_io_inp_dis[4]), .ZN(n372) );
-  or03d0 U81 ( .A1(n175), .A2(mprj_io_oeb[4]), .A3(n372), .Z(
-        \mprj_pads/area1_io_pad[4]/output_EN_N ) );
-  nr03d0 U82 ( .A1(mprj_io_dm[15]), .A2(mprj_io_dm[17]), .A3(mprj_io_dm[16]), 
-        .ZN(n176) );
-  aoi211d1 U83 ( .C1(mprj_io_dm[15]), .C2(mprj_io_dm[16]), .A(mprj_io_dm[17]), 
-        .B(mprj_io_inp_dis[5]), .ZN(n373) );
-  or03d0 U84 ( .A1(n176), .A2(mprj_io_oeb[5]), .A3(n373), .Z(
-        \mprj_pads/area1_io_pad[5]/output_EN_N ) );
-  nr03d0 U85 ( .A1(mprj_io_dm[18]), .A2(mprj_io_dm[20]), .A3(mprj_io_dm[19]), 
-        .ZN(n177) );
-  aoi211d1 U86 ( .C1(mprj_io_dm[18]), .C2(mprj_io_dm[19]), .A(mprj_io_dm[20]), 
-        .B(mprj_io_inp_dis[6]), .ZN(n374) );
-  or03d0 U87 ( .A1(n177), .A2(mprj_io_oeb[6]), .A3(n374), .Z(
-        \mprj_pads/area1_io_pad[6]/output_EN_N ) );
-  nr03d0 U88 ( .A1(mprj_io_dm[21]), .A2(mprj_io_dm[23]), .A3(mprj_io_dm[22]), 
-        .ZN(n178) );
-  aoi211d1 U89 ( .C1(mprj_io_dm[21]), .C2(mprj_io_dm[22]), .A(mprj_io_dm[23]), 
-        .B(mprj_io_inp_dis[7]), .ZN(n375) );
-  or03d0 U90 ( .A1(n178), .A2(mprj_io_oeb[7]), .A3(n375), .Z(
-        \mprj_pads/area1_io_pad[7]/output_EN_N ) );
-  nr03d0 U91 ( .A1(mprj_io_dm[24]), .A2(mprj_io_dm[26]), .A3(mprj_io_dm[25]), 
-        .ZN(n179) );
-  aoi211d1 U92 ( .C1(mprj_io_dm[24]), .C2(mprj_io_dm[25]), .A(mprj_io_dm[26]), 
-        .B(mprj_io_inp_dis[8]), .ZN(n376) );
-  or03d0 U93 ( .A1(n179), .A2(mprj_io_oeb[8]), .A3(n376), .Z(
-        \mprj_pads/area1_io_pad[8]/output_EN_N ) );
-  nr03d0 U94 ( .A1(mprj_io_dm[27]), .A2(mprj_io_dm[29]), .A3(mprj_io_dm[28]), 
-        .ZN(n180) );
-  aoi211d1 U95 ( .C1(mprj_io_dm[27]), .C2(mprj_io_dm[28]), .A(mprj_io_dm[29]), 
-        .B(mprj_io_inp_dis[9]), .ZN(n377) );
-  or03d0 U96 ( .A1(n180), .A2(mprj_io_oeb[9]), .A3(n377), .Z(
-        \mprj_pads/area1_io_pad[9]/output_EN_N ) );
-  nr03d0 U97 ( .A1(mprj_io_dm[30]), .A2(mprj_io_dm[32]), .A3(mprj_io_dm[31]), 
-        .ZN(n181) );
-  aoi211d1 U98 ( .C1(mprj_io_dm[30]), .C2(mprj_io_dm[31]), .A(mprj_io_dm[32]), 
-        .B(mprj_io_inp_dis[10]), .ZN(n378) );
-  or03d0 U99 ( .A1(n181), .A2(mprj_io_oeb[10]), .A3(n378), .Z(
-        \mprj_pads/area1_io_pad[10]/output_EN_N ) );
-  nr03d0 U100 ( .A1(mprj_io_dm[33]), .A2(mprj_io_dm[35]), .A3(mprj_io_dm[34]), 
-        .ZN(n182) );
-  aoi211d1 U101 ( .C1(mprj_io_dm[33]), .C2(mprj_io_dm[34]), .A(mprj_io_dm[35]), 
-        .B(mprj_io_inp_dis[11]), .ZN(n379) );
-  or03d0 U102 ( .A1(n182), .A2(mprj_io_oeb[11]), .A3(n379), .Z(
-        \mprj_pads/area1_io_pad[11]/output_EN_N ) );
-  nr03d0 U103 ( .A1(mprj_io_dm[36]), .A2(mprj_io_dm[38]), .A3(mprj_io_dm[37]), 
-        .ZN(n183) );
-  aoi211d1 U104 ( .C1(mprj_io_dm[36]), .C2(mprj_io_dm[37]), .A(mprj_io_dm[38]), 
-        .B(mprj_io_inp_dis[12]), .ZN(n380) );
-  or03d0 U105 ( .A1(n183), .A2(mprj_io_oeb[12]), .A3(n380), .Z(
-        \mprj_pads/area1_io_pad[12]/output_EN_N ) );
-  nr03d0 U106 ( .A1(mprj_io_dm[39]), .A2(mprj_io_dm[41]), .A3(mprj_io_dm[40]), 
-        .ZN(n184) );
-  aoi211d1 U107 ( .C1(mprj_io_dm[39]), .C2(mprj_io_dm[40]), .A(mprj_io_dm[41]), 
-        .B(mprj_io_inp_dis[13]), .ZN(n381) );
-  or03d0 U108 ( .A1(n184), .A2(mprj_io_oeb[13]), .A3(n381), .Z(
-        \mprj_pads/area1_io_pad[13]/output_EN_N ) );
-  nr03d0 U109 ( .A1(mprj_io_dm[42]), .A2(mprj_io_dm[44]), .A3(mprj_io_dm[43]), 
-        .ZN(n185) );
-  aoi211d1 U110 ( .C1(mprj_io_dm[42]), .C2(mprj_io_dm[43]), .A(mprj_io_dm[44]), 
-        .B(mprj_io_inp_dis[14]), .ZN(n382) );
-  or03d0 U111 ( .A1(n185), .A2(mprj_io_oeb[14]), .A3(n382), .Z(
-        \mprj_pads/area1_io_pad[14]/output_EN_N ) );
-  nr03d0 U112 ( .A1(mprj_io_dm[45]), .A2(mprj_io_dm[47]), .A3(mprj_io_dm[46]), 
-        .ZN(n186) );
-  aoi211d1 U113 ( .C1(mprj_io_dm[45]), .C2(mprj_io_dm[46]), .A(mprj_io_dm[47]), 
-        .B(mprj_io_inp_dis[15]), .ZN(n383) );
-  or03d0 U114 ( .A1(n186), .A2(mprj_io_oeb[15]), .A3(n383), .Z(
-        \mprj_pads/area1_io_pad[15]/output_EN_N ) );
-  nr03d0 U115 ( .A1(mprj_io_dm[48]), .A2(mprj_io_dm[50]), .A3(mprj_io_dm[49]), 
-        .ZN(n187) );
-  aoi211d1 U116 ( .C1(mprj_io_dm[48]), .C2(mprj_io_dm[49]), .A(mprj_io_dm[50]), 
-        .B(mprj_io_inp_dis[16]), .ZN(n384) );
-  or03d0 U117 ( .A1(n187), .A2(mprj_io_oeb[16]), .A3(n384), .Z(
-        \mprj_pads/area1_io_pad[16]/output_EN_N ) );
-  nr03d0 U118 ( .A1(mprj_io_dm[51]), .A2(mprj_io_dm[53]), .A3(mprj_io_dm[52]), 
-        .ZN(n188) );
-  aoi211d1 U119 ( .C1(mprj_io_dm[51]), .C2(mprj_io_dm[52]), .A(mprj_io_dm[53]), 
-        .B(mprj_io_inp_dis[17]), .ZN(n385) );
-  or03d0 U120 ( .A1(n188), .A2(mprj_io_oeb[17]), .A3(n385), .Z(
-        \mprj_pads/area1_io_pad[17]/output_EN_N ) );
-  nr03d0 U121 ( .A1(mprj_io_dm[54]), .A2(mprj_io_dm[56]), .A3(mprj_io_dm[55]), 
-        .ZN(n189) );
-  aoi211d1 U122 ( .C1(mprj_io_dm[54]), .C2(mprj_io_dm[55]), .A(mprj_io_dm[56]), 
-        .B(mprj_io_inp_dis[18]), .ZN(n386) );
-  or03d0 U123 ( .A1(n189), .A2(mprj_io_oeb[18]), .A3(n386), .Z(
-        \mprj_pads/area1_io_pad[18]/output_EN_N ) );
-  nr02d0 U124 ( .A1(flash_io1_oeb_core), .A2(flash_io1_ieb_core), .ZN(n209) );
-  nr02d0 U125 ( .A1(gpio_mode0_core), .A2(gpio_mode1_core), .ZN(n211) );
-  nr02d0 U126 ( .A1(flash_io0_oeb_core), .A2(flash_io0_ieb_core), .ZN(n210) );
-  inv0d0 U127 ( .I(gpio_outenb_core), .ZN(n387) );
-  aon211d1 U128 ( .C1(gpio_mode0_core), .C2(gpio_inenb_core), .B(
-        gpio_mode1_core), .A(n387), .ZN(\gpio_pad/N17 ) );
-  inv0d0 U129 ( .I(mprj_io_out[18]), .ZN(n166) );
-  inv0d0 U130 ( .I(mprj_io_out[17]), .ZN(n162) );
-  inv0d0 U131 ( .I(mprj_io_out[16]), .ZN(n158) );
-  inv0d0 U132 ( .I(mprj_io_out[15]), .ZN(n154) );
-  inv0d0 U133 ( .I(mprj_io_out[14]), .ZN(n150) );
-  inv0d0 U134 ( .I(mprj_io_out[13]), .ZN(n146) );
-  inv0d0 U135 ( .I(mprj_io_out[12]), .ZN(n142) );
-  inv0d0 U136 ( .I(mprj_io_out[11]), .ZN(n138) );
-  inv0d0 U137 ( .I(mprj_io_out[10]), .ZN(n134) );
-  inv0d0 U138 ( .I(mprj_io_out[9]), .ZN(n130) );
-  inv0d0 U139 ( .I(mprj_io_out[8]), .ZN(n126) );
-  inv0d0 U140 ( .I(mprj_io_out[7]), .ZN(n122) );
-  inv0d0 U141 ( .I(mprj_io_out[6]), .ZN(n118) );
-  inv0d0 U142 ( .I(mprj_io_out[5]), .ZN(n114) );
-  inv0d0 U143 ( .I(mprj_io_out[4]), .ZN(n110) );
-  inv0d0 U144 ( .I(mprj_io_out[3]), .ZN(n106) );
-  inv0d0 U145 ( .I(mprj_io_out[2]), .ZN(n102) );
-  inv0d0 U146 ( .I(mprj_io_out[1]), .ZN(n98) );
-  inv0d0 U147 ( .I(mprj_io_out[0]), .ZN(n94) );
-  inv0d0 U148 ( .I(mprj_io_out[37]), .ZN(n90) );
-  inv0d0 U149 ( .I(mprj_io_out[36]), .ZN(n86) );
-  inv0d0 U150 ( .I(mprj_io_out[35]), .ZN(n82) );
-  inv0d0 U151 ( .I(mprj_io_out[34]), .ZN(n78) );
-  inv0d0 U152 ( .I(mprj_io_out[33]), .ZN(n74) );
-  inv0d0 U153 ( .I(mprj_io_out[32]), .ZN(n70) );
-  inv0d0 U154 ( .I(mprj_io_out[31]), .ZN(n66) );
-  inv0d0 U155 ( .I(mprj_io_out[30]), .ZN(n62) );
-  inv0d0 U156 ( .I(mprj_io_out[29]), .ZN(n58) );
-  inv0d0 U157 ( .I(mprj_io_out[28]), .ZN(n54) );
-  inv0d0 U158 ( .I(mprj_io_out[27]), .ZN(n50) );
-  inv0d0 U159 ( .I(mprj_io_out[26]), .ZN(n46) );
-  inv0d0 U160 ( .I(mprj_io_out[25]), .ZN(n42) );
-  inv0d0 U161 ( .I(mprj_io_out[24]), .ZN(n38) );
-  inv0d0 U162 ( .I(mprj_io_out[23]), .ZN(n34) );
-  inv0d0 U163 ( .I(mprj_io_out[22]), .ZN(n30) );
-  inv0d0 U164 ( .I(mprj_io_out[21]), .ZN(n26) );
-  inv0d0 U165 ( .I(mprj_io_out[20]), .ZN(n22) );
-  inv0d0 U166 ( .I(mprj_io_out[19]), .ZN(n18) );
-  inv0d0 U167 ( .I(flash_io0_do_core), .ZN(n12) );
-  inv0d0 U168 ( .I(flash_io1_do_core), .ZN(n8) );
-  inv0d0 U170 ( .I(gpio_out_core), .ZN(n2) );
+  invtd7 \mprj_pads/area1_io_pad[18]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[18]) );
+  invtd7 \mprj_pads/area1_io_pad[17]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[17]) );
+  invtd7 \mprj_pads/area1_io_pad[17]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[17]) );
+  invtd7 \mprj_pads/area1_io_pad[16]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[16]) );
+  invtd7 \mprj_pads/area1_io_pad[16]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[16]) );
+  invtd7 \mprj_pads/area1_io_pad[15]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[15]) );
+  invtd7 \mprj_pads/area1_io_pad[15]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[15]) );
+  invtd7 \mprj_pads/area1_io_pad[14]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[14]) );
+  invtd7 \mprj_pads/area1_io_pad[14]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[14]) );
+  invtd7 \mprj_pads/area1_io_pad[13]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[13]) );
+  invtd7 \mprj_pads/area1_io_pad[13]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[13]) );
+  invtd7 \mprj_pads/area1_io_pad[12]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[12]) );
+  invtd7 \mprj_pads/area1_io_pad[12]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[12]) );
+  invtd7 \mprj_pads/area1_io_pad[11]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[11]) );
+  invtd7 \mprj_pads/area1_io_pad[11]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[11]) );
+  invtd7 \mprj_pads/area1_io_pad[10]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[10]) );
+  invtd7 \mprj_pads/area1_io_pad[10]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[10]) );
+  invtd7 \mprj_pads/area1_io_pad[9]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[9]) );
+  invtd7 \mprj_pads/area1_io_pad[9]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[9]) );
+  invtd7 \mprj_pads/area1_io_pad[8]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[8]) );
+  invtd7 \mprj_pads/area1_io_pad[8]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[8]) );
+  invtd7 \mprj_pads/area1_io_pad[7]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[7]) );
+  invtd7 \mprj_pads/area1_io_pad[7]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[7]) );
+  invtd7 \mprj_pads/area1_io_pad[6]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[6]) );
+  invtd7 \mprj_pads/area1_io_pad[6]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[6]) );
+  invtd7 \mprj_pads/area1_io_pad[5]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[5]) );
+  invtd7 \mprj_pads/area1_io_pad[5]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[5]) );
+  invtd7 \mprj_pads/area1_io_pad[4]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[4]) );
+  invtd7 \mprj_pads/area1_io_pad[4]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[4]) );
+  invtd7 \mprj_pads/area1_io_pad[2]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[2]) );
+  invtd7 \mprj_pads/area1_io_pad[2]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[2]) );
+  invtd7 \mprj_pads/area1_io_pad[1]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[1]) );
+  invtd7 \mprj_pads/area1_io_pad[1]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[1]) );
+  invtd7 \mprj_pads/area1_io_pad[0]/pad/__tmp152  ( .I(1'b1), .EN(1'b1), .ZN(
+        mprj_io[0]) );
+  invtd7 \mprj_pads/area1_io_pad[0]/pad/__tmp151  ( .I(1'b1), .EN(1'b0), .ZN(
+        mprj_io[0]) );
+  invtd7 U1 ( .I(1'b1), .EN(1'b1), .ZN(flash_clk) );
+  invtd7 U3 ( .I(1'b1), .EN(1'b1), .ZN(flash_csb) );
+endmodule
+
+
+module housekeeping ( wb_clk_i, wb_rstn_i, wb_adr_i, wb_dat_i, wb_sel_i, 
+        wb_we_i, wb_cyc_i, wb_stb_i, wb_ack_o, wb_dat_o, porb, pll_ena, 
+        pll_dco_ena, pll_div, pll_sel, pll90_sel, pll_trim, pll_bypass, 
+        qspi_enabled, uart_enabled, spi_enabled, debug_mode, ser_tx, ser_rx, 
+        spi_sdi, spi_csb, spi_sck, spi_sdo, spi_sdoenb, irq, reset, 
+        serial_clock, serial_load, serial_resetn, serial_data_1, serial_data_2, 
+        mgmt_gpio_in, mgmt_gpio_out, mgmt_gpio_oeb, pwr_ctrl_out, trap, 
+        user_clock, mask_rev_in, spimemio_flash_csb, spimemio_flash_clk, 
+        spimemio_flash_io0_oeb, spimemio_flash_io1_oeb, spimemio_flash_io2_oeb, 
+        spimemio_flash_io3_oeb, spimemio_flash_io0_do, spimemio_flash_io1_do, 
+        spimemio_flash_io2_do, spimemio_flash_io3_do, spimemio_flash_io0_di, 
+        spimemio_flash_io1_di, spimemio_flash_io2_di, spimemio_flash_io3_di, 
+        debug_in, debug_out, debug_oeb, pad_flash_csb, pad_flash_csb_oeb, 
+        pad_flash_clk, pad_flash_clk_oeb, pad_flash_io0_oeb, pad_flash_io1_oeb, 
+        pad_flash_io0_ieb, pad_flash_io1_ieb, pad_flash_io0_do, 
+        pad_flash_io1_do, pad_flash_io0_di, pad_flash_io1_di, usr1_vcc_pwrgood, 
+        usr2_vcc_pwrgood, usr1_vdd_pwrgood, usr2_vdd_pwrgood );
+  input [31:0] wb_adr_i;
+  input [31:0] wb_dat_i;
+  input [3:0] wb_sel_i;
+  output [31:0] wb_dat_o;
+  output [4:0] pll_div;
+  output [2:0] pll_sel;
+  output [2:0] pll90_sel;
+  output [25:0] pll_trim;
+  output [2:0] irq;
+  input [37:0] mgmt_gpio_in;
+  output [37:0] mgmt_gpio_out;
+  output [37:0] mgmt_gpio_oeb;
+  output [3:0] pwr_ctrl_out;
+  input [31:0] mask_rev_in;
+  input wb_clk_i, wb_rstn_i, wb_we_i, wb_cyc_i, wb_stb_i, porb, qspi_enabled,
+         uart_enabled, spi_enabled, debug_mode, ser_tx, spi_csb, spi_sck,
+         spi_sdo, spi_sdoenb, trap, user_clock, spimemio_flash_csb,
+         spimemio_flash_clk, spimemio_flash_io0_oeb, spimemio_flash_io1_oeb,
+         spimemio_flash_io2_oeb, spimemio_flash_io3_oeb, spimemio_flash_io0_do,
+         spimemio_flash_io1_do, spimemio_flash_io2_do, spimemio_flash_io3_do,
+         debug_out, debug_oeb, pad_flash_io0_di, pad_flash_io1_di,
+         usr1_vcc_pwrgood, usr2_vcc_pwrgood, usr1_vdd_pwrgood,
+         usr2_vdd_pwrgood;
+  output wb_ack_o, pll_ena, pll_dco_ena, pll_bypass, ser_rx, spi_sdi, reset,
+         serial_clock, serial_load, serial_resetn, serial_data_1,
+         serial_data_2, spimemio_flash_io0_di, spimemio_flash_io1_di,
+         spimemio_flash_io2_di, spimemio_flash_io3_di, debug_in, pad_flash_csb,
+         pad_flash_csb_oeb, pad_flash_clk, pad_flash_clk_oeb,
+         pad_flash_io0_oeb, pad_flash_io1_oeb, pad_flash_io0_ieb,
+         pad_flash_io1_ieb, pad_flash_io0_do, pad_flash_io1_do;
+
+  assign serial_clock = 1'b0;
+  assign pad_flash_io0_ieb = 1'b0;
+
+  mx02d1 U513 ( .I0(1'b0), .I1(1'b0), .S(1'b0) );
 endmodule
 
 
@@ -645,7 +349,21 @@ module caravel ( vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1,
   inout vddio,  vddio_2,  vssio,  vssio_2,  vdda,  vssa,  vccd,  vssd,  vdda1, 
      vdda1_2,  vdda2,  vssa1,  vssa1_2,  vssa2,  vccd1,  vccd2,  vssd1,  vssd2, 
      gpio,  flash_io0,  flash_io1;
-
+  wire   net81075, net81076, net81077, net81078, net81079, net81080, net81081,
+         net81082, net81083, net81084, net81085, net81086, net81087, net81088,
+         net81089, net81090, net81091, net81092, net81093, net81094, net81095,
+         net81096, net81097, net81098, net81099, net81100, net81101, net81102,
+         net81103, net81104, net81105, net81106, net81107, net81108, net81109,
+         net81110, net81111, net81112, net81113, net81114, net81115, net81116,
+         net81117, net81118, net81119, net81120, net81121, net81122, net81123,
+         net81124, net81125, net81126, net81127, net81128, net81129, net81130,
+         net81131, net81132, net81133, net81134, net81135, net81136, net81137,
+         net81138, net81139;
+  wire   [37:0] mprj_io_out;
+  wire   [37:0] mprj_io_oeb;
+  wire   [37:0] mprj_io_inp_dis;
+  wire   [113:0] mprj_io_dm;
+  wire   [28:0] user_analog_io;
   tri   vddio;
   tri   vddio_2;
   tri   vssio;
@@ -666,59 +384,38 @@ module caravel ( vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1,
   tri   vssd2;
   tri   gpio;
   tri   [37:0] mprj_io;
-  tri   clock;
-  tri   resetb;
   tri   flash_csb;
   tri   flash_clk;
   tri   flash_io0;
   tri   flash_io1;
-  tri   rstb_h;
-  tri   clock_core;
-  tri   gpio_out_core;
-  tri   gpio_in_core;
-  tri   gpio_mode0_core;
-  tri   gpio_mode1_core;
-  tri   gpio_outenb_core;
-  tri   gpio_inenb_core;
-  tri   flash_csb_oeb;
-  tri   flash_clk_oeb;
-  tri   flash_io0_oeb;
-  tri   flash_io1_oeb;
-  tri   flash_io0_ieb;
-  tri   flash_io1_ieb;
-  tri   flash_io0_do;
-  tri   flash_io1_do;
-  tri   flash_io0_di;
-  tri   flash_io1_di;
-  tri   [37:0] mprj_io_in;
-  tri   [37:0] mprj_io_out;
-  tri   [37:0] mprj_io_oeb;
-  tri   [37:0] mprj_io_inp_dis;
-  tri   [113:0] mprj_io_dm;
-  tri   [28:0] user_analog_io;
 
   chip_io padframe ( .vddio_pad(vddio), .vddio_pad2(vddio_2), .vssio_pad(vssio), .vssio_pad2(vssio_2), .vccd_pad(vccd), .vssd_pad(vssd), .vdda_pad(vdda), 
         .vssa_pad(vssa), .vdda1_pad(vdda1), .vdda1_pad2(vdda1_2), .vdda2_pad(
         vdda2), .vssa1_pad(vssa1), .vssa1_pad2(vssa1_2), .vssa2_pad(vssa2), 
         .vccd1_pad(vccd1), .vccd2_pad(vccd2), .vssd1_pad(vssd1), .vssd2_pad(
-        vssd2), .vssa1(1'b0), .gpio(gpio), .clock(clock), .resetb(resetb), 
+        vssd2), .vssa1(1'b0), .gpio(gpio), .clock(net81127), .resetb(net81128), 
         .flash_csb(flash_csb), .flash_clk(flash_clk), .flash_io0(flash_io0), 
-        .flash_io1(flash_io1), .porb_h(1'b0), .por(1'b0), .resetb_core_h(
-        rstb_h), .clock_core(clock_core), .gpio_out_core(gpio_out_core), 
-        .gpio_in_core(gpio_in_core), .gpio_mode0_core(gpio_mode0_core), 
-        .gpio_mode1_core(gpio_mode1_core), .gpio_outenb_core(gpio_outenb_core), 
-        .gpio_inenb_core(gpio_inenb_core), .flash_csb_core(1'b0), 
-        .flash_clk_core(1'b0), .flash_csb_oeb_core(flash_csb_oeb), 
-        .flash_clk_oeb_core(flash_clk_oeb), .flash_io0_oeb_core(flash_io0_oeb), 
-        .flash_io1_oeb_core(flash_io1_oeb), .flash_io0_ieb_core(flash_io0_ieb), 
-        .flash_io1_ieb_core(flash_io1_ieb), .flash_io0_do_core(flash_io0_do), 
-        .flash_io1_do_core(flash_io1_do), .flash_io0_di_core(flash_io0_di), 
-        .flash_io1_di_core(flash_io1_di), .mprj_io(mprj_io), .mprj_io_out(
-        mprj_io_out), .mprj_io_oeb(mprj_io_oeb), .mprj_io_inp_dis(
-        mprj_io_inp_dis), .mprj_io_ib_mode_sel({1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
+        .flash_io1(flash_io1), .porb_h(1'b0), .por(1'b0), .gpio_out_core(
+        net81129), .gpio_mode0_core(net81130), .gpio_mode1_core(net81131), 
+        .gpio_inenb_core(net81133), .flash_csb_core(1'b0), .flash_clk_core(
+        1'b0), .flash_csb_oeb_core(net81134), .flash_clk_oeb_core(net81135), 
+        .flash_io0_oeb_core(net81136), .flash_io1_oeb_core(net81137), 
+        .flash_io0_ieb_core(net81138), .flash_io1_ieb_core(1'b0), 
+        .flash_io0_do_core(net81139), .flash_io1_do_core(1'b0), .mprj_io(
+        mprj_io), .mprj_io_out({1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
         1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
         1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
-        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0}), 
+        1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0}), .mprj_io_oeb({1'b1, 1'b1, 1'b1, 
+        1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 
+        1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 
+        1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b0, 1'b1, 1'b1, 1'b1}), 
+        .mprj_io_inp_dis({1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0}), .mprj_io_ib_mode_sel({1'b0, 1'b0, 1'b0, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0}), 
         .mprj_io_vtrip_sel({1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
         1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
         1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
@@ -738,21 +435,67 @@ module caravel ( vddio, vddio_2, vssio, vssio_2, vdda, vssa, vccd, vssd, vdda1,
         1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0}), .mprj_io_analog_pol({1'b0, 1'b0, 
         1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
         1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
-        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0}), .mprj_io_dm(mprj_io_dm), .mprj_io_in(mprj_io_in), .mprj_io_one({1'b0, 1'b0, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0}), .mprj_io_dm({1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 
+        1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 
+        1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 
+        1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 
+        1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 
+        1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 
+        1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 
+        1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 
+        1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b1, 1'b0, 1'b0, 
+        1'b0, 1'b1, 1'b1, 1'b1, 1'b0, 1'b1, 1'b1, 1'b0}), .mprj_io_one({1'b0, 
         1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
         1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
-        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0}), .mprj_analog_io(user_analog_io) );
-  caravel_core chip_core ( .rstb_h(rstb_h), .clock_core(clock_core), 
-        .gpio_out_core(gpio_out_core), .gpio_in_core(gpio_in_core), 
-        .gpio_mode0_core(gpio_mode0_core), .gpio_mode1_core(gpio_mode1_core), 
-        .gpio_outenb_core(gpio_outenb_core), .gpio_inenb_core(gpio_inenb_core), 
-        .flash_csb_oeb(flash_csb_oeb), .flash_clk_oeb(flash_clk_oeb), 
-        .flash_io0_oeb(flash_io0_oeb), .flash_io1_oeb(flash_io1_oeb), 
-        .flash_io0_ieb(flash_io0_ieb), .flash_io1_ieb(flash_io1_ieb), 
-        .flash_io0_do(flash_io0_do), .flash_io1_do(flash_io1_do), 
-        .flash_io0_di(flash_io0_di), .flash_io1_di(flash_io1_di), .mprj_io_in(
-        mprj_io_in), .mprj_io_out(mprj_io_out), .mprj_io_oeb(mprj_io_oeb), 
-        .mprj_io_inp_dis(mprj_io_inp_dis), .mprj_io_dm(mprj_io_dm), 
-        .mprj_analog_io(user_analog_io) );
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
+        1'b0}), .mprj_analog_io({1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0}), 
+        .gpio_outenb_core_BAR(net81132) );
+  housekeeping \chip_core/housekeeping  ( .wb_clk_i(net81075), .wb_rstn_i(1'b0), .wb_adr_i({net81076, net81077, net81078, net81079, net81080, net81081, 
+        net81082, net81083, net81084, net81085, net81086, net81087, net81088, 
+        net81089, net81090, net81091, net81092, net81093, net81094, net81095, 
+        net81096, net81097, net81098, net81099, net81100, net81101, net81102, 
+        net81103, net81104, net81105, 1'b0, 1'b0}), .wb_dat_i({1'b0, 1'b0, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0}), .wb_sel_i({1'b0, 1'b0, 1'b0, 
+        1'b0}), .wb_we_i(1'b0), .wb_cyc_i(net81106), .wb_stb_i(net81107), 
+        .porb(1'b0), .qspi_enabled(1'b0), .uart_enabled(net81108), 
+        .spi_enabled(net81109), .debug_mode(net81110), .ser_tx(net81111), 
+        .spi_csb(net81112), .spi_sck(net81113), .spi_sdo(net81114), 
+        .spi_sdoenb(net81115), .mgmt_gpio_in({1'b0, net81116, 1'b0, net81117, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
+        1'b0, net81118, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, net81119, net81120, 1'b0, 1'b0, 1'b0, 
+        net81121}), .trap(1'b0), .user_clock(net81122), .mask_rev_in({1'b0, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0}), .spimemio_flash_csb(1'b0), 
+        .spimemio_flash_clk(1'b0), .spimemio_flash_io0_oeb(net81123), 
+        .spimemio_flash_io1_oeb(1'b1), .spimemio_flash_io2_oeb(1'b1), 
+        .spimemio_flash_io3_oeb(1'b1), .spimemio_flash_io0_do(net81124), 
+        .spimemio_flash_io1_do(1'b0), .spimemio_flash_io2_do(1'b0), 
+        .spimemio_flash_io3_do(1'b0), .debug_out(1'b0), .debug_oeb(net81125), 
+        .pad_flash_io0_di(1'b0), .pad_flash_io1_di(net81126), 
+        .usr1_vcc_pwrgood(1'b1), .usr2_vcc_pwrgood(1'b1), .usr1_vdd_pwrgood(
+        1'b1), .usr2_vdd_pwrgood(1'b1) );
+  adiode \chip_core/spare_logic[0]/spare_logic_diode[3]  ( .I(1'b0) );
+  adiode \chip_core/spare_logic[0]/spare_logic_diode[2]  ( .I(1'b0) );
+  adiode \chip_core/spare_logic[0]/spare_logic_diode[1]  ( .I(1'b0) );
+  adiode \chip_core/spare_logic[0]/spare_logic_diode[0]  ( .I(1'b0) );
+  adiode \chip_core/spare_logic[3]/spare_logic_diode[3]  ( .I(1'b0) );
+  adiode \chip_core/spare_logic[3]/spare_logic_diode[2]  ( .I(1'b0) );
+  adiode \chip_core/spare_logic[3]/spare_logic_diode[1]  ( .I(1'b0) );
+  adiode \chip_core/spare_logic[3]/spare_logic_diode[0]  ( .I(1'b0) );
+  adiode \chip_core/spare_logic[2]/spare_logic_diode[3]  ( .I(1'b0) );
+  adiode \chip_core/spare_logic[2]/spare_logic_diode[2]  ( .I(1'b0) );
+  adiode \chip_core/spare_logic[2]/spare_logic_diode[1]  ( .I(1'b0) );
+  adiode \chip_core/spare_logic[2]/spare_logic_diode[0]  ( .I(1'b0) );
+  adiode \chip_core/spare_logic[1]/spare_logic_diode[3]  ( .I(1'b0) );
+  adiode \chip_core/spare_logic[1]/spare_logic_diode[2]  ( .I(1'b0) );
+  adiode \chip_core/spare_logic[1]/spare_logic_diode[1]  ( .I(1'b0) );
+  adiode \chip_core/spare_logic[1]/spare_logic_diode[0]  ( .I(1'b0) );
+  mx02d1 U381 ( .I0(1'b1), .I1(1'b1), .S(1'b0) );
 endmodule
 

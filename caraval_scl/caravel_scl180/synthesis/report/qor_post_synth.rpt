@@ -1,10 +1,10 @@
-Information: Building the design 'caravel_core'. (HDL-193)
-Warning:  File /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/caravel_core-verilog.pvl not found, or does not contain a usable description of caravel_core. (ELAB-320)
-Presto compilation completed successfully.
-Warning: Unable to resolve reference 'caravel_core' in 'caravel'. (LINK-5)
 Information: Updating design information... (UID-85)
 Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
 Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'hk_serial_clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'hk_serial_clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'hk_serial_load' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'hk_serial_load' will be added to the clock's propagated skew. (TIM-112)
 Information: Input delay ('fall') on clock port 'hkspi_clk' will be added to the clock's propagated skew. (TIM-112)
 Information: Input delay ('rise') on clock port 'hkspi_clk' will be added to the clock's propagated skew. (TIM-112)
  
@@ -12,14 +12,14 @@ Information: Input delay ('rise') on clock port 'hkspi_clk' will be added to the
 Report : qor
 Design : caravel
 Version: T-2022.03-SP5-6
-Date   : Sat Dec 14 18:31:05 2024
+Date   : Tue Dec 17 19:28:47 2024
 ****************************************
 
 
   Timing Path Group (none)
   -----------------------------------
-  Levels of Logic:               4.00
-  Critical Path Length:          2.92
+  Levels of Logic:               1.00
+  Critical Path Length:          0.02
   Critical Path Slack:         uninit
   Critical Path Clk Period:     25.00
   Total Negative Slack:          0.00
@@ -32,14 +32,14 @@ Date   : Sat Dec 14 18:31:05 2024
 
   Cell Count
   -----------------------------------
-  Hierarchical Cell Count:          1
-  Hierarchical Port Count:        698
-  Leaf Cell Count:                251
-  Buf/Inv Cell Count:              46
+  Hierarchical Cell Count:          2
+  Hierarchical Port Count:       1050
+  Leaf Cell Count:                102
+  Buf/Inv Cell Count:               0
   Buf Cell Count:                   0
-  Inv Cell Count:                  46
+  Inv Cell Count:                   0
   CT Buf/Inv Cell Count:            0
-  Combinational Cell Count:       251
+  Combinational Cell Count:       102
   Sequential Cell Count:            0
   Macro Count:                      0
   -----------------------------------
@@ -47,23 +47,23 @@ Date   : Sat Dec 14 18:31:05 2024
 
   Area
   -----------------------------------
-  Combinational Area:     2521.320028
-  Noncombinational Area:  4064.560028
-  Buf/Inv Area:            288.419999
+  Combinational Area:       50.180000
+  Noncombinational Area:  4077.120026
+  Buf/Inv Area:              0.000000
   Total Buffer Area:             0.00
-  Total Inverter Area:         288.42
-  Macro/Black Box Area:      0.000000
-  Net Area:                127.220792
+  Total Inverter Area:           0.00
+  Macro/Black Box Area:    100.320000
+  Net Area:                 45.722593
   -----------------------------------
-  Cell Area:              6585.880056
-  Design Area:            6713.100848
+  Cell Area:              4227.620026
+  Design Area:            4273.342619
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:           502
+  Total Number of Nets:           579
   Nets With Violations:            43
-  Max Trans Violations:            43
+  Max Trans Violations:             3
   Max Cap Violations:              41
   -----------------------------------
 
@@ -72,12 +72,12 @@ Date   : Sat Dec 14 18:31:05 2024
 
   Compile CPU Statistics
   -----------------------------------------
-  Resource Sharing:                    0.02
-  Logic Optimization:                  0.19
-  Mapping Optimization:                2.49
+  Resource Sharing:                   20.77
+  Logic Optimization:                  0.42
+  Mapping Optimization:                2.02
   -----------------------------------------
-  Overall Compile Time:                9.22
-  Overall Compile Wall Clock Time:     9.57
+  Overall Compile Time:              115.79
+  Overall Compile Wall Clock Time:   117.77
 
   --------------------------------------------------------------------
 
