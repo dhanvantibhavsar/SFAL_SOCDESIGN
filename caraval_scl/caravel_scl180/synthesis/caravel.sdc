@@ -33,7 +33,7 @@ set_input_transition -max $max_clk_tran [get_ports {clock}]
 
 if {$io_4_mode == "SCK"} {
    # deassert hkspi_disable
-   set_case_analysis 0 [get_pins {chip_core/housekeeping/_6817_/Q}]
+   # set_case_analysis 0 [get_pins {chip_core/housekeeping/_6817_/Q}]
    # dessert CSB
    set_case_analysis 0 [get_ports {mprj_io[3]} ] 
 
@@ -49,7 +49,7 @@ if {$io_4_mode == "SCK"} {
    -group [get_clocks {hkspi_clk}]
 } elseif {$io_4_mode == "GPIO"} {
    # assert hkspi_disable
-   set_case_analysis 1 [get_pins {chip_core/housekeeping/_6817_/Q}]
+   # set_case_analysis 1 [get_pins {chip_core/housekeeping/_6817_/Q}]
 
    set_clock_groups \
    -name clock_group \
@@ -59,18 +59,18 @@ if {$io_4_mode == "SCK"} {
    -group [get_clocks {hk_serial_load}]\
 } 
 # Add case analysis for clock pad DM[2]==1'b0 & DM[1]==1'b0 & DM[0]==1'b1 to be input
-set_case_analysis 0 [get_pins padframe/clock_pad/DM[2]]
-set_case_analysis 0 [get_pins padframe/clock_pad/DM[1]]
-set_case_analysis 1 [get_pins padframe/clock_pad/DM[0]]
-set_case_analysis 0 [get_pins padframe/clock_pad/INP_DIS]
+#set_case_analysis 0 [get_pins padframe/clock_pad/DM[2]]
+#set_case_analysis 0 [get_pins padframe/clock_pad/DM[1]]
+#set_case_analysis 1 [get_pins padframe/clock_pad/DM[0]]
+#set_case_analysis 0 [get_pins padframe/clock_pad/INP_DIS]
 # hk_serial_clk period is x2 core clock
 # clock <-> hk_serial_clk/load no paths
 # future note: CDC stuff
 # clock <-> hkspi_clk no paths with careful methods (clock is off)
 
 # Set system monitoring mux select to zero so that the clock/user_clk monitoring is disabled 
-set_case_analysis 0 [get_pins chip_core/housekeeping/_3949_/S]
-set_case_analysis 0 [get_pins chip_core/housekeeping/_3950_/S]
+# set_case_analysis 0 [get_pins chip_core/housekeeping/_3949_/S]
+# set_case_analysis 0 [get_pins chip_core/housekeeping/_3950_/S]
 
 set input_delay_value 4
 set output_delay_value 4
@@ -240,10 +240,10 @@ if {$ios_mode == "IN"} {
    }
 } elseif {$ios_mode == "OUT"} {
    # Add case analysis for pads DM[2]==1'b1 & DM[1]==1'b1 & DM[0]==1'b0 to be outputs
-   set_case_analysis 1 [get_pins padframe/*mprj*/DM[2]]
-   set_case_analysis 1 [get_pins padframe/*mprj*/DM[1]]
-   set_case_analysis 0 [get_pins padframe/*mprj*/DM[0]]
-   set_case_analysis 0 [get_pins padframe/*mprj*/OE_N]
+   #set_case_analysis 1 [get_pins padframe/*mprj*/DM[2]]
+   #set_case_analysis 1 [get_pins padframe/*mprj*/DM[1]]
+   #set_case_analysis 0 [get_pins padframe/*mprj*/DM[0]]
+   #set_case_analysis 0 [get_pins padframe/*mprj*/OE_N]
 
    # add loads for output ports (pads)
    set_load -min $min_cap [get_ports {mprj_io[*]}] 
@@ -286,18 +286,18 @@ if {$ios_mode == "IN"} {
    set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[37]}]
    if {$io_4_mode == "SCK"} {
       # SCK, CSB, SDI are inputs
-      set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[4]/DM[2]]
-      set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[4]/DM[1]]
-      set_case_analysis 1 [get_pins padframe/\mprj_pads.area1_io_pad[4]/DM[0]]
-      set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[4]/INP_DIS]
-      set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[3]/DM[2]]
-      set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[3]/DM[1]]
-      set_case_analysis 1 [get_pins padframe/\mprj_pads.area1_io_pad[3]/DM[0]]
-      set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[3]/INP_DIS]
-      set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[2]/DM[2]]
-      set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[2]/DM[1]]
-      set_case_analysis 1 [get_pins padframe/\mprj_pads.area1_io_pad[2]/DM[0]]
-      set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[2]/INP_DIS]
+      #set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[4]/DM[2]]
+      #set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[4]/DM[1]]
+      #set_case_analysis 1 [get_pins padframe/\mprj_pads.area1_io_pad[4]/DM[0]]
+      #set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[4]/INP_DIS]
+      #set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[3]/DM[2]]
+      #set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[3]/DM[1]]
+      #set_case_analysis 1 [get_pins padframe/\mprj_pads.area1_io_pad[3]/DM[0]]
+      #set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[3]/INP_DIS]
+      #set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[2]/DM[2]]
+      #set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[2]/DM[1]]
+      #set_case_analysis 1 [get_pins padframe/\mprj_pads.area1_io_pad[2]/DM[0]]
+      #set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[2]/INP_DIS]
       set_output_delay $output_delay_value  -clock [get_clocks {hkspi_clk}] [get_ports {mprj_io[1]}]
       set_input_delay $input_delay_value  -clock [get_clocks {hkspi_clk}] [get_ports {mprj_io[2]}]
       set_input_delay $input_delay_value  -clock [get_clocks {hkspi_clk}] [get_ports {mprj_io[3]}]
@@ -351,14 +351,14 @@ if {$ios_mode == "IN"} {
 }
 
 # flash_* are output except for io1
-set_case_analysis 1 [get_pins padframe/flash_*pad/DM[2]]
-set_case_analysis 1 [get_pins padframe/flash_*pad/DM[1]]
-set_case_analysis 0 [get_pins padframe/flash_*pad/DM[0]]
-set_case_analysis 0 [get_pins padframe/flash_*pad/INP_DIS]
-set_case_analysis 0 [get_pins padframe/flash_io1_pad/DM[2]]
-set_case_analysis 0 [get_pins padframe/flash_io1_pad/DM[1]]
-set_case_analysis 1 [get_pins padframe/flash_io1_pad/DM[0]]
-set_case_analysis 0 [get_pins padframe/flash_io1_pad/OE_N]
+#set_case_analysis 1 [get_pins padframe/flash_*pad/DM[2]]
+#set_case_analysis 1 [get_pins padframe/flash_*pad/DM[1]]
+#set_case_analysis 0 [get_pins padframe/flash_*pad/DM[0]]
+#set_case_analysis 0 [get_pins padframe/flash_*pad/INP_DIS]
+#set_case_analysis 0 [get_pins padframe/flash_io1_pad/DM[2]]
+#set_case_analysis 0 [get_pins padframe/flash_io1_pad/DM[1]]
+#set_case_analysis 1 [get_pins padframe/flash_io1_pad/DM[0]]
+#set_case_analysis 0 [get_pins padframe/flash_io1_pad/OE_N]
 
 #flash interface input transition from the datasheet
 set flash_min_tran 4
@@ -382,10 +382,10 @@ set_output_delay $flash_out_delay  -clock [get_clocks {clk}] -add_delay [get_por
 set_input_delay $flash_in_delay -clock [get_clocks {clk}] -add_delay [get_ports {flash_io1}]
 
 # gpio_pad is set as input pad
-set_case_analysis 0 [get_pins padframe/gpio_pad/DM[2]]
-set_case_analysis 0 [get_pins padframe/gpio_pad/DM[1]]
-set_case_analysis 1 [get_pins padframe/gpio_pad/DM[0]]
-set_case_analysis 0 [get_pins padframe/gpio_pad/INP_DIS]
+#set_case_analysis 0 [get_pins padframe/gpio_pad/DM[2]]
+#set_case_analysis 0 [get_pins padframe/gpio_pad/DM[1]]
+#set_case_analysis 1 [get_pins padframe/gpio_pad/DM[0]]
+#set_case_analysis 0 [get_pins padframe/gpio_pad/INP_DIS]
 set_input_transition -min $min_in_tran [get_ports {gpio}] 
 set_input_transition -max $max_in_tran [get_ports {gpio}] 
 
