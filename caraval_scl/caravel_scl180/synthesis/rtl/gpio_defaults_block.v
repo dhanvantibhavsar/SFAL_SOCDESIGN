@@ -44,7 +44,7 @@ module gpio_defaults_block #(
     // For the mask revision input, use an array of digital constant logic cells
 
     dummy_scl180_conb_1 gpio_default_value [12:0] (
-`ifndef USE_POWER_PINS
+`ifdef USE_POWER_PINS
             .VPWR(VPWR),
             .VPB(VPWR),
             .VNB(VGND),

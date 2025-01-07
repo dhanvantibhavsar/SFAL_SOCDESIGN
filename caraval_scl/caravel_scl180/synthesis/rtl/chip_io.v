@@ -1,7 +1,8 @@
-`include "pc3d01_wrapper.v"
-`include "pc3d21.v"
-`include "pt3b02_wrapper.v"
-`include "pc3b03ed_wrapper.v"
+//`include "pc3d01_wrapper.v"
+//`include "pc3d21.v"
+//`include "pt3b02_wrapper.v"
+//`include "pc3b03ed_wrapper.v"
+`include "pads..v"
 // SPDX-FileCopyrightText: 2020 Efabless Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +18,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-// `default_nettype none
+ `default_nettype wire
 module chip_io(
 	// Package Pins
 	inout  vddio_pad,		// Common padframe/ESD supply
@@ -98,7 +99,7 @@ module chip_io(
 	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_en,
 	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_sel,
 	input [`MPRJ_IO_PADS-1:0] mprj_io_analog_pol,
-	input [`MPRJ_IO_PADS*3-1:0] mprj_io_dm,
+	wire [`MPRJ_IO_PADS*3-1:0] mprj_io_dm,
 	output [`MPRJ_IO_PADS-1:0] mprj_io_in,
 	// Loopbacks to constant value 1 in the 1.8V domain
 	input [`MPRJ_IO_PADS-1:0] mprj_io_one,

@@ -120,32 +120,32 @@ module mgmt_protect (
 	wire 	    mprj_ack_i_core_bar;
 
         mprj_logic_high mprj_logic_high_inst (
-/*`ifdef USE_POWER_PINS
+`ifdef USE_POWER_PINS
                 .vccd1(vccd1),
                 .vssd1(vssd1),
-`endif*/
+`endif
                 .HI(mprj_logic1)
         );
 
         mprj2_logic_high mprj2_logic_high_inst (
-/*`ifdef USE_POWER_PINS
+`ifdef USE_POWER_PINS
                 .vccd2(vccd2),
                 .vssd2(vssd2),
-`endif*/
+`endif
                 .HI(mprj2_logic1)
         );
 
 	// Logic high in the VDDA (3.3V) domains
 
 	mgmt_protect_hv powergood_check (
-/*`ifdef USE_POWER_PINS
+`ifdef USE_POWER_PINS
 	    .vccd(vccd),
 	    .vssd(vssd),
 	    .vdda1(vdda1),
 	    .vssa1(vssa1),
 	    .vdda2(vdda2),
 	    .vssa2(vssa2),
-`endif */
+`endif 
 	    .mprj_vdd_logic1(mprj_vdd_logic1),
 	    .mprj2_vdd_logic1(mprj2_vdd_logic1)
 	);

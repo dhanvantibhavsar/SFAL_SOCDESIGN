@@ -22,10 +22,10 @@
 // gates provided by macro_sparecell.
 
 module spare_logic_block (
- /*   `ifdef USE_POWER_PINS
+    `ifdef USE_POWER_PINS
         inout vccd,
         inout vssd,
-    `endif*/
+    `endif
 
     output [26:0] spare_xz,	// Constant 0 outputs (and block inputs)
     output [3:0]  spare_xi,	// Inverter outputs

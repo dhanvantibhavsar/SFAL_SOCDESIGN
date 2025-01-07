@@ -36,10 +36,10 @@
 /* with the Caravel harness chip. */    
 
 module mgmt_core_wrapper (
-/*`ifdef USE_POWER_PINS
+`ifdef USE_POWER_PINS
     inout VPWR,     /* 1.8V domain */
- /*   inout VGND,
-`endif*/
+   inout VGND,
+`endif
     // Clock and reset
     input core_clk,
     input core_rstn,
@@ -126,10 +126,10 @@ module mgmt_core_wrapper (
     /* Implement the PicoSoC core */
 
     mgmt_core core (
- /*   `ifdef USE_POWER_PINS
+    `ifdef USE_POWER_PINS
         .VPWR(VPWR),      */  /* 1.8V domain */
- /*       .VGND(VGND),
-    `endif */
+        .VGND(VGND),
+    `endif 
         .core_clk(core_clk),
         .core_rstn(core_rstn),
 

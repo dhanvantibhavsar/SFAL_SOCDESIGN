@@ -23,16 +23,16 @@
 `endif
 
 module digital_pll(
-/*`ifdef USE_POWER_PINS
+`ifdef USE_POWER_PINS
     VPWR,
     VGND,
-`endif */
+`endif 
     resetb, enable, osc, clockp, div, dco, ext_trim);
 
-/*`ifdef USE_POWER_PINS
+`ifdef USE_POWER_PINS
     input VPWR;
     input VGND;
-`endif */
+`endif 
 
     input	 resetb;	// Sense negative reset
     input	 enable;	// Enable PLL

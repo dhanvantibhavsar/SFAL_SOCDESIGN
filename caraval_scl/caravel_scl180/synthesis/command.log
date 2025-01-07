@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version T-2022.03-SP5-6 for linux64 -- Sep 20, 2023
-#@ # Date:   Wed Dec 18 16:22:09 2024
+#@ # Date:   Tue Jan  7 08:10:02 2025
 #@ # Run by: dhanvanti@sfalvsd
 #@ 
 
@@ -8635,10 +8635,15 @@ source -echo -verbose /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/carave
 #@ 
 #@ read_db "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/lib/sky130_fd_sc_hvl__ff_n40C_4v40.db"
 #@ 
+#@ read_db "/home/dhanvanti/scl_pdk_v2/iolib/cio250/synopsys/2002.05/models/tsl18cio250_typ.db"
 #@ 
-#@ set target_library "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/lib/sky130_fd_sc_hvl__ff_n40C_4v40.db"
 #@ 
-#@ set link_library {"* /home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/lib/sky130_fd_sc_hvl__ff_n40C_4v40.db"}
+#@ set target_library "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/lib/sky130_fd_sc_hvl__ff_n40C_4v40.db /home/dhanvanti/scl_pdk_v2/iolib/cio250/synopsys/2002.05/models/tsl18cio250_typ.db"
+#@ 
+#@ set link_library {"* /home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/lib/sky130_fd_sc_hvl__ff_n40C_4v40.db /home/dhanvanti/scl_pdk_v2/iolib/cio250/synopsys/2002.05/models/tsl18cio250_typ.db"}
+#@ 
+#@ set_app_var target_library $target_library
+#@ set_app_var link_library "* $link_library"
 #@ 
 #@ foreach_in_collection cell [get_lib_cells sky130_fd_sc_hvl__ff_n40C_4v40/*] {
 #@ 	if { $cell != "sky130_fd_sc_hvl__schmittbuf_1" } {
@@ -8656,14 +8661,14 @@ source -echo -verbose /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/carave
 #@ 
 #@ elaborate $top_module
 #@ link
-#@ #read_sdc "$root_dir/synthesis/caravel.sdc"
-#@ #compile_ultra
+#@ read_sdc "$root_dir/synthesis/caravel.sdc"
+#@ compile_ultra
 #@ 
-#@ #report_qor > "$report_dir/qor_post_synth.rpt"
-#@ #report_area > "$report_dir/area_post_synth.rpt"
-#@ #report_power > "$report_dir/power_post_synth.rpt"
+#@ report_qor > "$report_dir/qor_post_synth.rpt"
+#@ report_area > "$report_dir/area_post_synth.rpt"
+#@ report_power > "$report_dir/power_post_synth.rpt"
 #@ 
-#@ #write -format verilog -hierarchy -output $output_file
+#@ write -format verilog -hierarchy -output $output_file
 #@ 
 #@ 
 #@ 
@@ -8674,205 +8679,3 @@ source -echo -verbose /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/carave
 #@ 
 #@ # -- End source /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/synth.tcl
 
-set io_4_mode SCK
-puts "\[INFO\]: IO[4] is set as: $io_4_mode"
-set ios_mode OUT
-puts "\[INFO\]: GPIOs mode is set as: $ios_mode"
-set ::env(IO_SYNC) 0
-set clk_period 25
-create_clock -name clk -period $clk_period [get_ports {clock}]
-puts "\[INFO\]: System clock period: $clk_period"
-create_clock -name hk_serial_clk -period 100 [get_pins {chip_core/housekeeping/serial_clock}]
-create_clock -name hk_serial_load -period 1000 [get_pins {chip_core/housekeeping/serial_load}]
-set_clock_uncertainty 0.1000 [get_clocks {clk hk_serial_clk hk_serial_load}]
-set_propagated_clock [get_clocks {clk hk_serial_clk hk_serial_load}]
-set min_clk_tran 1
-set max_clk_tran 1.5
-puts "\[INFO\]: Clock transition range: $min_clk_tran : $max_clk_tran"
-set_input_transition -min $min_clk_tran [get_ports {clock}]
-set_input_transition -max $max_clk_tran [get_ports {clock}]
-if {$io_4_mode == "SCK"} {
-   # deassert hkspi_disable
-   # set_case_analysis 0 [get_pins {chip_core/housekeeping/_6817_/Q}]
-   # dessert CSB
-   set_case_analysis 0 [get_ports {mprj_io[3]} ] 
-
-   create_clock -name hkspi_clk -period 100 [get_ports {mprj_io[4]} ] 
-   set_clock_uncertainty 0.1000 [get_clocks {hkspi_clk}]
-   set_propagated_clock [get_clocks {hkspi_clk}]
-   set_clock_groups    -name clock_group    -logically_exclusive    -group [get_clocks {clk}]   -group [get_clocks {hk_serial_clk}]   -group [get_clocks {hk_serial_load}]   -group [get_clocks {hkspi_clk}]
-} elseif {$io_4_mode == "GPIO"} {
-   # assert hkspi_disable
-   # set_case_analysis 1 [get_pins {chip_core/housekeeping/_6817_/Q}]
-
-   set_clock_groups    -name clock_group    -logically_exclusive    -group [get_clocks {clk}]   -group [get_clocks {hk_serial_clk}]   -group [get_clocks {hk_serial_load}]}
-set_case_analysis 0 [get_pins padframe/clock_pad/DM[2]]
-set_case_analysis 0 [get_pins padframe/clock_pad/DM[1]]
-set_case_analysis 1 [get_pins padframe/clock_pad/DM[0]]
-set_case_analysis 0 [get_pins padframe/clock_pad/INP_DIS]
-set input_delay_value 4
-set output_delay_value 4
-puts "\[INFO\]: Setting input delay to: $input_delay_value"
-puts "\[INFO\]: Setting output delay to: $output_delay_value"
-set min_in_tran 1
-set max_in_tran 4
-puts "\[INFO\]: Input transition range: $min_in_tran : $max_in_tran"
-set min_cap 4
-set max_cap 7
-puts "\[INFO\]: Cap load range: $min_cap : $max_cap"
-$ios_mode == "IN"
-echo $ios_mode
-set_case_analysis 1 [get_pins padframe/*mprj*/DM[2]]
-set_load -min $min_cap [get_ports {mprj_io[*]}]
-set_load -max $max_cap [get_ports {mprj_io[*]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[0]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[5]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[6]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[7]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[8]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[9]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[10]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[11]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[12]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[13]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[14]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[15]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[16]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[17]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[18]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[19]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[20]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[21]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[22]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[23]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[24]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[25]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[26]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[27]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[28]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[29]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[30]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[31]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[32]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[33]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[34]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[35]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[36]}]
-set_output_delay $output_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {mprj_io[37]}]
-echo $io_4_mode
-set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[4]/DM[2]]
-set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[4]/DM[1]]
-set_case_analysis 1 [get_pins padframe/\mprj_pads.area1_io_pad[4]/DM[0]]
-set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[4]/INP_DIS]
-set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[3]/DM[2]]
-set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[3]/DM[1]]
-set_case_analysis 1 [get_pins padframe/\mprj_pads.area1_io_pad[3]/DM[0]]
-set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[3]/INP_DIS]
-set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[2]/DM[2]]
-set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[2]/DM[1]]
-set_case_analysis 1 [get_pins padframe/\mprj_pads.area1_io_pad[2]/DM[0]]
-set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[2]/INP_DIS]
-set_output_delay $output_delay_value  -clock [get_clocks {hkspi_clk}] [get_ports {mprj_io[1]}]
-set_input_delay $input_delay_value  -clock [get_clocks {hkspi_clk}] [get_ports {mprj_io[2]}]
-set_input_delay $input_delay_value  -clock [get_clocks {hkspi_clk}] [get_ports {mprj_io[3]}]
-set_input_transition -min $min_in_tran [get_ports {mprj_io[2] mprj_io[2]}]
-set_input_transition -max $max_in_tran [get_ports {mprj_io[3] mprj_io[3]}]
-echo $set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[4]/DM[2]]
-set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[4]/DM[1]]
-set_case_analysis 1 [get_pins padframe/\mprj_pads.area1_io_pad[4]/DM[0]]
-set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[4]/INP_DIS]
-set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[3]/DM[2]]
-set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[3]/DM[1]]
-set_case_analysis 1 [get_pins padframe/\mprj_pads.area1_io_pad[3]/DM[0]]
-set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[3]/INP_DIS]
-set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[2]/DM[2]]
-set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[2]/DM[1]]
-set_case_analysis 1 [get_pins padframe/\mprj_pads.area1_io_pad[2]/DM[0]]
-set_case_analysis 0 [get_pins padframe/\mprj_pads.area1_io_pad[2]/INP_DIS]
-set_output_delay $output_delay_value  -clock [get_clocks {hkspi_clk}] [get_ports {mprj_io[1]}]
-set_input_delay $input_delay_value  -clock [get_clocks {hkspi_clk}] [get_ports {mprj_io[2]}]
-set_input_delay $input_delay_value  -clock [get_clocks {hkspi_clk}] [get_ports {mprj_io[3]}]
-set_input_transition -min $min_in_tran [get_ports {mprj_io[2] mprj_io[2]}]
-set_input_transition -max $max_in_tran [get_ports {mprj_io[3] mprj_io[3]}]
-echo $::env(IO_SYNC)
-set_false_path -to [get_ports mprj_io[0]]
-set_false_path -to [get_ports mprj_io[5]]
-set_false_path -to [get_ports mprj_io[6]]
-set_false_path -to [get_ports mprj_io[7]]
-set_false_path -to [get_ports mprj_io[8]]
-set_false_path -to [get_ports mprj_io[9]]
-set_false_path -to [get_ports mprj_io[10]]
-set_false_path -to [get_ports mprj_io[11]]
-set_false_path -to [get_ports mprj_io[12]]
-set_false_path -to [get_ports mprj_io[13]]
-set_false_path -to [get_ports mprj_io[14]]
-set_false_path -to [get_ports mprj_io[15]]
-set_false_path -to [get_ports mprj_io[16]]
-set_false_path -to [get_ports mprj_io[17]]
-set_false_path -to [get_ports mprj_io[18]]
-set_false_path -to [get_ports mprj_io[19]]
-set_false_path -to [get_ports mprj_io[20]]
-set_false_path -to [get_ports mprj_io[21]]
-set_false_path -to [get_ports mprj_io[22]]
-set_false_path -to [get_ports mprj_io[23]]
-set_false_path -to [get_ports mprj_io[24]]
-set_false_path -to [get_ports mprj_io[25]]
-set_false_path -to [get_ports mprj_io[26]]
-set_false_path -to [get_ports mprj_io[27]]
-set_false_path -to [get_ports mprj_io[28]]
-set_false_path -to [get_ports mprj_io[29]]
-set_false_path -to [get_ports mprj_io[30]]
-set_false_path -to [get_ports mprj_io[31]]
-set_false_path -to [get_ports mprj_io[32]]
-set_false_path -to [get_ports mprj_io[33]]
-set_false_path -to [get_ports mprj_io[34]]
-set_false_path -to [get_ports mprj_io[35]]
-set_false_path -to [get_ports mprj_io[36]]
-set_false_path -to [get_ports mprj_io[37]]
-set_case_analysis 1 [get_pins padframe/flash_*pad/DM[2]]
-set_case_analysis 1 [get_pins padframe/flash_*pad/DM[1]]
-set_case_analysis 0 [get_pins padframe/flash_*pad/DM[0]]
-set_case_analysis 0 [get_pins padframe/flash_*pad/INP_DIS]
-set_case_analysis 0 [get_pins padframe/flash_io1_pad/DM[2]]
-set_case_analysis 0 [get_pins padframe/flash_io1_pad/DM[1]]
-set_case_analysis 1 [get_pins padframe/flash_io1_pad/DM[0]]
-set_case_analysis 0 [get_pins padframe/flash_io1_pad/OE_N]
-set flash_min_tran 4
-set flash_max_tran 6
-puts "\[INFO\]: Flash interface transition range: $flash_min_tran : $flash_max_tran"
-set_input_transition -min $flash_min_tran [get_ports {flash_io1}]
-set_input_transition -max $flash_max_tran [get_ports {flash_io1}]
-set flash_min_cap 6
-set flash_max_cap 8
-puts "\[INFO\]: Flash interface cap load range: $flash_min_cap : $flash_max_cap"
-set_load -min $min_cap [get_ports {flash_csb flash_clk flash_io0}]
-set_load -max $max_cap [get_ports {flash_csb flash_clk flash_io0}]
-set flash_in_delay 4
-set flash_out_delay 4
-puts "\[INFO\]: Flash interface delay: input $flash_in_delay output $flash_out_delay"
-set_output_delay $flash_out_delay  -clock [get_clocks {clk}] -add_delay [get_ports {flash_csb}]
-set_output_delay $flash_out_delay  -clock [get_clocks {clk}] -add_delay [get_ports {flash_clk}]
-set_output_delay $flash_out_delay  -clock [get_clocks {clk}] -add_delay [get_ports {flash_io0}]
-set_input_delay $flash_in_delay -clock [get_clocks {clk}] -add_delay [get_ports {flash_io1}]
-set_case_analysis 0 [get_pins padframe/gpio_pad/DM[2]]
-set_case_analysis 0 [get_pins padframe/gpio_pad/DM[1]]
-set_case_analysis 1 [get_pins padframe/gpio_pad/DM[0]]
-set_case_analysis 0 [get_pins padframe/gpio_pad/INP_DIS]
-set_input_transition -min $min_in_tran [get_ports {gpio}]
-set_input_transition -max $max_in_tran [get_ports {gpio}]
-set_input_delay $input_delay_value  -clock [get_clocks {clk}] -add_delay [get_ports {gpio}]
-set_max_fanout 18 [current_design]
-set_false_path -from [get_ports resetb]
-set_false_path -from [get_ports gpio]
-set derate 0.0375
-puts "\[INFO\]: Setting derate factor to: [expr $derate * 100] %"
-set_timing_derate -early [expr 1-$derate]
-set_timing_derate -late [expr 1+$derate]
-compile_ultra
-set derate 0.0375
-puts "\[INFO\]: Setting derate factor to: [expr $derate * 100] %"
-set_timing_derate -early [expr 1-$derate]
-report_qor > "$report_dir/qor_post_synth.rpt"
-report_area > "$report_dir/area_post_synth.rpt"
-report_power > "$report_dir/power_post_synth.rpt"
-write -format verilog -hierarchy -output $output_file

@@ -106,7 +106,7 @@ module gpio_signal_buffering_alt (
     wire [101:0] buf_in;
     wire [101:0] buf_out;
 
-    sky130_fd_sc_hd__buf_8 signal_buffers [101:0] (
+    /*sky130_fd_sc_hd__buf_8 signal_buffers [101:0] (
         `ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
@@ -115,7 +115,7 @@ module gpio_signal_buffering_alt (
 	`endif
 	.A(buf_in),
 	.X(buf_out)
-    );
+    );*/
 
     /* Now chain them all together */
 

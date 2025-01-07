@@ -33,13 +33,13 @@
 /*--------------------------------------------------------------*/
 
 
-`include "mprj_io_buffer.v"
-`include "manual_power_connections.v"
-`include "empty_macro.v"
-`include "user_defines.v"
-`include "mgmt_core.v"
-`include "defines.v"
-`include "gpio_control_block.v"
+//`include "mprj_io_buffer.v"
+//`include "manual_power_connections.v"
+//`include "empty_macro.v"
+//`include "user_defines.v"
+//`include "mgmt_core.v"
+//`include "defines.v"
+//`include "gpio_control_block.v"
 
 `default_nettype wire
 module caravel_core (
@@ -282,11 +282,11 @@ module caravel_core (
     // implementation must match this pinout.
 
     mgmt_core_wrapper soc (
-/*	`ifdef USE_POWER_PINS
+	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
 	`endif
-*/
+
 	// Clock and reset
 	.core_clk(caravel_clk),
 	.core_rstn(caravel_rstn),
@@ -379,7 +379,7 @@ module caravel_core (
     /* the vccd1 domain.						*/
 
     mgmt_protect mgmt_buffers (
-/*	`ifdef USE_POWER_PINS
+	`ifdef USE_POWER_PINS
  	    .vccd(vccd),
 	    .vssd(vssd),
 	    .vccd1(vccd1),
@@ -390,7 +390,7 @@ module caravel_core (
 	    .vssa1(vssa1),
 	    .vdda2(vdda2),
 	    .vssa2(vssa2),
-	`endif */
+	`endif 
 	.caravel_clk(caravel_clk),
 	.caravel_clk2(caravel_clk2),
 	.caravel_rstn(caravel_rstn),
@@ -438,7 +438,7 @@ module caravel_core (
     /* Wrapper module around the user project 		*/
     /*--------------------------------------------------*/
 
-    user_project_wrapper mprj ( 
+   // user_project_wrapper mprj ( 
     /*    `ifdef USE_POWER_PINS
 	    .vdda1(vdda1),		// User area 1 3.3V power
 	    .vdda2(vdda2),		// User area 2 3.3V power
@@ -450,35 +450,35 @@ module caravel_core (
 	    .vssd2(vssd2),		// User area 2 digital ground
     	`endif*/
 
-    	.wb_clk_i(mprj_clock),
-    	.wb_rst_i(mprj_reset),
+    //	.wb_clk_i(mprj_clock),
+    	//.wb_rst_i(mprj_reset),
 
 	// Management SoC Wishbone bus (exported)
-	.wbs_cyc_i(mprj_cyc_o_user),
-	.wbs_stb_i(mprj_stb_o_user),
-	.wbs_we_i(mprj_we_o_user),
-	.wbs_sel_i(mprj_sel_o_user),
-	.wbs_adr_i(mprj_adr_o_user),
-	.wbs_dat_i(mprj_dat_o_user),
-	.wbs_ack_o(mprj_ack_i_user),
-	.wbs_dat_o(mprj_dat_i_user),
+	//.wbs_cyc_i(mprj_cyc_o_user),
+//	.wbs_stb_i(mprj_stb_o_user),
+	//.wbs_we_i(mprj_we_o_user),
+	//.wbs_sel_i(mprj_sel_o_user),
+	//.wbs_adr_i(mprj_adr_o_user),
+	//.wbs_dat_i(mprj_dat_o_user),
+	//.wbs_ack_o(mprj_ack_i_user),
+	//.wbs_dat_o(mprj_dat_i_user),
 
 	// GPIO pad 3-pin interface (plus analog)
-	.io_in (user_io_in),
-    .io_out(user_io_out),
-    .io_oeb(user_io_oeb),
-	.analog_io(mprj_analog_io),
+	//.io_in (user_io_in),
+    //.io_out(user_io_out),
+    //.io_oeb(user_io_oeb),
+	//.analog_io(mprj_analog_io),
 
 	// Logic analyzer
-	.la_data_in(la_data_in_user),
-	.la_data_out(la_data_out_user),
-	.la_oenb(la_oenb_user),
+	//.la_data_in(la_data_in_user),
+	//.la_data_out(la_data_out_user),
+	//.la_oenb(la_oenb_user),
 
 	// Independent clock
-	.user_clock2(mprj_clock2),
+	//.user_clock2(mprj_clock2),
 
 	// IRQ
-	.user_irq(user_irq_core)
+	//.user_irq(user_irq_core)
     );
 
     /*------------------------------------------*/
@@ -526,10 +526,10 @@ module caravel_core (
     // Clocking control
 
     caravel_clocking clock_ctrl (
-    /*`ifdef USE_POWER_PINS
+    `ifdef USE_POWER_PINS
 		.VPWR(vccd),
 		.VGND(vssd),
-    `endif*/
+    `endif
         .porb(porb_l),
         .ext_clk_sel(ext_clk_sel),
         .ext_clk(clock_core),
@@ -684,10 +684,10 @@ module caravel_core (
     );
 
   mprj_io_buffer gpio_buf (
-/*`ifdef USE_POWER_PINS
+`ifdef USE_POWER_PINS
       .VPWR(vccd),
       .VGND(vssd),
-`endif */
+`endif 
 
       .mgmt_gpio_in(mgmt_gpio_in),
       .mgmt_gpio_in_buf(mgmt_gpio_in_buf),
@@ -713,7 +713,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(13'h1803)
     ) gpio_defaults_block_0 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -723,7 +723,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(13'h1803)
     ) gpio_defaults_block_1 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -733,7 +733,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(13'h0403)
     ) gpio_defaults_block_2 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -744,7 +744,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(13'h0801)
     ) gpio_defaults_block_3 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -754,7 +754,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(13'h0403)
     ) gpio_defaults_block_4 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -766,7 +766,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_5_INIT)
     ) gpio_defaults_block_5 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -776,7 +776,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_6_INIT)
     ) gpio_defaults_block_6 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -786,7 +786,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_7_INIT)
     ) gpio_defaults_block_7 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -796,7 +796,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_8_INIT)
     ) gpio_defaults_block_8 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -806,7 +806,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_9_INIT)
     ) gpio_defaults_block_9 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -816,7 +816,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_10_INIT)
     ) gpio_defaults_block_10 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -826,7 +826,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_11_INIT)
     ) gpio_defaults_block_11 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -836,7 +836,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_12_INIT)
     ) gpio_defaults_block_12 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -846,7 +846,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_13_INIT)
     ) gpio_defaults_block_13 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -856,7 +856,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_14_INIT)
     ) gpio_defaults_block_14 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -866,7 +866,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_15_INIT)
     ) gpio_defaults_block_15 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -876,7 +876,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_16_INIT)
     ) gpio_defaults_block_16 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -886,7 +886,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_17_INIT)
     ) gpio_defaults_block_17 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -896,7 +896,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_18_INIT)
     ) gpio_defaults_block_18 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -906,7 +906,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_19_INIT)
     ) gpio_defaults_block_19 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -916,8 +916,8 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_20_INIT)
     ) gpio_defaults_block_20 (
-    	`ifndef USE_POWER_PINS
-	    .VPWR(vccd),
+    	`ifdef USE_POWER_PINS
+	   .VPWR(vccd),
 	    .VGND(vssd),
         `endif
 	.gpio_defaults(gpio_defaults[272:260])
@@ -926,7 +926,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_21_INIT)
     ) gpio_defaults_block_21 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -936,7 +936,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_22_INIT)
     ) gpio_defaults_block_22 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -946,7 +946,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_23_INIT)
     ) gpio_defaults_block_23 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -956,7 +956,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_24_INIT)
     ) gpio_defaults_block_24 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -966,7 +966,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_25_INIT)
     ) gpio_defaults_block_25 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -976,7 +976,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_26_INIT)
     ) gpio_defaults_block_26 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -986,7 +986,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_27_INIT)
     ) gpio_defaults_block_27 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -996,7 +996,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_28_INIT)
     ) gpio_defaults_block_28 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -1006,7 +1006,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_29_INIT)
     ) gpio_defaults_block_29 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -1016,7 +1016,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_30_INIT)
     ) gpio_defaults_block_30 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -1026,7 +1026,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_31_INIT)
     ) gpio_defaults_block_31 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -1036,7 +1036,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_32_INIT)
     ) gpio_defaults_block_32 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -1046,7 +1046,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_33_INIT)
     ) gpio_defaults_block_33 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -1056,7 +1056,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_34_INIT)
     ) gpio_defaults_block_34 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -1066,7 +1066,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_35_INIT)
     ) gpio_defaults_block_35 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -1076,7 +1076,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_36_INIT)
     ) gpio_defaults_block_36 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -1086,7 +1086,7 @@ module caravel_core (
     gpio_defaults_block #(
 	.GPIO_CONFIG_INIT(`USER_CONFIG_GPIO_37_INIT)
     ) gpio_defaults_block_37 (
-    	`ifndef USE_POWER_PINS
+    	`ifdef USE_POWER_PINS
 	    .VPWR(vccd),
 	    .VGND(vssd),
         `endif
@@ -1424,11 +1424,11 @@ module caravel_core (
     // Four spare logic blocks above the processor and one per GPIO
     // control block.
 (* keep *) spare_logic_block spare_logic [`NUM_SPARE_BLOCKS-1:0] (
-	/*`ifdef USE_POWER_PINS
+	`ifdef USE_POWER_PINS
 
 		.vccd(vccd),
 		.vssd(vssd),
-	`endif */
+	`endif 
 		.spare_xz(spare_xz_nc),
 		.spare_xi(spare_xi_nc),
 		.spare_xib(spare_xib_nc),

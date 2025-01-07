@@ -1,7 +1,7 @@
 // Generator : SpinalHDL v1.6.0    git head : 73c8d8e2b86b45646e9d0b2e729291f2b65e6be3
 // Component : VexRiscv
 // Git hash  : c4eca1837ebca20b637a0a61e3a93d9446488459
-
+`default_nettype wire
 
 `define EnvCtrlEnum_binary_sequential_type [1:0]
 `define EnvCtrlEnum_binary_sequential_NONE 2'b00

@@ -14,10 +14,10 @@
 // SPDX-License-Identifier: Apache-2.0
 
 module mprj2_logic_high (
-/*`ifdef USE_POWER_PINS
+`ifdef USE_POWER_PINS
     inout	   vccd2,
     inout	   vssd2,
-`endif */
+`endif 
     output         HI
 );
 dummy_scl180_conb_1 inst (
