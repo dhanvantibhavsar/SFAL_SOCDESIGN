@@ -68,10 +68,10 @@ module constant_block (
             .VGND(vssd),
             .VPB(vccd),
             .VNB(vssd),
-`endif
+`endif*/
             .I(zero_unbuf),
             .Z(zero)
-    );*/
+    );
 
 endmodule
 `default_nettype wire

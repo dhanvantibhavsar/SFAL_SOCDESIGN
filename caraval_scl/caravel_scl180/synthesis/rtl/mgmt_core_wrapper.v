@@ -127,7 +127,7 @@ module mgmt_core_wrapper (
 
     mgmt_core core (
     `ifdef USE_POWER_PINS
-        .VPWR(VPWR),      */  /* 1.8V domain */
+        .VPWR(VPWR),       /* 1.8V domain */
         .VGND(VGND),
     `endif 
         .core_clk(core_clk),

@@ -18,10 +18,10 @@
 `default_nettype wire
 
 module mprj_io_buffer (
-/*`ifdef USE_POWER_PINS
+`ifdef USE_POWER_PINS
       input VPWR,
       input VGND,
-`endif*/
+`endif
      input [(`MPRJ_IO_PADS_1-1):0]  mgmt_gpio_in,
      output [(`MPRJ_IO_PADS_1-1):0] mgmt_gpio_in_buf,
      input [2:0]   mgmt_gpio_oeb,

@@ -44,6 +44,10 @@
 
 
 module VexRiscv (
+`ifdef USE_POWER_PINS
+	inout vccd1,
+	inout vssd1,
+`endif
   input      [31:0]   externalResetVector,
   input               timerInterrupt,
   input               softwareInterrupt,

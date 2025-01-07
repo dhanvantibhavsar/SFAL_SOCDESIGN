@@ -28,7 +28,8 @@ module simple_por(
     output porb_l,
     output por_l
 );
-
+	
+`ifdef USE_POWER_PINS_SIM
     wire mid;
     reg inode;
 
@@ -98,6 +99,6 @@ module simple_por(
     // since this is behavioral anyway, but this should be
     // replaced by a proper inverter
     assign por_l = ~porb_l;
-
+`endif
 endmodule
 `default_nettype wire

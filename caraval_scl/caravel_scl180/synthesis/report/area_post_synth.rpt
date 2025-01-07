@@ -1,10 +1,9 @@
-Warning: Design 'caravel' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : area
 Design : caravel
 Version: T-2022.03-SP5-6
-Date   : Tue Jan  7 08:12:48 2025
+Date   : Tue Jan  7 14:22:51 2025
 ****************************************
 
 Library(s) Used:
@@ -12,23 +11,21 @@ Library(s) Used:
     tsl18fs120_scl_ff (File: /home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db)
     tsl18cio250_typ (File: /home/dhanvanti/scl_pdk_v2/iolib/cio250/synopsys/2002.05/models/tsl18cio250_typ.db)
 
-Number of ports:                         1113
-Number of nets:                          1591
-Number of cells:                          918
-Number of combinational cells:            349
-Number of sequential cells:               498
-Number of macros/black boxes:              19
-Number of buf/inv:                        128
-Number of references:                      37
+Number of ports:                         2433
+Number of nets:                         60281
+Number of cells:                        58786
+Number of combinational cells:          40664
+Number of sequential cells:             18057
+Number of macros/black boxes:              20
+Number of buf/inv:                       7260
+Number of references:                      53
 
-Combinational area:               5562.900014
-Buf/Inv area:                      934.239997
-Noncombinational area:           34231.970493
-Macro/Black Box area:             3986.640190
-Net Interconnect area:            1775.369817
+Combinational area:             743709.475571
+Buf/Inv area:                    76340.359877
+Noncombinational area:         1134227.253620
+Macro/Black Box area:             5282.080254
+Net Interconnect area:           83129.549730
 
-Total cell area:                 43781.510697
-Total area:                      45556.880514
-
-Information: This design contains black box (unknown) components. (RPT-8)
+Total cell area:               1883218.809444
+Total area:                    1966348.359175
 1

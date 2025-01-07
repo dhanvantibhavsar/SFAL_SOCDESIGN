@@ -13,6 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
+`include "defines.v"
 `default_nettype wire
 
 /* Define the array of GPIO pads.  Note that the analog project support

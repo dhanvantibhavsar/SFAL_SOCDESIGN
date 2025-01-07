@@ -26,7 +26,7 @@
 /*----------------------------------------------------------------------*/
 
 module mgmt_protect_hv (
-/*`ifdef USE_POWER_PINS
+`ifdef USE_POWER_PINS
     inout	vccd,
     inout	vssd,
     inout	vdda1,
@@ -34,7 +34,7 @@ module mgmt_protect_hv (
     inout	vdda2,
     inout	vssa2,
 `endif
-*/
+
     output	mprj_vdd_logic1,
     output	mprj2_vdd_logic1
 

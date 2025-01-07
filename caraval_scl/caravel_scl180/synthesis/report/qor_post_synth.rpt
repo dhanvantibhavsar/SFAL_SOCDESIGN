@@ -1,36 +1,50 @@
-Information: Building the design 'mprj_io'. (HDL-193)
-Warning:  File /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/mprj_io-verilog.pvl not found, or does not contain a usable description of mprj_io. (ELAB-320)
-Presto compilation completed successfully.
-Warning: Unable to resolve reference 'mprj_io' in 'chip_io'. (LINK-5)
 Information: Updating design information... (UID-85)
 Information: Timing loop detected. (OPT-150)
-	chip_core/pll/pll_control/tval_reg[6]/CP chip_core/pll/pll_control/tval_reg[6]/Q U540/A1 U540/ZN U548/I U548/ZN U707/A U707/ZN U708/I U708/ZN U511/I1 U511/Z U543/I U543/ZN chip_core/pll/ringosc/iss/delayen0/EN chip_core/pll/ringosc/iss/delayen0/ZN 
+	chip_core/housekeeping/U463/I chip_core/housekeeping/U463/Z chip_core/housekeeping/wbbd_sck_reg/CP chip_core/housekeeping/wbbd_sck_reg/Q chip_core/housekeeping/U266/A1 chip_core/housekeeping/U266/ZN chip_core/housekeeping/U3138/A chip_core/housekeeping/U3138/ZN chip_core/housekeeping/U272/I chip_core/housekeeping/U272/Z chip_core/housekeeping/U273/I chip_core/housekeeping/U273/Z chip_core/housekeeping/U277/I chip_core/housekeeping/U277/Z chip_core/housekeeping/U275/I chip_core/housekeeping/U275/Z chip_core/housekeeping/U278/I chip_core/housekeeping/U278/Z chip_core/housekeeping/pll_trim_reg[5]/CP chip_core/housekeeping/pll_trim_reg[5]/QN U594/I0 U594/Z U1138/I U1138/ZN chip_core/pll/ringosc/dstage[5].id/delayen0/EN chip_core/pll/ringosc/dstage[5].id/delayen0/ZN chip_core/clock_ctrl/ext_clk_syncd_reg/CP chip_core/clock_ctrl/ext_clk_syncd_reg/Q U588/I1 U588/Z U587/I0 U587/Z U850/I U850/ZN U851/I U851/ZN 
 Information: Timing loop detected. (OPT-150)
-	U541/A U541/ZN U722/A U722/ZN U510/I1 U510/Z U743/I U743/ZN chip_core/pll/ringosc/dstage[11].id/delayen0/EN chip_core/pll/ringosc/dstage[11].id/delayen0/ZN chip_core/pll/ringosc/iss/delayenb0/I chip_core/pll/ringosc/iss/delayenb0/ZN chip_core/pll/pll_control/tval_reg[6]/CP chip_core/pll/pll_control/tval_reg[6]/Q 
+	chip_core/housekeeping/U287/I chip_core/housekeeping/U287/Z chip_core/housekeeping/U288/I chip_core/housekeeping/U288/Z chip_core/housekeeping/hkspi_disable_reg/CP chip_core/housekeeping/hkspi_disable_reg/Q chip_core/housekeeping/U411/A1 chip_core/housekeeping/U411/ZN chip_core/housekeeping/U208/A1 chip_core/housekeeping/U208/ZN chip_core/housekeeping/U3138/C2 chip_core/housekeeping/U3138/ZN chip_core/housekeeping/U272/I chip_core/housekeeping/U272/Z chip_core/housekeeping/U273/I chip_core/housekeeping/U273/Z 
+Warning: Disabling timing arc between pins 'I1' and 'Z' on cell 'U588'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'C2' and 'ZN' on cell 'chip_core/housekeeping/U3138'
+         to break a timing loop. (OPT-314)
 Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/pll/pll_control/tval_reg[6]'
-         to break a timing loop (originally by case_analysis). (OPT-314)
-Warning: Disabling timing arc between pins 'EN' and 'ZN' on cell 'chip_core/pll/ringosc/iss/delayen0'
-         to break a timing loop (originally by case_analysis). (OPT-314)
-Warning: Disabling timing arc between pins 'EN' and 'ZN' on cell 'chip_core/pll/ringosc/iss/delayen0'
-         to break a timing loop (originally by case_analysis). (OPT-314)
-Warning: Disabling timing arc between pins 'I' and 'ZN' on cell 'chip_core/pll/ringosc/iss/delayenb0'
-         to break a timing loop (originally by case_analysis). (OPT-314)
+         to break a timing loop. (OPT-314)
 Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/pll/pll_control/tval_reg[4]'
-         to break a timing loop (originally by case_analysis). (OPT-314)
+         to break a timing loop. (OPT-314)
 Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/pll/pll_control/tval_reg[5]'
-         to break a timing loop (originally by case_analysis). (OPT-314)
+         to break a timing loop. (OPT-314)
 Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/pll/pll_control/tval_reg[2]'
-         to break a timing loop (originally by case_analysis). (OPT-314)
+         to break a timing loop. (OPT-314)
 Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/pll/pll_control/tval_reg[3]'
-         to break a timing loop (originally by case_analysis). (OPT-314)
-Warning: Disabling timing arc between pins 'I' and 'ZN' on cell 'chip_core/pll/ringosc/dstage[1].id/delayenb0'
-         to break a timing loop (originally by case_analysis). (OPT-314)
+         to break a timing loop. (OPT-314)
 Warning: Disabling timing arc between pins 'I' and 'ZN' on cell 'chip_core/pll/ringosc/dstage[0].id/delayenb1'
-         to break a timing loop (originally by case_analysis). (OPT-314)
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'I' and 'ZN' on cell 'chip_core/pll/ringosc/dstage[0].id/delayen1'
+         to break a timing loop. (OPT-314)
 Warning: Disabling timing arc between pins 'I' and 'ZN' on cell 'chip_core/pll/ringosc/dstage[0].id/delayenb0'
-         to break a timing loop (originally by case_analysis). (OPT-314)
-Warning: Disabling timing arc between pins 'I' and 'ZN' on cell 'chip_core/pll/ringosc/iss/delayen0'
-         to break a timing loop (originally by case_analysis). (OPT-314)
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/clock_ctrl/divider/syncN_reg[0]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/clock_ctrl/divider/syncN_reg[2]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'QN' on cell 'chip_core/clock_ctrl/divider/syncN_reg[1]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'S' and 'Z' on cell 'U588'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'S' and 'Z' on cell 'U588'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'I1' and 'Z' on cell 'U587'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'S' and 'Z' on cell 'U587'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'S' and 'Z' on cell 'U587'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/clock_ctrl/divider2/syncN_reg[0]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'Q' on cell 'chip_core/clock_ctrl/divider2/syncN_reg[2]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'CP' and 'QN' on cell 'chip_core/clock_ctrl/divider2/syncN_reg[1]'
+         to break a timing loop. (OPT-314)
 Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
 Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
 Information: Input delay ('fall') on clock port 'hk_serial_clk' will be added to the clock's propagated skew. (TIM-112)
@@ -44,60 +58,87 @@ Information: Input delay ('rise') on clock port 'hkspi_clk' will be added to the
 Report : qor
 Design : caravel
 Version: T-2022.03-SP5-6
-Date   : Tue Jan  7 08:12:48 2025
+Date   : Tue Jan  7 14:22:38 2025
 ****************************************
 
 
-  Timing Path Group (none)
+  Timing Path Group 'clk'
   -----------------------------------
-  Levels of Logic:               1.00
-  Critical Path Length:          0.02
-  Critical Path Slack:         uninit
+  Levels of Logic:              20.00
+  Critical Path Length:         10.34
+  Critical Path Slack:           1.17
   Critical Path Clk Period:     25.00
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
-  Worst Hold Violation:          0.00
-  Total Hold Violation:          0.00
-  No. of Hold Violations:        0.00
+  Worst Hold Violation:        -13.42
+  Total Hold Violation:     -39438.13
+  No. of Hold Violations:    14895.00
+  -----------------------------------
+
+  Timing Path Group 'hk_serial_clk'
+  -----------------------------------
+  Levels of Logic:               0.00
+  Critical Path Length:          0.27
+  Critical Path Slack:          48.32
+  Critical Path Clk Period:    100.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:         -1.84
+  Total Hold Violation:        -56.62
+  No. of Hold Violations:      109.00
+  -----------------------------------
+
+  Timing Path Group 'hkspi_clk'
+  -----------------------------------
+  Levels of Logic:               7.00
+  Critical Path Length:          1.32
+  Critical Path Slack:          40.84
+  Critical Path Clk Period:    100.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:         -6.50
+  Total Hold Violation:      -2000.16
+  No. of Hold Violations:      620.00
   -----------------------------------
 
 
   Cell Count
   -----------------------------------
-  Hierarchical Cell Count:          2
-  Hierarchical Port Count:       1050
-  Leaf Cell Count:                866
-  Buf/Inv Cell Count:             128
-  Buf Cell Count:                  20
-  Inv Cell Count:                 108
-  CT Buf/Inv Cell Count:           20
-  Combinational Cell Count:       425
-  Sequential Cell Count:          441
+  Hierarchical Cell Count:          7
+  Hierarchical Port Count:       2370
+  Leaf Cell Count:              58741
+  Buf/Inv Cell Count:            7260
+  Buf Cell Count:                4157
+  Inv Cell Count:                3106
+  CT Buf/Inv Cell Count:         1018
+  Combinational Cell Count:     40779
+  Sequential Cell Count:        17962
   Macro Count:                      0
   -----------------------------------
 
 
   Area
   -----------------------------------
-  Combinational Area:     5562.900014
-  Noncombinational Area: 34231.970493
-  Buf/Inv Area:            934.239997
-  Total Buffer Area:           250.80
-  Total Inverter Area:         683.44
-  Macro/Black Box Area:   3986.640190
-  Net Area:               1775.369817
+  Combinational Area:   743709.475571
+  Noncombinational Area:
+                       1134227.253620
+  Buf/Inv Area:          76340.359877
+  Total Buffer Area:         53387.25
+  Total Inverter Area:       23150.69
+  Macro/Black Box Area:   5282.080254
+  Net Area:              83129.549730
   -----------------------------------
-  Cell Area:             43781.510697
-  Design Area:           45556.880514
+  Cell Area:           1883218.809444
+  Design Area:         1966348.359175
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:          1051
-  Nets With Violations:             1
+  Total Number of Nets:         59077
+  Nets With Violations:            87
   Max Trans Violations:             0
-  Max Cap Violations:               0
-  Max Fanout Violations:            1
+  Max Cap Violations:              85
+  Max Fanout Violations:           41
   -----------------------------------
 
 
@@ -105,19 +146,19 @@ Date   : Tue Jan  7 08:12:48 2025
 
   Compile CPU Statistics
   -----------------------------------------
-  Resource Sharing:                   23.71
-  Logic Optimization:                  0.50
-  Mapping Optimization:                1.58
+  Resource Sharing:                   19.83
+  Logic Optimization:                 26.65
+  Mapping Optimization:              210.75
   -----------------------------------------
-  Overall Compile Time:              144.65
-  Overall Compile Wall Clock Time:   147.06
+  Overall Compile Time:              616.32
+  Overall Compile Wall Clock Time:   640.93
 
   --------------------------------------------------------------------
 
   Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
 
 
-  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+  Design (Hold)  WNS: 13.42  TNS: 41494.91  Number of Violating Paths: 15624
 
   --------------------------------------------------------------------
 

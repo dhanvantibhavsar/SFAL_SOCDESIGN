@@ -1,14 +1,19 @@
 `default_nettype wire
-
+`celldefine
 module scl180_marco_sparecell(
 
-`ifdef USE_POWER_PIN
-    input  VGND,
-    input  VPWR,
+`ifdef USE_POWER_PINS
+    VPWR,
+    VGND,
 `endif
- output LO
+ LO
 );
-    
+    output LO;
+
+`ifdef USE_POWER_PINS
+    input VPWR;
+    input VGND;
+`endif
     // Local signals
     wire nor2left ;
     wire invleft  ;
@@ -29,4 +34,5 @@ module scl180_marco_sparecell(
     buffd1 buf0   (.Z(LO) , .I(tielo) );
 
 endmodule
-
+`endcelldefine
+`default_nettype wire

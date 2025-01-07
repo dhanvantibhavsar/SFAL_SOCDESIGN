@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version T-2022.03-SP5-6 for linux64 -- Sep 20, 2023
-#@ # Date:   Tue Jan  7 08:10:02 2025
+#@ # Date:   Tue Jan  7 14:06:47 2025
 #@ # Run by: dhanvanti@sfalvsd
 #@ 
 
@@ -8656,19 +8656,20 @@ source -echo -verbose /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/carave
 #@ set top_module "caravel" ;
 #@ set output_file "$root_dir/synthesis/output/caravel_synthesis.v"
 #@ set report_dir "$root_dir/synthesis/report"
-#@ read_file $verilog_files -autoread -format verilog -top $top_module
+#@ read_file $verilog_files/defines.v
+#@ read_file $verilog_files -autoread -define USE_POWER_PINS -format verilog -top $top_module
 #@ 
 #@ 
-#@ elaborate $top_module
-#@ link
-#@ read_sdc "$root_dir/synthesis/caravel.sdc"
-#@ compile_ultra
+#@ #elaborate $top_module
+#@ #link
+#@ #read_sdc "$root_dir/synthesis/caravel.sdc"
+#@ #compile_ultra
 #@ 
-#@ report_qor > "$report_dir/qor_post_synth.rpt"
-#@ report_area > "$report_dir/area_post_synth.rpt"
-#@ report_power > "$report_dir/power_post_synth.rpt"
+#@ #report_qor > "$report_dir/qor_post_synth.rpt"
+#@ #report_area > "$report_dir/area_post_synth.rpt"
+#@ #report_power > "$report_dir/power_post_synth.rpt"
 #@ 
-#@ write -format verilog -hierarchy -output $output_file
+#@ #write -format verilog -hierarchy -output $output_file
 #@ 
 #@ 
 #@ 
@@ -8679,3 +8680,11 @@ source -echo -verbose /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/carave
 #@ 
 #@ # -- End source /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/synth.tcl
 
+elaborate $top_module
+link
+read_sdc "$root_dir/synthesis/caravel.sdc"
+compile_ultra
+report_qor > "$report_dir/qor_post_synth.rpt"
+report_area > "$report_dir/area_post_synth.rpt"
+report_power > "$report_dir/power_post_synth.rpt"
+write -format verilog -hierarchy -output $output_file

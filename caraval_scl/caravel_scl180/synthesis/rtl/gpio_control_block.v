@@ -255,8 +255,8 @@ module gpio_control_block #(
     scl180_marco_sparecell spare_cell (
          
 	`ifdef USE_POWER_PINS
-            .VGND(vssd),
             .VPWR(vccd),
+            .VGND(vssd),
 	 `endif
        .LO(lo_signal) 
     );

@@ -479,7 +479,7 @@ module caravel_core (
 
 	// IRQ
 	//.user_irq(user_irq_core)
-    );
+    //);
 
     /*------------------------------------------*/
     /* End user project instantiation		*/
