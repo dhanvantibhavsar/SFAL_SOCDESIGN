@@ -15,7 +15,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 PDK_PATH = /home/dhanvanti/scl_pdk_v2
-VERILOG_PATH = ../../../../
+VERILOG_PATH = ../../
 
 
 RTL_PATH = /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl
@@ -74,19 +74,19 @@ endif
 	${GCC_PATH}/${GCC_PREFIX}-objcopy -O binary $< /dev/stdout | tail -c +1048577 > $@
 
 check-env:
-ifndef PDK_ROOT
-	$(error PDK_ROOT is undefined, please export it before running make)
-endif
-ifeq (,$(wildcard $(PDK_ROOT)/$(PDK)))
-	$(error $(PDK_ROOT)/$(PDK) not found, please install pdk before running make)
-endif
-ifeq (,$(wildcard $(GCC_PATH)/$(GCC_PREFIX)-gcc ))
-	$(error $(GCC_PATH)/$(GCC_PREFIX)-gcc is not found, please export GCC_PATH and GCC_PREFIX before running make)
-endif
+#ifndef PDK_ROOT
+#	$(error PDK_ROOT is undefined, please export it before running make)
+#endif
+#ifeq (,$(wildcard $(PDK_ROOT)/$(PDK)))
+#	$(error $(PDK_ROOT)/$(PDK) not found, please install pdk before running make)
+#endif
+#ifeq (,$(wildcard $(GCC_PATH)/$(GCC_PREFIX)-gcc ))
+#	$(error $(GCC_PATH)/$(GCC_PREFIX)-gcc is not found, please export GCC_PATH and GCC_PREFIX before running make)
+#endif
 # check for efabless style installation
-ifeq (,$(wildcard $(PDK_ROOT)/$(PDK)/libs.ref/*/verilog))
-SIM_DEFINES := ${SIM_DEFINES} -DEF_STYLE
-endif
+#ifeq (,$(wildcard $(PDK_ROOT)/$(PDK)/libs.ref/*/verilog))
+#SIM_DEFINES := ${SIM_DEFINES} -DEF_STYLE
+#endif
 # ---- Clean ----
 
 clean:

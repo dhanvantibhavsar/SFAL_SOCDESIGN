@@ -21,12 +21,14 @@
 
 VERILOG_PATH = ..
 
-RTL_PATH = /home/dhanvanti/vsdscl180/vsdscl180/caravel_scl180/rtl
+RTL_PATH = /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl
 
 
+
+SCL_SIM_MODELS=  /home/dhanvanti/scl_pdk_v2/stdlib/fs120/verilog/vcs_sim_model/
 
 SCL_PDK_PATH ?= /home/dhanvanti/scl_pdk_v2
-SCL_PADK_PATH_ENV ?= ../scl180
+#SCL_PADK_PATH_ENV ?= ../scl180
 
 
 RISCV_TYPE ?= rv32imc
@@ -60,10 +62,9 @@ hex:  ${PATTERN:=.hex}
 
 
 %.vvp: %_tb.v %.hex
-	iverilog -Ttyp $(SIM_DEFINES) \
+	iverilog -Ttyp -v $(SIM_DEFINES)  \
 	-I $(FIRMWARE_PATH) \
 	-I $(RTL_PATH) \
-	-I $(SCL_PDK_PATH_ENV)  \
 	-I $(SCL_PDK_PATH)/stdlib/fs120/verilog/vcs_sim_model/ \
 	-I $(SCL_PDK_PATH)/iolib/cio150/verilog/tsl18cio150/zero/ \
 	$< -o $@ 
@@ -90,11 +91,11 @@ hex:  ${PATTERN:=.hex}
 	 ${GCC_PATH}/${GCC_PREFIX}-objcopy -O binary $< /dev/stdout | tail -c +1048577 > $@
 	
 	
-clean:
-	 rm -f  *.vvp *.vcd *.log
+##clean:
+##	 rm -f  *.vvp *.vcd *.log
 	
 	
-.PHONY: clean hex all
+
 
 
 

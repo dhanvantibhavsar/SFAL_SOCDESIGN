@@ -1,4 +1,5 @@
- `ifdef SIM
+ 
+`ifdef SIM
  `default_nettype wire
  `endif
 // SPDX-FileCopyrightText: 2020 Efabless Corporation
@@ -32,13 +33,15 @@
 /*                                                          	*/
 /*--------------------------------------------------------------*/
 
-// `include "copyright_block.v"
-// `include "caravel_logo.v"
-// `include "caravel_motto.v"
-// `include "open_source.v"
-// `include "user_id_textblock.v"
- //`include "caravel_core.v"
+ `include "copyright_block.v"
+ `include "caravel_logo.v"
+ `include "caravel_motto.v"
+ `include "open_source.v"
+ `include "user_id_textblock.v"
+ `include "caravel_core.v"
  //`include "caravel_netlists.v"
+ //`include "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/verilog/vcs_sim_model/tsl18fs120_scl.v"
+
 
 `default_nettype wire
 

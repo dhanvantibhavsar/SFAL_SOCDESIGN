@@ -33,9 +33,9 @@
 /*--------------------------------------------------------------*/
 
 
-//`include "mprj_io_buffer.v"
-//`include "manual_power_connections.v"
-//`include "empty_macro.v"
+`include "mprj_io_buffer.v"
+`include "manual_power_connections.v"
+`include "empty_macro.v"
 //`include "user_defines.v"
 //`include "mgmt_core.v"
 //`include "defines.v"

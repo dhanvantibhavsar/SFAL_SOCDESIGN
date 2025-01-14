@@ -137,8 +137,8 @@ module hkspi_tb;
 	reg [7:0] tbdata;
 
 	initial begin
-	    //$dumpfile("hkspi.vcd");
-	    //$dumpvars(0, hkspi_tb);
+	    $dumpfile("hkspi.vcd");
+	    $dumpvars(0, hkspi_tb);
 
 	    CSB <= 1'b1;
 	    SCK <= 1'b0;

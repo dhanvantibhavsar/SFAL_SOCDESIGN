@@ -27,6 +27,7 @@
 `define USE_POWER_PINS
 
 `include "defines.v"
+//`include "__user_project_wrapper.v"
 
 `ifdef GL
 	`include "gl/__user_project_wrapper.v"
