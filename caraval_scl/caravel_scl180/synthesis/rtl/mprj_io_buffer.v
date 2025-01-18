@@ -13,7 +13,9 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`include "defines.v"
+`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/defines.v"
+//`include "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/verilog/vcs_sim_model/tsl18fs120_scl.v"
+
 
 `default_nettype wire
 

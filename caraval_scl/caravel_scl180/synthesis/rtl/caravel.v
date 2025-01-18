@@ -32,15 +32,21 @@
 /* the management SoC).						*/
 /*                                                          	*/
 /*--------------------------------------------------------------*/
+`include "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/verilog/vcs_sim_model/tsl18fs120_scl.v"
 
- `include "copyright_block.v"
- `include "caravel_logo.v"
- `include "caravel_motto.v"
- `include "open_source.v"
- `include "user_id_textblock.v"
- `include "caravel_core.v"
+`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/chip_io.v"
+
+ `include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/copyright_block.v"
+ `include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/caravel_logo.v"
+ `include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/caravel_motto.v"
+ `include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/open_source.v"
+ `include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/user_id_textblock.v"
+ `include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/caravel_core.v"
+`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/constant_block.v"
+ `include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/clock_div.v"
+
+
  //`include "caravel_netlists.v"
- //`include "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/verilog/vcs_sim_model/tsl18fs120_scl.v"
 
 
 `default_nettype wire

@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
+`ifndef RAM256_MODULE
+`define RAM256_MODULE
 `default_nettype wire
 
 module RAM256 #(parameter   USE_LATCH=1,
@@ -50,3 +52,4 @@ module RAM256 #(parameter   USE_LATCH=1,
     assign Do0 = A0[7]? Do0_pre[1]:Do0_pre[0];
     
 endmodule
+`endif

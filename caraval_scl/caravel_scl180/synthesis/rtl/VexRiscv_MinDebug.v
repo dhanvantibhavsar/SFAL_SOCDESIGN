@@ -1,7 +1,8 @@
 // Generator : SpinalHDL v1.6.0    git head : 73c8d8e2b86b45646e9d0b2e729291f2b65e6be3
 // Component : VexRiscv
 // Git hash  : 6276bf628be9d0a58c0284dca83137b71ef29098
-
+`ifndef VEXRISCV_MODULE
+`define VEXRISCV_MODULE
 
 `define EnvCtrlEnum_binary_sequential_type [1:0]
 `define EnvCtrlEnum_binary_sequential_NONE 2'b00
@@ -4278,3 +4279,4 @@ module StreamFifoLowLatency (
 
 
 endmodule
+`endif

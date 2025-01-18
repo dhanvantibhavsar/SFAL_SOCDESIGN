@@ -1,3 +1,5 @@
+`ifndef RAM128_MODULE
+`define RAM128_MODULE
 `default_nettype wire
 module RAM128 (
     input CLK,
@@ -53,4 +55,4 @@ module RAM128 (
   assign Do0 = data_out;
 
 endmodule
-
+`endif

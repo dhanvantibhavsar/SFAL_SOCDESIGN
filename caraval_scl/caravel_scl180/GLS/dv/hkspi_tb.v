@@ -21,16 +21,18 @@
 `timescale 1 ns / 1 ps
 
 //`include "__uprj_netlists.v"
-//`include "caravel_netlists.v"
+//`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/caravel_netlists.v"
+`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/caravel.v"
+
 //`include "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/verilog/vcs_sim_model/tsl18fs120_scl.v"
 `include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/pc3b03ed.v"
 `include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/pc3d01.v"
 `include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/pc3d21.v"
 `include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/pt3b02.v"
 
-`include "spiflash.v"
-`include "tbuart.v"
-`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/output/caravel_synthesis.v"
+`include "dv/spiflash.v"
+`include "dv/tbuart.v"
+//`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/output/caravel_synthesis.v"
 
 module hkspi_tb;
 	reg clock;

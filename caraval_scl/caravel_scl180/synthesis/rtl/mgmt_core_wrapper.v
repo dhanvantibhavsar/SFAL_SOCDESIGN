@@ -26,7 +26,7 @@
  *  SPDX-License-Identifier: ISC
  */
 
-`include "mgmt_core.v"
+`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/mgmt_core.v"
 `default_nettype wire
 
 `ifndef _MGMT_CORE_WRAPPER_

@@ -18,8 +18,8 @@
 // Technically this is a frequency locked loop, not a phase locked loop.
 
 `ifndef SIM
-`include "digital_pll_controller.v"
-`include "ring_osc2x13.v"
+`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/digital_pll_controller.v"
+`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/ring_osc2x13.v"
 `endif
 
 module digital_pll(
