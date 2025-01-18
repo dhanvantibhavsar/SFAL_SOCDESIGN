@@ -58,7 +58,7 @@ Information: Input delay ('rise') on clock port 'hkspi_clk' will be added to the
 Report : qor
 Design : caravel
 Version: T-2022.03-SP5-6
-Date   : Tue Jan  7 14:22:38 2025
+Date   : Sat Jan 18 17:35:18 2025
 ****************************************
 
 
@@ -146,12 +146,12 @@ Date   : Tue Jan  7 14:22:38 2025
 
   Compile CPU Statistics
   -----------------------------------------
-  Resource Sharing:                   19.83
-  Logic Optimization:                 26.65
-  Mapping Optimization:              210.75
+  Resource Sharing:                   20.77
+  Logic Optimization:                 25.39
+  Mapping Optimization:              199.32
   -----------------------------------------
-  Overall Compile Time:              616.32
-  Overall Compile Wall Clock Time:   640.93
+  Overall Compile Time:              556.06
+  Overall Compile Wall Clock Time:   579.92
 
   --------------------------------------------------------------------
 
