@@ -20,16 +20,17 @@
 `define UNIT_DELAY #1
 `define USE_POWER_PINS
 `define SIM_TIME 100_000
+`include "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/verilog/vcs_sim_model/tsl18fs120_scl.v"
 
-`include "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/verilog/vcs_sim_model/adiode.v"
-`include "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/verilog/vcs_sim_model/invtd1.v"
-`include "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/verilog/vcs_sim_model/invtd7.v"
-`include "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/verilog/vcs_sim_model/mx02d1.v"
+//`include "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/verilog/vcs_sim_model/adiode.v"
+//`include "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/verilog/vcs_sim_model/invtd1.v"
+//`include "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/verilog/vcs_sim_model/invtd7.v"
+//`include "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/verilog/vcs_sim_model/mx02d1.v"
 
 //`include "libs.ref/sky130_fd_io/verilog/sky130_ef_io.v"
 //`include "libs.ref/sky130_fd_io/verilog/sky130_ef_io__gpiov2_pad_wrapped.v"
 
-`include "defines.v"
+`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/defines.v"
 
 `ifdef GL
     `include "gl/chip_io.v"
@@ -38,9 +39,9 @@
         `include "ports.v"
         `include "chip_io_split.v"
     `else
-        `include "pads.v"
-        `include "mprj_io.v"
-        `include "chip_io.v"
+        `include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/pads.v"
+        `include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/mprj_io.v"
+       // `include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/chip_io.v"
     `endif
 `endif 
 

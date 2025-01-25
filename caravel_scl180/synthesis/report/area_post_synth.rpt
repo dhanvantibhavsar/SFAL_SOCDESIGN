@@ -1,0 +1,35 @@
+ 
+****************************************
+Report : area
+Design : caravel
+Version: T-2022.03-SP5-6
+Date   : Sat Jan 25 21:35:33 2025
+****************************************
+
+Library(s) Used:
+
+    tsl18fs120_scl_ff (File: /home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db)
+    gtech (File: /usr/synopsys/syn/T-2022.03-SP5-6/libraries/syn/gtech.db)
+    sky130_fd_sc_hvl__ff_n40C_4v40 (File: /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caravel_scl180/lib/sky130_fd_sc_hvl__ff_n40C_4v40.db)
+    tsl18cio250_typ (File: /home/dhanvanti/scl_pdk_v2/iolib/cio250/synopsys/2002.05/models/tsl18cio250_typ.db)
+
+Number of ports:                        37777
+Number of nets:                        109931
+Number of cells:                        76914
+Number of combinational cells:          50071
+Number of sequential cells:             21500
+Number of macros/black boxes:              16
+Number of buf/inv:                       7064
+Number of references:                       7
+
+Combinational area:              21647.129599
+Buf/Inv area:                    13097.749556
+Noncombinational area:           58190.702759
+Macro/Black Box area:              100.320000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 79938.152357
+Total area:                 undefined
+
+Information: This design contains unmapped logic. (RPT-7)
+1

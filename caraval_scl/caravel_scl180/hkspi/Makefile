@@ -2,9 +2,9 @@
 # Variables
 VERILOG_PATH = ..
 
-##RTL_PATH = /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl
+RTL_PATH = /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl
 
-RTL_PATH = /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/output
+#RTL_PATH = /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/output
 
 
 SCL_SIM_MODELS=  /home/dhanvanti/scl_pdk_v2/stdlib/fs120/verilog/vcs_sim_model/

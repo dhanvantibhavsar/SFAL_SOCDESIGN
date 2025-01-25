@@ -19,10 +19,11 @@
 */
 
 `timescale 1 ns / 1 ps
+`include "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/verilog/vcs_sim_model/tsl18fs120_scl.v"
 
 //`include "__uprj_netlists.v"
 //`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/caravel_netlists.v"
-`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/caravel.v"
+//`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/caravel.v"
 
 //`include "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/verilog/vcs_sim_model/tsl18fs120_scl.v"
 `include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/pc3b03ed.v"
@@ -51,6 +52,7 @@ module hkspi_tb;
 	wire flash_io1;
 	wire flash_io2;
 	wire flash_io3;
+
 
 	wire SDO;
 

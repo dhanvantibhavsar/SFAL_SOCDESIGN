@@ -32,6 +32,10 @@
 /*                                                          	*/
 /*--------------------------------------------------------------*/
 
+`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/simple_por.v"
+`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/xres_buf.v"
+`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/spare_logic_block.v"
+`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/user_id_programming.v"
 
 `include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/mprj_io_buffer.v"
 

@@ -13,7 +13,15 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`include "defines.v"
+`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/defines.v"
+`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/pc3b03ed_wrapper.v"
+`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/pc3d21.v"
+`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/pc3d01.v"
+`include "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caraval_scl/caravel_scl180/synthesis/rtl/pt3b02.v"
+
+
+
+
 
 `default_nettype wire
 
