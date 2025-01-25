@@ -8,9 +8,9 @@ module RAM128 (
     output [31:0] Do0,
     input [3:0] WE0
 );
-
+/* synthesis syn_black_box */
   // Parameter for memory size
-  parameter MEM_DEPTH = 128;
+ /* parameter MEM_DEPTH = 128;
   // Parameter for data width
   parameter DATA_WIDTH = 32;
 
@@ -50,6 +50,6 @@ module RAM128 (
 
   // Output data
   assign Do0 = data_out;
-
+*/
 endmodule
 

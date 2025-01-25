@@ -1,5 +1,3 @@
-read_db "/home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db"
-
 read_db "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caravel_scl180/lib/sky130_fd_sc_hvl__ff_n40C_4v40.db"
 
 read_db "/home/dhanvanti/scl_pdk_v2/iolib/cio250/synopsys/2002.05/models/tsl18cio250_typ.db"
@@ -18,12 +16,12 @@ foreach_in_collection cell [get_lib_cells sky130_fd_sc_hvl__ff_n40C_4v40/*] {
 	}
 }
 
-set root_dir "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caravel_scl180/"
-set verilog_files  "$root_dir/rtl"
+set root_dir "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caravel_scl180"
+set verilog_files  "$root_dir/synthesis/rtl"
 set top_module "caravel" ;
 set output_file "$root_dir/synthesis/output/caravel_synthesis.v"
 set report_dir "$root_dir/synthesis/report"
-#read_file $verilog_files/defines.v
+read_file $verilog_files/defines.v
 read_file $verilog_files -autoread -define USE_POWER_PINS -format verilog -top $top_module
 
 

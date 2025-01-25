@@ -1,27 +1,25 @@
-Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
-Warning: Design has unannotated primary inputs. (PWR-414)
-Warning: Design has unannotated sequential cell outputs. (PWR-415)
-Warning: Design has unannotated black box outputs. (PWR-428)
  
 ****************************************
 Report : power
         -analysis_effort low
 Design : caravel
 Version: T-2022.03-SP5-6
-Date   : Sat Jan 25 21:35:43 2025
+Date   : Sat Jan 25 23:26:25 2025
 ****************************************
 
 
 Library(s) Used:
 
     tsl18fs120_scl_ff (File: /home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db)
-    gtech (File: /usr/synopsys/syn/T-2022.03-SP5-6/libraries/syn/gtech.db)
-    sky130_fd_sc_hvl__ff_n40C_4v40 (File: /home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caravel_scl180/lib/sky130_fd_sc_hvl__ff_n40C_4v40.db)
     tsl18cio250_typ (File: /home/dhanvanti/scl_pdk_v2/iolib/cio250/synopsys/2002.05/models/tsl18cio250_typ.db)
 
 
-Operating Conditions: 
+Operating Conditions: tsl18fs120_scl_ff   Library: tsl18fs120_scl_ff
 Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+caravel                2000000           tsl18fs120_scl_ff
 
 
 Global Operating Voltage = 1.98 
@@ -38,24 +36,24 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =   1.8266 mW    (0%)
-  Net Switching Power  =   1.0012  W  (100%)
+  Cell Internal Power  =  90.9188 mW   (66%)
+  Net Switching Power  =  46.0286 mW   (34%)
                          ---------
-Total Dynamic Power    =   1.0030  W  (100%)
+Total Dynamic Power    = 136.9474 mW  (100%)
 
-Cell Leakage Power     = 457.7674 nW
+Cell Leakage Power     =   2.8668 uW
 
 
                  Internal         Switching           Leakage            Total
 Power Group      Power            Power               Power              Power   (   %    )  Attrs
 --------------------------------------------------------------------------------------------------
-io_pad             1.7044            0.5442        4.1871e+05            2.2490  (   0.22%)
+io_pad             1.3705        3.8872e-03        2.6739e+04            1.3744  (   1.01%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
-black_box          0.0000            0.0000           62.7200            0.0000  (   0.00%)
-clock_network      0.1222        1.0001e+03        8.1360e+03        1.0002e+03  (  99.78%)  i
-register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
-sequential         0.0000            0.0000          970.4000        9.7040e-07  (   0.00%)
-combinational      0.0000        5.8949e-03        2.9885e+04        5.9247e-03  (   0.00%)
+black_box          0.0000        4.3352e-03           62.7200        4.3353e-03  (   0.00%)
+clock_network     89.3397           43.7715        4.5475e+04          133.1111  (  98.03%)  i
+register           0.1120        3.6133e-02        1.8659e+06            0.1501  (   0.11%)
+sequential     2.4163e-04        3.1316e-05        7.7858e+03        2.8073e-04  (   0.00%)
+combinational  9.1389e-02            1.0589        9.2090e+05            1.1512  (   0.85%)
 --------------------------------------------------------------------------------------------------
-Total              1.8266 mW     1.0007e+03 mW     4.5777e+05 pW     1.0025e+03 mW
+Total             90.9138 mW        44.8747 mW     2.8668e+06 pW       135.7913 mW
 1
