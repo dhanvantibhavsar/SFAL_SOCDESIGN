@@ -1,10 +1,9 @@
-Warning: Design 'caravel' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : area
 Design : caravel
 Version: T-2022.03-SP5-6
-Date   : Sat Jan 25 23:26:24 2025
+Date   : Tue Feb  4 11:15:06 2025
 ****************************************
 
 Library(s) Used:
@@ -12,23 +11,21 @@ Library(s) Used:
     tsl18fs120_scl_ff (File: /home/dhanvanti/scl_pdk_v2/stdlib/fs120/liberty/lib_flow_ff/tsl18fs120_scl_ff.db)
     tsl18cio250_typ (File: /home/dhanvanti/scl_pdk_v2/iolib/cio250/synopsys/2002.05/models/tsl18cio250_typ.db)
 
-Number of ports:                         3190
-Number of nets:                         60449
-Number of cells:                        58584
-Number of combinational cells:          40495
-Number of sequential cells:             18021
+Number of ports:                         2196
+Number of nets:                         25306
+Number of cells:                        23938
+Number of combinational cells:          17568
+Number of sequential cells:              6277
 Number of macros/black boxes:              20
-Number of buf/inv:                       7220
-Number of references:                      54
+Number of buf/inv:                       4367
+Number of references:                      56
 
-Combinational area:             739500.735507
-Buf/Inv area:                    74593.409859
-Noncombinational area:         1081129.901012
+Combinational area:             291899.030025
+Buf/Inv area:                    35602.989887
+Noncombinational area:          432814.661930
 Macro/Black Box area:             5282.080254
-Net Interconnect area:           83093.135883
+Net Interconnect area:           27468.791801
 
-Total cell area:               1825912.716773
-Total area:                    1909005.852656
-
-Information: This design contains black box (unknown) components. (RPT-8)
+Total cell area:                729995.772208
+Total area:                     757464.564010
 1
