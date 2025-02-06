@@ -39,10 +39,18 @@
 
     `ifdef GL
 	`include "tsl18fs120_scl.v"
+
+	`include "pc3b03ed_wrapper.v"
+        `include "pc3d21.v"
+        `include "pc3d01.v"
+        `include "pt3b02.v"
+
 	`include "digital_pll.v"
 	`include "caravel_clocking.v"
 	`include "dummy_scl180_conb_1.v"
 	`include "user_id_programming.v"
+	`include "RAM128.v"
+	`include "VexRiscv_MinDebugCache.v"
 	`include "chip_io.v"
 	`include "housekeeping.v"
 	`include "mprj_logic_high.v"
@@ -60,7 +68,7 @@
 	`include "xres_buf.v"
 	`include "spare_logic_block.v"
 	//`include "gl/mgmt_defines.v"
-	`include "mgmt_core_wrapper.v"
+	`include "mgmt_core.v"
 	`include "caravel.v"
         //`include "pc3b03ed_wrapper.v"
         //`include "pc3d21.v"
