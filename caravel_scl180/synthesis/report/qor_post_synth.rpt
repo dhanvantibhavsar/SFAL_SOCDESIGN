@@ -1,8 +1,8 @@
 Information: Updating design information... (UID-85)
 Information: Timing loop detected. (OPT-150)
-	chip_core/housekeeping/wbbd_sck_reg/CP chip_core/housekeeping/wbbd_sck_reg/Q chip_core/housekeeping/U298/A1 chip_core/housekeeping/U298/ZN chip_core/housekeeping/U3138/A chip_core/housekeeping/U3138/ZN chip_core/housekeeping/U336/I chip_core/housekeeping/U336/Z chip_core/housekeeping/U337/I chip_core/housekeeping/U337/Z chip_core/housekeeping/U338/I chip_core/housekeeping/U338/Z chip_core/housekeeping/U339/I chip_core/housekeeping/U339/Z chip_core/housekeeping/U340/I chip_core/housekeeping/U340/Z chip_core/housekeeping/U358/I chip_core/housekeeping/U358/Z chip_core/housekeeping/U359/I chip_core/housekeeping/U359/Z chip_core/housekeeping/pll_dco_ena_reg/CP chip_core/housekeeping/pll_dco_ena_reg/QN U1453/I U1453/ZN U1469/I U1469/ZN U1620/A1 U1620/ZN U1621/A U1621/ZN U1622/I U1622/ZN chip_core/pll/ringosc/dstage[5].id/delayen0/EN chip_core/pll/ringosc/dstage[5].id/delayen0/ZN chip_core/clock_ctrl/use_pll_second_reg/CP chip_core/clock_ctrl/use_pll_second_reg/Q U545/A U545/ZN U546/A U546/ZN U547/A U547/ZN U1305/I U1305/ZN U1306/I U1306/ZN 
+	chip_core/housekeeping/wbbd_sck_reg/CP chip_core/housekeeping/wbbd_sck_reg/Q chip_core/housekeeping/U299/A1 chip_core/housekeeping/U299/ZN chip_core/housekeeping/U3138/A chip_core/housekeeping/U3138/ZN chip_core/housekeeping/U337/I chip_core/housekeeping/U337/Z chip_core/housekeeping/U338/I chip_core/housekeeping/U338/Z chip_core/housekeeping/U339/I chip_core/housekeeping/U339/Z chip_core/housekeeping/U340/I chip_core/housekeeping/U340/Z chip_core/housekeeping/U341/I chip_core/housekeeping/U341/Z chip_core/housekeeping/U359/I chip_core/housekeeping/U359/Z chip_core/housekeeping/U360/I chip_core/housekeeping/U360/Z chip_core/housekeeping/pll_dco_ena_reg/CP chip_core/housekeeping/pll_dco_ena_reg/QN U1461/I U1461/ZN U1469/I U1469/ZN U1620/A1 U1620/ZN U1621/A U1621/ZN U1622/I U1622/ZN chip_core/pll/ringosc/dstage[5].id/delayen0/EN chip_core/pll/ringosc/dstage[5].id/delayen0/ZN chip_core/clock_ctrl/use_pll_second_reg/CP chip_core/clock_ctrl/use_pll_second_reg/Q U545/A U545/ZN U546/A U546/ZN U547/A U547/ZN U1305/I U1305/ZN U1306/I U1306/ZN 
 Information: Timing loop detected. (OPT-150)
-	chip_core/housekeeping/wbbd_busy_reg/CP chip_core/housekeeping/wbbd_busy_reg/Q chip_core/housekeeping/U231/I chip_core/housekeeping/U231/ZN chip_core/housekeeping/U298/A2 chip_core/housekeeping/U298/ZN chip_core/housekeeping/U3138/A chip_core/housekeeping/U3138/ZN chip_core/housekeeping/U336/I chip_core/housekeeping/U336/Z chip_core/housekeeping/U337/I chip_core/housekeeping/U337/Z chip_core/housekeeping/U338/I chip_core/housekeeping/U338/Z chip_core/housekeeping/U339/I chip_core/housekeeping/U339/Z chip_core/housekeeping/U340/I chip_core/housekeeping/U340/Z chip_core/housekeeping/U358/I chip_core/housekeeping/U358/Z chip_core/housekeeping/U359/I chip_core/housekeeping/U359/Z chip_core/housekeeping/pll_dco_ena_reg/CP chip_core/housekeeping/pll_dco_ena_reg/QN U1453/I U1453/ZN U1469/I U1469/ZN U1620/A1 U1620/ZN U1621/A U1621/ZN U1622/I U1622/ZN chip_core/pll/ringosc/dstage[5].id/delayen0/EN chip_core/pll/ringosc/dstage[5].id/delayen0/ZN chip_core/clock_ctrl/use_pll_second_reg/CP chip_core/clock_ctrl/use_pll_second_reg/Q U545/A U545/ZN U546/A U546/ZN U547/A U547/ZN U1305/I U1305/ZN U1306/I U1306/ZN 
+	chip_core/housekeeping/wbbd_busy_reg/CP chip_core/housekeeping/wbbd_busy_reg/Q chip_core/housekeeping/U231/I chip_core/housekeeping/U231/ZN chip_core/housekeeping/U299/A2 chip_core/housekeeping/U299/ZN chip_core/housekeeping/U3138/A chip_core/housekeeping/U3138/ZN chip_core/housekeeping/U337/I chip_core/housekeeping/U337/Z chip_core/housekeeping/U338/I chip_core/housekeeping/U338/Z chip_core/housekeeping/U339/I chip_core/housekeeping/U339/Z chip_core/housekeeping/U340/I chip_core/housekeeping/U340/Z chip_core/housekeeping/U341/I chip_core/housekeeping/U341/Z chip_core/housekeeping/U359/I chip_core/housekeeping/U359/Z chip_core/housekeeping/U360/I chip_core/housekeeping/U360/Z chip_core/housekeeping/pll_dco_ena_reg/CP chip_core/housekeeping/pll_dco_ena_reg/QN U1461/I U1461/ZN U1469/I U1469/ZN U1620/A1 U1620/ZN U1621/A U1621/ZN U1622/I U1622/ZN chip_core/pll/ringosc/dstage[5].id/delayen0/EN chip_core/pll/ringosc/dstage[5].id/delayen0/ZN chip_core/clock_ctrl/use_pll_second_reg/CP chip_core/clock_ctrl/use_pll_second_reg/Q U545/A U545/ZN U546/A U546/ZN U547/A U547/ZN U1305/I U1305/ZN U1306/I U1306/ZN 
 Warning: Disabling timing arc between pins 'A' and 'ZN' on cell 'U545'
          to break a timing loop. (OPT-314)
 Warning: Disabling timing arc between pins 'C2' and 'ZN' on cell 'chip_core/housekeeping/U3138'
@@ -58,7 +58,7 @@ Information: Input delay ('rise') on clock port 'hkspi_clk' will be added to the
 Report : qor
 Design : caravel
 Version: T-2022.03-SP5-6
-Date   : Tue Feb  4 11:15:06 2025
+Date   : Fri Feb  7 08:05:34 2025
 ****************************************
 
 
@@ -71,8 +71,8 @@ Date   : Tue Feb  4 11:15:06 2025
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
   Worst Hold Violation:        -11.04
-  Total Hold Violation:     -11483.36
-  No. of Hold Violations:     4375.00
+  Total Hold Violation:     -11536.15
+  No. of Hold Violations:     4374.00
   -----------------------------------
 
   Timing Path Group 'hk_serial_clk'
@@ -84,7 +84,7 @@ Date   : Tue Feb  4 11:15:06 2025
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
   Worst Hold Violation:         -1.26
-  Total Hold Violation:        -51.91
+  Total Hold Violation:        -51.92
   No. of Hold Violations:       93.00
   -----------------------------------
 
@@ -97,7 +97,7 @@ Date   : Tue Feb  4 11:15:06 2025
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
   Worst Hold Violation:         -6.86
-  Total Hold Violation:      -2401.09
+  Total Hold Violation:      -2402.02
   No. of Hold Violations:      622.00
   -----------------------------------
 
@@ -106,12 +106,12 @@ Date   : Tue Feb  4 11:15:06 2025
   -----------------------------------
   Hierarchical Cell Count:          4
   Hierarchical Port Count:       2133
-  Leaf Cell Count:              23865
-  Buf/Inv Cell Count:            4367
-  Buf Cell Count:                 871
+  Leaf Cell Count:              23866
+  Buf/Inv Cell Count:            4368
+  Buf Cell Count:                 872
   Inv Cell Count:                3497
   CT Buf/Inv Cell Count:          338
-  Combinational Cell Count:     17686
+  Combinational Cell Count:     17687
   Sequential Cell Count:         6179
   Macro Count:                      0
   -----------------------------------
@@ -119,25 +119,25 @@ Date   : Tue Feb  4 11:15:06 2025
 
   Area
   -----------------------------------
-  Combinational Area:   291899.030025
+  Combinational Area:   291911.570024
   Noncombinational Area:
                         432814.661930
-  Buf/Inv Area:          35602.989887
-  Total Buffer Area:         11007.06
+  Buf/Inv Area:          35615.529887
+  Total Buffer Area:         11019.60
   Total Inverter Area:       24661.79
   Macro/Black Box Area:   5282.080254
-  Net Area:              27468.791801
+  Net Area:              27475.913320
   -----------------------------------
-  Cell Area:            729995.772208
-  Design Area:          757464.564010
+  Cell Area:            730008.312208
+  Design Area:          757484.225528
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:         24331
-  Nets With Violations:            81
+  Total Number of Nets:         24332
+  Nets With Violations:            79
   Max Trans Violations:             0
-  Max Cap Violations:              79
+  Max Cap Violations:              77
   Max Fanout Violations:           41
   -----------------------------------
 
@@ -146,19 +146,19 @@ Date   : Tue Feb  4 11:15:06 2025
 
   Compile CPU Statistics
   -----------------------------------------
-  Resource Sharing:                   22.83
-  Logic Optimization:                 17.72
-  Mapping Optimization:              109.26
+  Resource Sharing:                   26.70
+  Logic Optimization:                 17.54
+  Mapping Optimization:              124.99
   -----------------------------------------
-  Overall Compile Time:              341.59
-  Overall Compile Wall Clock Time:   352.42
+  Overall Compile Time:              387.39
+  Overall Compile Wall Clock Time:   399.58
 
   --------------------------------------------------------------------
 
   Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
 
 
-  Design (Hold)  WNS: 11.04  TNS: 13936.37  Number of Violating Paths: 5090
+  Design (Hold)  WNS: 11.04  TNS: 13990.08  Number of Violating Paths: 5089
 
   --------------------------------------------------------------------
 

@@ -47,13 +47,13 @@ hex:  ${PATTERN:=.hex}
 
 vcd:  ${PATTERN:=.vcd}
 
-%.vvp: %_tb.v %.hex
+%.vvp: %_tb1.v %.hex
 ifeq ($(SIM),RTL)
 	iverilog -Ttyp $(SIM_DEFINES) -I $(BEHAVIOURAL_MODELS) \
 	 -I $(RTL_PATH) -I $(MGMT_WRAPPER_PATH) -I ../scl180/  \
 	$< -o $@ 
 else  
-	iverilog -Ttyp $(SIM_DEFINES) -DGL -I $(BEHAVIOURAL_MODELS) -I $(PDK_PATH) -I ../scl180/ \
+	iverilog -Ttyp $(SIM_DEFINES) -DGL -I $(VERILOG_PATH)/synthesis/output -I $(BEHAVIOURAL_MODELS) -I $(PDK_PATH) -I ../scl180/ \
 	-I $(PDK_PATH) -I $(VERILOG_PATH) -I $(RTL_PATH) -I $(MGMT_WRAPPER_PATH)  \
 	$< -o $@ 
 endif

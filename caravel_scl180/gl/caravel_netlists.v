@@ -20,9 +20,9 @@
 
 `ifdef SIM
 
-    `include "defines.v"
-    `include "user_defines.v"
-    `include "pads.v"
+    //`include "defines.v"
+    //`include "user_defines.v"
+    //`include "pads.v"
 
     /* NOTE: Need to pass the PDK root directory to iverilog with option -I */
 
@@ -39,41 +39,40 @@
 
     `ifdef GL
 	`include "tsl18fs120_scl.v"
-
-	`include "pc3b03ed_wrapper.v"
         `include "pc3d21.v"
         `include "pc3d01.v"
         `include "pt3b02.v"
 
-	`include "digital_pll.v"
-	`include "caravel_clocking.v"
-	`include "dummy_scl180_conb_1.v"
-	`include "user_id_programming.v"
-	`include "RAM128.v"
-	`include "VexRiscv_MinDebugCache.v"
-	`include "chip_io.v"
-	`include "housekeeping.v"
-	`include "mprj_logic_high.v"
-	`include "mprj2_logic_high.v"
-	`include "mgmt_protect_hv.v"
-	`include "mgmt_protect.v"
-	`include "constant_block.v"
-	`include "gpio_control_block.v"
-	`include "gpio_defaults_block.v"
+	`include "pc3b03ed.v"
+	//`include "RAM128.v"
+	`include "caravel_synthesis.v"
+	//`include "VexRiscv_MinDebugCache.v"
+	//`include "digital_pll.v"
+	//`include "caravel_clocking.v"
+	//`include "dummy_scl180_conb_1.v"
+	//`include "user_id_programming.v"
+	//`include "chip_io.v"
+	//`include "housekeeping_spi.v"
+
+	//`include "housekeeping.v"
+	//`include "mprj_logic_high.v"
+	//`include "mprj2_logic_high.v"
+	//`include "mgmt_protect_hv.v"
+	//`include "mgmt_protect.v"
+	//`include "constant_block.v"
+	//`include "gpio_control_block.v"
+	//`include "gpio_defaults_block.v"
 	//`include "gl/gpio_defaults_block_0403.v"
 	//`include "gl/gpio_defaults_block_1803.v"
 	//`include "gl/gpio_defaults_block_0801.v"
 	//`include "gl/gpio_signal_buffering.v"
-	`include "gpio_logic_high.v"
-	`include "xres_buf.v"
-	`include "spare_logic_block.v"
+	//`include "gpio_logic_high.v"
+	//`include "xres_buf.v"
+	//`include "spare_logic_block.v"
 	//`include "gl/mgmt_defines.v"
-	`include "mgmt_core.v"
-	`include "caravel.v"
-        //`include "pc3b03ed_wrapper.v"
-        //`include "pc3d21.v"
-       // `include "pc3d01.v"
-        //`include "pt3b02.v"
+	//`include "mgmt_core.v"
+	//`include "caravel_core.v"
+	//`include "caravel.v"
     `else
 	`include "digital_pll.v"
 	`include "digital_pll_controller.v"
@@ -105,6 +104,6 @@
         //`include ""
     `endif
 
-    `include "simple_por.v"
+    //`include "simple_por.v"
 
 `endif

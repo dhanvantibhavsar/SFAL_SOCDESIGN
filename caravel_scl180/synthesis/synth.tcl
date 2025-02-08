@@ -25,17 +25,20 @@ set output_file "$root_dir/synthesis/output/caravel_synthesis.v"
 set report_dir "$root_dir/synthesis/report"
 read_file $verilog_files/defines.v
 read_file $verilog_files -autoread -define USE_POWER_PINS -format verilog -top $top_module
-
+read_sdc "$root_dir/synthesis/caravel.sdc"
+update_timing
 
 elaborate $top_module
 
 link
-read_sdc "$root_dir/synthesis/caravel.sdc"
-compile_ultra
+#set_uniquify_design false;
+#set_flatten false
 
+compile
 report_qor > "$report_dir/qor_post_synth.rpt"
 report_area > "$report_dir/area_post_synth.rpt"
 report_power > "$report_dir/power_post_synth.rpt"
+
 
 write -format verilog -hierarchy -output $output_file
 

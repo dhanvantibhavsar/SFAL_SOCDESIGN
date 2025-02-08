@@ -570,7 +570,7 @@ module caravel_core (
     // Housekeeping interface
 
     housekeeping housekeeping (
-    `ifndef USE_POWER_PINS
+    `ifdef USE_POWER_PINS
 		.VPWR(vccd),
 		.VGND(vssd),
     `endif

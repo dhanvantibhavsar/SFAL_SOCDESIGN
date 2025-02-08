@@ -4,7 +4,7 @@ Report : power
         -analysis_effort low
 Design : caravel
 Version: T-2022.03-SP5-6
-Date   : Tue Feb  4 11:15:06 2025
+Date   : Fri Feb  7 08:05:35 2025
 ****************************************
 
 
@@ -36,10 +36,10 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =  28.8568 mW   (67%)
-  Net Switching Power  =  14.2136 mW   (33%)
+  Cell Internal Power  =  28.8588 mW   (67%)
+  Net Switching Power  =  14.2135 mW   (33%)
                          ---------
-Total Dynamic Power    =  43.0704 mW  (100%)
+Total Dynamic Power    =  43.0722 mW  (100%)
 
 Cell Leakage Power     =   1.3876 uW
 
@@ -50,10 +50,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             1.6548            0.5649        4.1871e+05            2.2201  (   5.22%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000        1.1606e-02           62.7200        1.1606e-02  (   0.03%)
-clock_network     27.0666           12.1784        1.0640e+04           39.2450  (  92.28%)  i
-register       5.7594e-02        3.3581e-02        6.3547e+05        9.1795e-02  (   0.22%)
+clock_network     27.0684           12.1775        1.0640e+04           39.2459  (  92.28%)  i
+register       5.7604e-02        3.3579e-02        6.3547e+05        9.1812e-02  (   0.22%)
 sequential     2.4120e-04        2.9990e-05        7.7858e+03        2.7897e-04  (   0.00%)
-combinational  7.6786e-02            0.8805        3.1492e+05            0.9576  (   2.25%)
+combinational  7.7029e-02            0.8812        3.1494e+05            0.9585  (   2.25%)
 --------------------------------------------------------------------------------------------------
-Total             28.8560 mW        13.6690 mW     1.3876e+06 pW        42.5265 mW
+Total             28.8581 mW        13.6688 mW     1.3876e+06 pW        42.5283 mW
 1
