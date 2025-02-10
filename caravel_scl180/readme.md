@@ -7,6 +7,9 @@ VexRiscV Harnessed with Efabless's Caravel and SCL180 PDK is a reference project
 - Mentored by :- Mr. Kunal Ghosh (VLSI System Design) and SFAL 
 - PDK used :- SCL180
 - Tool used :- Synopsys Design Tools
+- Top Module :- vsdcaravel
+
+  **caravel** is from efabless+SKY130+opensource , while **vsdcaravel** is from vsd+SCL180+Synopsys
 
 ## Features
 - **Synthesis and Gate-Level Simulation (GLS)** of Caravel SoC
