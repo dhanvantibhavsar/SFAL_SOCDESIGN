@@ -59,6 +59,7 @@ This repository provides a **structured, hands-on guide** through the **RTL-to-G
 
 <details> 
 <summary> Day 5 - Introduction to Logic Synthesis</summary>
+
 ### Day 5 - Introduction to Logic Synthesis  
 - PDK Used- SCL180  
 - Getting started with DC shell  
