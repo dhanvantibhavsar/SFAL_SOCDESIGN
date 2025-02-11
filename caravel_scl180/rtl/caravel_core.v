@@ -58,7 +58,7 @@ module caravel_core (
     // SoC Core Interface
     output porb_h,
     output por_l,
-    input  rstb_h,
+    inout  rstb_h,
     input  clock_core,
     output gpio_out_core,
     input  gpio_in_core,

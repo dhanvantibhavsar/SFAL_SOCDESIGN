@@ -28,7 +28,7 @@ module chip_io(
 	inout  vssd_pad,		// Common digital ground
 	inout  vdda_pad,		// Management analog 3.3V supply
 	inout  vssa_pad,		// Management analog ground
-	output  vdda1_pad,		// User area 1 3.3V supply
+	inout  vdda1_pad,		// User area 1 3.3V supply
 	inout  vdda1_pad2,		
 	inout  vdda2_pad,		// User area 2 3.3V supply
 	inout  vssa1_pad,		// User area 1 analog ground
@@ -73,8 +73,8 @@ module chip_io(
 	input  gpio_mode1_core,
 	input  gpio_outenb_core,
 	input  gpio_inenb_core,
-	input  flash_csb_core,
-	input  flash_clk_core,
+	inout  flash_csb_core,
+	inout  flash_clk_core,
 	input  flash_csb_oeb_core,
 	input  flash_clk_oeb_core,
 	input  flash_io0_oeb_core,

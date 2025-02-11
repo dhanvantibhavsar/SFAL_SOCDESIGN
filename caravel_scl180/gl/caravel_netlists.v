@@ -45,7 +45,7 @@
 
 	`include "pc3b03ed.v"
 	//`include "RAM128.v"
-	`include "caravel_synthesis.v"
+	`include "vsdcaravel_synthesis.v"
 	//`include "VexRiscv_MinDebugCache.v"
 	//`include "digital_pll.v"
 	//`include "caravel_clocking.v"
@@ -96,7 +96,7 @@
 	`include "xres_buf.v"
 	`include "spare_logic_block.v"
 	`include "mgmt_core_wrapper.v"
-	`include "caravel.v"
+	`include "vsdcaravel.v"
         //`include "pc3b03ed_wrapper.v"
         //`include "pc3d21.v"
         //`include "pc3d01.v"

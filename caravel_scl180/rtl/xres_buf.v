@@ -29,8 +29,8 @@ module xres_buf (
 `endif
 );
 
-output X    ;
-input  A    ;
+inout X    ;
+inout A    ;
 `ifdef USE_POWER_PINS
 inout  VPWR ;
 inout  VGND ;

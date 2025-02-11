@@ -398,7 +398,7 @@ module hkspi_tb;
 	assign mprj_io[2] = hk_sdi;
 	assign SDO = mprj_io[1];
 	
-	caravel uut (
+	vsdcaravel uut (
 		.vddio	  (VDD3V3),
 		.vddio_2  (VDD3V3),
 		.vssio	  (VSS),
