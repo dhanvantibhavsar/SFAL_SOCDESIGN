@@ -16,7 +16,7 @@
 `default_nettype wire
 `timescale 1 ns / 1 ps
 /// sta-blackbox
-module simple_por(
+module dummy_por(
 `ifdef USE_POWER_PINS
     inout vdd3v3,
     inout vdd1v8,

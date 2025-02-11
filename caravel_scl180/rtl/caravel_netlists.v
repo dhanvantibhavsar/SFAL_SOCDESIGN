@@ -87,7 +87,7 @@
 	`include "xres_buf.v"
 	`include "spare_logic_block.v"
 	`include "mgmt_core_wrapper.v"
-	`include "caravel.v"
+	`include "vsdcaravel.v"
         //`include "pc3b03ed_wrapper.v"
         //`include "pc3d21.v"
         //`include "pc3d01.v"
@@ -95,6 +95,6 @@
         //`include ""
     `endif
 
-    `include "simple_por.v"
+    `include "dummy_por.v"
 
 `endif

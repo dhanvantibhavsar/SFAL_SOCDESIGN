@@ -20,7 +20,7 @@ foreach_in_collection cell [get_lib_cells sky130_fd_sc_hvl__ff_n40C_4v40/*] {
 
 set root_dir "/home/dhanvanti/vsd_sfal/SFAL_SOCDESIGN/caravel_scl180"
 set verilog_files  "$root_dir/rtl"
-set top_module "caravel" ;
+set top_module "vsdcaravel" ;
 set output_file "$root_dir/synthesis/output/caravel_synthesis.v"
 set report_dir "$root_dir/synthesis/report"
 read_file $verilog_files/defines.v

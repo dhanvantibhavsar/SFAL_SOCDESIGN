@@ -1378,7 +1378,7 @@ module caravel_core (
     );
 
     // Power-on-reset circuit
-    simple_por por (
+    dummy_por por (
 	`ifdef USE_POWER_PINS
 		.vdd3v3(vddio),
 		.vdd1v8(vccd),

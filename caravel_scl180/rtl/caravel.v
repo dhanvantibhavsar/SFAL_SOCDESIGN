@@ -39,7 +39,7 @@
 `include "user_id_textblock.v"
 `include "caravel_core.v"
 
-module caravel (
+module vsdcaravel (
     // All top-level I/O are package-facing pins
     inout                     vddio,    // Common 3.3V padframe/ESD power
     inout                     vddio_2,  // Common 3.3V padframe/ESD power
