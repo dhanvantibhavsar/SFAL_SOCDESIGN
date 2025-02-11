@@ -1,5 +1,11 @@
 # SFAL_SOCDESIGN  
-**A Step-by-Step Journey in SoC Design**  
+### VexRiscV Harnessed with Efabless's Caravel and SCL180 PDK
+
+ VexRiscV Harnessed with Efabless's Caravel and SCL180 PDK is a reference project demonstrating the synthesis and gate-level simulation (GLS) of the Caravel design using the SCL180 PDK.
+
+- Project by :- Dhanvanti Bhavsar
+- PDK used :- SCL180
+- Tool used :- Synopsys Design Tools
 
 ## Overview  
 Digital chip design is a multi-step process that transforms a high-level functional specification into a fully manufacturable silicon chip. It begins with defining the design requirements, followed by **Register Transfer Level (RTL) coding** using hardware description languages like **Verilog or VHDL**. The RTL design is then verified to ensure functional correctness before being synthesized into a gate-level netlist.  
@@ -73,8 +79,7 @@ This repository provides a **structured, hands-on guide** through the **RTL-to-G
 - Timing .libs and Exploration   
 </details>
 
-### VexRiscV Harnessed with Efabless's Caravel and SCL180 PDK
-- VexRiscV Harnessed with Efabless's Caravel and SCL180 PDK is a reference project demonstrating the synthesis and gate-level simulation (GLS) of the Caravel design using the SCL180 PDK.
+
 
 ---
 
